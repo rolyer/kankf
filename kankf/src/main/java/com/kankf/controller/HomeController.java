@@ -13,5 +13,6 @@ public class HomeController {
 	public void index(ModelMap out){
 		out.put("message", "Hello World!");
 		out.put("current", new Date());
+		out.put("title", "Index");
 	}
 }
