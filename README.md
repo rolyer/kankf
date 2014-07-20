@@ -1,4 +1,4 @@
-kankf
+KF-CMS
 =====
 
-www.kankf.com
+A CMS Application
