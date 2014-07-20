@@ -6,6 +6,8 @@
 	<br>
 	<div align='center'>
 		<h2>${message}</h2>
+		#d("Velocity Macro")
+		$!date.format('yyyy-MM-dd HH:mm:ss',$!{current})
 	</div>
 </body>
 </html>
