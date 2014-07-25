@@ -1,6 +1,6 @@
-package com.kankf.service;
+package com.kfcms.service;
 
-import com.kankf.model.User;
+import com.kfcms.model.User;
 
 public interface UserService {
 	public void insertUser(User user);

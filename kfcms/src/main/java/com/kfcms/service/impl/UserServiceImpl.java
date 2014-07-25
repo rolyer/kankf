@@ -1,12 +1,12 @@
-package com.kankf.service.impl;
+package com.kfcms.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.kankf.mappers.UserMapper;
-import com.kankf.model.User;
-import com.kankf.service.UserService;
+import com.kfcms.mappers.UserMapper;
+import com.kfcms.model.User;
+import com.kfcms.service.UserService;
 
 @Service("userService")
 public class UserServiceImpl implements UserService {

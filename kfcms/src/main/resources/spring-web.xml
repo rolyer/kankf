@@ -14,7 +14,7 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
 	<context:property-placeholder location="classpath:jdbc.properties" />
 	
 	<mvc:annotation-driven />
-	<context:component-scan base-package="com.kankf" />
+	<context:component-scan base-package="com.kfcms" />
 	
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 	  <property name="driverClassName" value="${jdbc.driver}" />
@@ -31,8 +31,8 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
 	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 	  <property name="dataSource" ref="dataSource" />
-	  <property name="typeAliasesPackage" value="com.kankf.model"/>
-	  <!-- <property name="mapperLocations" value="classpath*:com/kankf/mappers/*.xml" /> -->
+	  <property name="typeAliasesPackage" value="com.kfcms.model"/>
+	  <!-- <property name="mapperLocations" value="classpath*:com/kfcms/mappers/*.xml" /> -->
 	</bean>
 
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
@@ -40,13 +40,13 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
 	</bean>
 	
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-	  <property name="basePackage" value="com.kankf.mappers" />
+	  <property name="basePackage" value="com.kfcms.mappers" />
 	</bean>
 
 	<bean
 		class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping">
 		<property name="caseSensitive" value="false" />
-		<property name="basePackage" value="com.kankf.controller" />
+		<property name="basePackage" value="com.kfcms.controller" />
 	</bean>
 
 	<bean id="velocityConfig"

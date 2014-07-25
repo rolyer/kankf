@@ -1,4 +1,4 @@
-package com.kankf.model;
+package com.kfcms.model;
 // default package
 // Generated Jul 25, 2014 10:39:42 PM by Hibernate Tools 3.4.0.CR1
 

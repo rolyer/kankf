@@ -1,4 +1,4 @@
-package com.kankf.controller;
+package com.kfcms.controller;
 
 import java.util.Date;
 
@@ -7,8 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.kankf.model.User;
-import com.kankf.service.UserService;
+import com.kfcms.model.User;
+import com.kfcms.service.UserService;
 
 @Controller
 public class HomeController {
