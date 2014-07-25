@@ -25,7 +25,6 @@ public class HomeController {
 		User user = new User();
 		user.setGmtCreated(new Date());
 		user.setUserName("userName");
-		user.setUserRole("1");
 		
 		userService.insertUser(user);
 	}
