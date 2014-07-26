@@ -1,0 +1,18 @@
+<div class="sticky">
+<h2 class="title">置顶推荐</h2>
+<ul>
+	<li class="item">
+		<a href="#"><img src="$link.getContextPath()/images/ie11-logo.png" alt="傲剑2">
+			<h3>傲剑2</h3>
+			<p class="muted">傲剑2是一款“新轻功”武侠网页游戏，承袭了经典武侠著作中“民族大义、江湖情仇”等精髓理念，创新...</p>
+		</a>
+	</li>
+	<li class="item">
+		<a href="#"><img src="$link.getContextPath()/images/ctrip-140x98.png" alt="黑暗之光">
+			<h3>黑暗之光</h3>
+			<p class="muted">新一代3D引擎，优越的物理碰撞效果、实时战斗光影追踪、即触式全景互动，呈现于精致的画面中。穿梭六大时空，提炼...</p>
+		</a>
+	</li>
+</ul>
+</div>
+<!--置顶推荐 end -->

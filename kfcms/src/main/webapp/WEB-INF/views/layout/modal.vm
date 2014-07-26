@@ -1,0 +1,44 @@
+<div class="thisWinWrapper msya xShadow w400" id="thisWinWrapper" style="top: 50%; display: block; z-index: 100001; position: fixed; left: 50%; margin-top: -35px; margin-left: -201px; display: none;" >
+    <h2 align="center">兄弟玩真龙三国通服礼包</h2>
+	
+	<p class="wxx"><a href="javascript:;" onclick="$('#thisWinWrapper').hide();$('#jihualayer').remove();"><img src="images/x.png"></a></p>
+	<div class="thisWinPages" id="thisWinWrapper_content" style="display: none;"><p align="center"><b>正在为您准备号码，不要关闭当前窗口，请稍等...</b></p><br><p align="center" style="padding-right:20px;"><img src="http://img1.07073.com/_10img/hao/img_tips.gif"> 提示:为了您和他人的利益，请不要重复领取</p></div>
+	<div class="thisWinPages" id="thisFloating_content_success" style="display: ;">
+		<div id="fh_content" style="display:none">
+	  <h3>很抱歉，已被一抢而空！</h3>
+	  <h6><a href="#" class="wpa1" onclick="window.open($('#weburl').val());">开始游戏</a></h6>
+	  	</div>
+	  	<div id="fh_success" style="display: none;">
+	  	<style>.vGo2 { width: 75px; height: 25px; display: block; line-height: 27px; text-align: center; font-family: "宋体"; color: #fff; background: url(http://img1.07073.com/_13css/kaifu/skins/f/bg.gif) 0 -700px no-repeat; }</style>
+		  <div style="border-bottom:1px #cecece dotted;padding-top:4px;height:50px;margin-bottom:10px">
+		    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+			  <tbody><tr>
+				<td align="left" valign="top">
+				<object id="player" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,3,0,0" width="272" height="29">
+				<param name="movie" value="http://img1.07073.com/_13css/kaifu/skins/_img/CopyText4.swf">
+				<param name="quality" value="high">
+				<param name="allowScriptAccess" value="always">
+				<param name="wmode" value="transparent">
+				<param id="code_1" name="flashvars" value="code=WZJI3DEC665185590574846284">
+				<embed id="code_2" width="272" height="29" align="middle" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" allowscriptaccess="always" wmode="transparent" quality="high" src="http://img1.07073.com/_13css/kaifu/skins/_img/CopyText4.swf" flashvars="code=WZJI3DEC665185590574846284">
+				</object></td>
+				<td align="right" valign="top" style="padding-top:3px"><a class="vGo2" rel="nofollow" href="#" onclick="window.open($('#weburl').val());">开始游戏</a></td>
+			  </tr>
+			</tbody></table> 
+		  </div>
+	  <h4>礼包介绍</h4>
+	  <p><b>礼包介绍</b></p>
+	  <p id="card_info1">
+	  2倍收益丹*5
+装备强化石*10
+千里传音*5
+还魂丹*5
+	  </p>
+	  <p><b>使用方法</b></p>
+	  <p id="card_info2">
+	  练到14级，游戏右上角“福利大厅”-“激活码兑换”
+	  </p>
+	  <input id="weburl" type="hidden" value="http://182.xdwan.com/gg7076a/">
+	  	</div>
+	  </div>
+</div>

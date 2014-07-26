@@ -1,17 +1,30 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>$!{title}</title>
-    </head>
-    <body>
-        <div>
-            #parse("layout/header.vm")
-        </div>
+<head>
+	#parse("layout/meta.vm")
+</head>
+<body class="home blog" cz-shortcut-listen="true">
 
-        <div>
-            $screen_content
-        </div>
-         <div>
-            #parse("layout/footer.vm")
-        </div>
-    </body>
+	#parse("layout/header.vm")
+	
+	<section class="container">
+		<div class="content-wrap">
+			<div class="content">
+				#parse("layout/toplist.vm")
+				$screen_content
+			</div>
+		</div>
+		<!-- side -->
+		#parse("layout/side.vm")
+		<!-- side -->
+	</section>
+
+	#parse("layout/footer.vm")
+	
+	<script type="text/javascript" src="$link.getContextPath()/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="$link.getContextPath()/js/base.js"></script>
+	
+	#parse("layout/modal.vm")
+	
+</body>
 </html>

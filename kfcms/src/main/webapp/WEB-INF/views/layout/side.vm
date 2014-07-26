@@ -1,0 +1,32 @@
+<aside class="sidebar">	
+<div class="widget d_textbanner">
+<a class="style02" href="#"><strong>热门游戏</strong><h2>斗破苍穹II</h2><p>《斗破苍穹II》是2011年成都页游科技自主研发的史诗级ARPG无端网游。改编自超人气白金作者天蚕土豆的同名小说，游戏画面精美清新，玩法多样轻松...</p></a>
+</div>
+
+<div class="widget d_banner"><div class="d_banner_inner"><a style="line-height:116px;font-size:16px;" class="banner-your" href="#advertisement/">全站广告机会 360*120px</a></div></div>
+
+<div class="widget d_banner"><div class="d_banner_inner"><a style="line-height:116px;font-size:16px; height:300px;" class="banner-your" href="#advertisement/">Google AdSense 360*120px</a></div></div>
+
+<div class="widget d_tag">
+	<h3 class="widget_tit"><a class="btn btn-primary" href="#tags">游戏分类</a>游戏分类</h3>
+	<div class="d_tags">
+		<a href="#tag/web">冒险 (0)</a>
+		<a href="#tag/web">角色扮演 (1)</a>
+		<a href="#tag/web">休闲 (2)</a>
+		<a href="#tag/web">益智 (3)</a>
+	</div>
+</div>
+
+<div class="widget d_postlist">
+<h3 class="widget_tit"><a class="btn btn-primary" href="#topic/yunying">进入运营商频道</a>运营商</h3>
+<ul>
+<li><a href="#"><span class="thumbnail"><img src="$link.getContextPath()/images/ymatou.png" alt="乐火游戏"></span><span class="text">乐火游戏</span><span class="muted">2014-05-16</span><span class="muted">12评论</span></a>
+</li>
+<li><a href="#"><span class="thumbnail"><img src="$link.getContextPath()/images/wealink.png" alt="太游游戏"></span><span class="text">太游游戏</span><span class="muted">2013-11-11</span><span class="muted">12评论</span></a></li>
+</ul>
+</div>
+
+<div class="widget d_comment">
+<h3 class="widget_tit">最新评论</h3>
+<ul><li><a href="#comment-id" title="Here is the title!"><img alt="" data-original="#avatar/default.png" class="avatar avatar-36 photo" height="36" width="36" src="$link.getContextPath()/images/default.png">游客 <span class="muted">16小时前说：<br>真的开发游客评论了吗？</span></a></li>
+</ul></div></aside>

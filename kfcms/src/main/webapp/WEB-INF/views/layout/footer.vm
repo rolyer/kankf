@@ -1,1 +1,18 @@
-<h1>copyright 2014</h1>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+			© 2014 <a href="#">看开服</a> - 最新最全网页游戏开服信息就在看开服。
+        </div>
+        <script>
+			window._deel = {
+				name: '',
+				//url: 'http://www.kaikf.com/wp-content/themes/d8',
+				rss: 'http://www.kaikf.com/feed/',
+				maillist: 'on',
+				//maillistCode: 'd7d1324f807337a7207f706466e3e97b1fbc7acbcc484b9f',
+				commenton: 0,
+				roll: [1,3]
+			}
+		</script>
+    </div>
+</footer>

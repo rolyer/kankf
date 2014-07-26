@@ -1,13 +1,7 @@
-<html>
-<head>
-<title>Spring MVC : Hello World</title>
-</head>
-<body>
-	<br>
-	<div align='center'>
-		<h2>${message}</h2>
-		#d("Velocity Macro2")
-		$!date.format('yyyy-MM-dd HH:mm:ss',$!{current})
-	</div>
-</body>
-</html>
+#set($layout="layout/templet.vm")
+
+<div align='center'>
+	<br />
+	#d("Welcome to member center!")
+	Time: $!date.format('yyyy-MM-dd HH:mm:ss',$!{current})
+</div>
