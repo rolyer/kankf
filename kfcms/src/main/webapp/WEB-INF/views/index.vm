@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>看开服</title>
+<link rel="stylesheet" id="style-css" href="$link.getContextPath()/templates/default/style.css?ver=3.0" type="text/css" media="all">
+<meta name="keywords" content="看开服">
+<meta name="description" content="看开服">
+<!--[if lt IE 9]><script src="$link.getContextPath()/js/html5.js"></script><![endif]-->
+</head>
+
+<body class="home blog" cz-shortcut-listen="true">
+
+<header class="header">
+	<div class="navbar">
+		<h1 class="logo"><a href="#" title="看开服">看开服</a></h1>
+		<ul class="nav">
+			<li id="menu-item-3685" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-3685">
+				<a href="index.html">开服首页</a></li>
+			<li id="menu-item-5154" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5154">
+				<a href="today.html">今日开服</a></li>
+			<li id="menu-item-5012" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5012">
+				<a href="tomorrow.html">明日开服</a></li>
+			<li id="menu-item-5220" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5220">
+				<a href="rank.html">开服排行</a>
+			</li>
+			<li id="menu-item-4244" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-4244">
+				<a href="libao.html">开服礼包</a>
+				<ul class="sub-menu">
+					<li id="menu-item-4438" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4438">
+						<a href="#">新手卡</a></li>
+					<li id="menu-item-4439" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4439">
+						<a href="">道具卡</a></li>
+					<li id="menu-item-4437" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4437">
+						<a href="">激活码</a></li>
+				</ul>
+			</li>
+		</ul>
+		<!--nav end-->
+		<div class="screen-mini"><button data-type="screen-nav" class="btn btn-inverse screen-nav"><i class="icon-tasks icon-white"></i></button></div>
+		<div class="menu pull-right">
+			<form method="get" class="dropdown search-form" action="#">
+				<input class="search-input" name="s" type="text" placeholder="输入关键字搜索" autofocus="" x-webkit-speech="">
+				<input class="btn btn-success search-submit" type="submit" value="搜索">
+			</form>
+			<div class="btn-group pull-left">
+				<button class="btn btn-primary" data-toggle="modal" data-target="#tijiaokaifu">+提交开服</button>
+				<button class="btn btn-primary" data-toggle="modal" data-target="#feed">订阅</button>
+				<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">关注 <i class="caret"></i></button>
+				<ul class="dropdown-menu pull-right">
+					<li><a rel="external nofollow" href="http://t.qq.com/rolyer" target="_blank">腾讯微博</a></li>					<li><a rel="external nofollow" href="http://weibo.com/rolyer" target="_blank">新浪微博</a></li>														</ul>
+							</div>
+		</div>
+	</div>
+	<!--navbar end-->
+	
+	<div class="speedbar">
+		<div class="pull-right">
+			<i class="icon-user icon12"></i> <a href="#login">登录</a>
+		</div>
+		<div class="toptip">
+			<strong class="text-success">最新消息：</strong><a rel="external nofollow" href="#">本站已开放提交开服信息,欢迎投稿！</a>&nbsp;
+			你还可以：&nbsp;<a rel="external nofollow" href="#">投稿</a>&nbsp;/&nbsp;
+			<a rel="external nofollow" href="#">广告合作</a>&nbsp;/&nbsp;
+			联系邮箱：<strong class="text-info">admin@domian.com</strong>
+		</div>
+	</div>
+	<!--speedbar end-->
+</header>
+
+<section class="container">
+	<div class="content-wrap">
+	<div class="content">
+	<div class="sticky">
+	<h2 class="title">置顶推荐</h2>
+	<ul>
+		<li class="item">
+			<a href="#"><img src="$link.getContextPath()/images/ie11-logo.png" alt="傲剑2">
+				<h3>傲剑2</h3>
+				<p class="muted">傲剑2是一款“新轻功”武侠网页游戏，承袭了经典武侠著作中“民族大义、江湖情仇”等精髓理念，创新...</p>
+			</a>
+		</li>
+		<li class="item">
+			<a href="#"><img src="$link.getContextPath()/images/ctrip-140x98.png" alt="黑暗之光">
+				<h3>黑暗之光</h3>
+				<p class="muted">新一代3D引擎，优越的物理碰撞效果、实时战斗光影追踪、即触式全景互动，呈现于精致的画面中。穿梭六大时空，提炼...</p>
+			</a>
+		</li>
+	</ul>
+	</div>
+	<!--置顶推荐 end -->
+	<!-- 今日开服 start-->
+	<h2 class="title t2">今日开服</h2>
+	
+	<div class="content-list">
+		<ul>
+			<li class="list-title ui-left text-overflow">游戏名称</li>
+			<li class="list-title ui-left text-overflow">服务器名</li>
+			<li class="list-title ui-left text-overflow">游戏类型</li>
+			<li class="list-title ui-left text-overflow">开服礼包</li>
+			<li class="list-title ui-left text-overflow">运营商</li>
+			<li class="list-title ui-left text-overflow">快捷操作</li>
+			<li class="list-title ui-left text-overflow">状态</li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow"><a href="gourl.html" target="_blank">乱舞江山</a></li>
+			<li class="list-info ui-left text-overflow"><a href="gourl.html" target="_blank">双线2服</a></li>
+			<li class="list-info ui-left text-overflow"><a href="gourl.html" target="_blank">Q版</a></li>
+			<li class="list-info ui-left text-overflow"><a href="gourl.html" target="_blank">--</a></li>
+			<li class="list-info ui-left text-overflow"><a href="gourl.html" target="_blank">哇塞游戏平台</a></li>
+			<li class="list-info ui-left text-overflow"><a href="gourl.html" target="_blank" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">
+				<a href="javascript:;" onclick="receive('121295', 'http://t.adango.com.cn/073cy1.html');">礼包</a>
+			</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="gray">即将开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="gray">即将开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="gray">即将开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="gray">即将开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="gray">即将开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="gray">即将开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow"><a href="javascript:;" onclick="receive('121295', 'http://t.adango.com.cn/073cy1.html');">礼包</a></li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+	</div>
+	<div class="load-more">
+		<a href="today.html" title="点击加载更多内容">加载更多...</a>
+	</div>
+	
+	<!-- 今日开服 end-->
+	
+	<!-- 明日开服 start-->
+	<h2 class="title t2">明日开服</h2>
+	<div class="content-list">
+		<ul>
+			<li class="list-title ui-left text-overflow">游戏名称</li>
+			<li class="list-title ui-left text-overflow">服务器名</li>
+			<li class="list-title ui-left text-overflow">游戏类型</li>
+			<li class="list-title ui-left text-overflow">开服礼包</li>
+			<li class="list-title ui-left text-overflow">运营商</li>
+			<li class="list-title ui-left text-overflow">快捷操作</li>
+			<li class="list-title ui-left text-overflow">状态</li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="gray">即将开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="gray">即将开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="gray">即将开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+		<ul>
+			<li class="list-info ui-left text-overflow">乱舞江山</li>
+			<li class="list-info ui-left text-overflow">双线2服</li>
+			<li class="list-info ui-left text-overflow">Q版</li>
+			<li class="list-info ui-left text-overflow">--</li>
+			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
+			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+		</ul>
+	</div>
+	<div class="load-more">
+		<a href="tomorrow.html" title="点击加载更多内容">加载更多...</a>
+	</div>
+	<!-- 明日开服 end-->
+	
+	<div class="pagination" style="display: none;">
+		<ul>
+			<li class="prev-page"></li><li class="active"><span>1</span></li>
+			<li><a href="#page/2">2</a></li>
+			<li><a href="#page/3">3</a></li>
+			<li><a href="#page/4">4</a></li>
+			<li><a href="#page/5">5</a></li>
+			<li><span> ... </span></li>
+			<li class="next-page"><a href="#page/2">下一页</a></li>
+		</ul>
+	</div>
+	<!-- pagination end -->
+	</div>
+</div>
+
+<aside class="sidebar">	
+<div class="widget d_textbanner">
+<a class="style02" href="#"><strong>热门游戏</strong><h2>斗破苍穹II</h2><p>《斗破苍穹II》是2011年成都页游科技自主研发的史诗级ARPG无端网游。改编自超人气白金作者天蚕土豆的同名小说，游戏画面精美清新，玩法多样轻松...</p></a>
+</div>
+
+<div class="widget d_banner"><div class="d_banner_inner"><a style="line-height:116px;font-size:16px;" class="banner-your" href="#advertisement/">全站广告机会 360*120px</a></div></div>
+
+<div class="widget d_banner"><div class="d_banner_inner"><a style="line-height:116px;font-size:16px; height:300px;" class="banner-your" href="#advertisement/">Google AdSense 360*120px</a></div></div>
+
+<div class="widget d_tag">
+	<h3 class="widget_tit"><a class="btn btn-primary" href="#tags">游戏分类</a>游戏分类</h3>
+	<div class="d_tags">
+		<a href="#tag/web">冒险 (0)</a>
+		<a href="#tag/web">角色扮演 (1)</a>
+		<a href="#tag/web">休闲 (2)</a>
+		<a href="#tag/web">益智 (3)</a>
+	</div>
+</div>
+
+<div class="widget d_postlist">
+<h3 class="widget_tit"><a class="btn btn-primary" href="#topic/yunying">进入运营商频道</a>运营商</h3>
+<ul>
+<li><a href="#"><span class="thumbnail"><img src="$link.getContextPath()/images/ymatou.png" alt="乐火游戏"></span><span class="text">乐火游戏</span><span class="muted">2014-05-16</span><span class="muted">12评论</span></a>
+</li>
+<li><a href="#"><span class="thumbnail"><img src="$link.getContextPath()/images/wealink.png" alt="太游游戏"></span><span class="text">太游游戏</span><span class="muted">2013-11-11</span><span class="muted">12评论</span></a></li>
+</ul>
+</div>
+
+<div class="widget d_comment">
+<h3 class="widget_tit">最新评论</h3>
+<ul><li><a href="#comment-id" title="Here is the title!"><img alt="" data-original="#avatar/default.png" class="avatar avatar-36 photo" height="36" width="36" src="$link.getContextPath()/images/default.png">游客 <span class="muted">16小时前说：<br>真的开发游客评论了吗？</span></a></li>
+</ul></div></aside></section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+			© 2014 <a href="#">看开服</a> - 最新最全网页游戏开服信息就在看开服。
+        </div>
+        <script>
+			window._deel = {
+				name: '',
+				//url: 'http://www.kaikf.com/wp-content/themes/d8',
+				rss: 'http://www.kaikf.com/feed/',
+				maillist: 'on',
+				//maillistCode: 'd7d1324f807337a7207f706466e3e97b1fbc7acbcc484b9f',
+				commenton: 0,
+				roll: [1,3]
+			}
+		</script>
+    </div>
+</footer>
+<script type="text/javascript" src="$link.getContextPath()/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="$link.getContextPath()/js/base.js"></script>
+<div class="thisWinWrapper msya xShadow w400" id="thisWinWrapper" style="top: 50%; display: block; z-index: 100001; position: fixed; left: 50%; margin-top: -35px; margin-left: -201px; display: none;" >
+    <h2 align="center">兄弟玩真龙三国通服礼包</h2>
+	
+	<p class="wxx"><a href="javascript:;" onclick="$('#thisWinWrapper').hide();$('#jihualayer').remove();"><img src="images/x.png"></a></p>
+	<div class="thisWinPages" id="thisWinWrapper_content" style="display: none;"><p align="center"><b>正在为您准备号码，不要关闭当前窗口，请稍等...</b></p><br><p align="center" style="padding-right:20px;"><img src="http://img1.07073.com/_10img/hao/img_tips.gif"> 提示:为了您和他人的利益，请不要重复领取</p></div>
+	<div class="thisWinPages" id="thisFloating_content_success" style="display: ;">
+		<div id="fh_content" style="display:none">
+	  <h3>很抱歉，已被一抢而空！</h3>
+	  <h6><a href="#" class="wpa1" onclick="window.open($('#weburl').val());">开始游戏</a></h6>
+	  	</div>
+	  	<div id="fh_success" style="display: none;">
+	  	<style>.vGo2 { width: 75px; height: 25px; display: block; line-height: 27px; text-align: center; font-family: "宋体"; color: #fff; background: url(http://img1.07073.com/_13css/kaifu/skins/f/bg.gif) 0 -700px no-repeat; }</style>
+		  <div style="border-bottom:1px #cecece dotted;padding-top:4px;height:50px;margin-bottom:10px">
+		    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+			  <tbody><tr>
+				<td align="left" valign="top">
+				<object id="player" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,3,0,0" width="272" height="29">
+				<param name="movie" value="http://img1.07073.com/_13css/kaifu/skins/_img/CopyText4.swf">
+				<param name="quality" value="high">
+				<param name="allowScriptAccess" value="always">
+				<param name="wmode" value="transparent">
+				<param id="code_1" name="flashvars" value="code=WZJI3DEC665185590574846284">
+				<embed id="code_2" width="272" height="29" align="middle" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" allowscriptaccess="always" wmode="transparent" quality="high" src="http://img1.07073.com/_13css/kaifu/skins/_img/CopyText4.swf" flashvars="code=WZJI3DEC665185590574846284">
+				</object></td>
+				<td align="right" valign="top" style="padding-top:3px"><a class="vGo2" rel="nofollow" href="#" onclick="window.open($('#weburl').val());">开始游戏</a></td>
+			  </tr>
+			</tbody></table> 
+		  </div>
+	  <h4>礼包介绍</h4>
+	  <p><b>礼包介绍</b></p>
+	  <p id="card_info1">
+	  2倍收益丹*5
+装备强化石*10
+千里传音*5
+还魂丹*5
+	  </p>
+	  <p><b>使用方法</b></p>
+	  <p id="card_info2">
+	  练到14级，游戏右上角“福利大厅”-“激活码兑换”
+	  </p>
+	  <input id="weburl" type="hidden" value="http://182.xdwan.com/gg7076a/">
+	  	</div>
+	  </div>
+</div>
+</body>
+
+</html>
