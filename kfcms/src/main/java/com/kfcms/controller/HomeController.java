@@ -2,6 +2,7 @@ package com.kfcms.controller;
 
 import java.util.Date;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -12,12 +13,14 @@ import com.kfcms.service.UserService;
 
 @Controller
 public class HomeController {
+	private final static Logger LOGGER = Logger.getLogger(HomeController.class);
 	
 	@Autowired
 	private UserService userService;
 	
 	@RequestMapping("index.html")
 	public void index(ModelMap out){
+		LOGGER.debug("HomeController : index");		
 		out.put("message", "Hello World!");
 		out.put("current", new Date());
 		out.put("title", "Index");
