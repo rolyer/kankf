@@ -1,4 +1,4 @@
-#set($layout="layout/templet.vm")
+#set($layout="layout/template.vm")
 <div class="content loading_box">
 	<div class="skip">
 		<div class="web_log"></div>

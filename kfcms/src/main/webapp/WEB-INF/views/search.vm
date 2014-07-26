@@ -1,4 +1,4 @@
-#set($layout="layout/templet.vm")
+#set($layout="layout/template.vm")
 
 <!-- 今日开服 start-->
 	<h2 class="title">今日开服</h2>

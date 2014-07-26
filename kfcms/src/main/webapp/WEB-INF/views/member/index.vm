@@ -1,4 +1,4 @@
-#set($layout="layout/templet.vm")
+#set($layout="layout/template.vm")
 
 <div align='center'>
 	<br />
