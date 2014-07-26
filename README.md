@@ -1,4 +1,4 @@
 KF-CMS
 =====
 
-A CMS Application
+A CMS Application developed Spring MVC, MyBatis, Velocity.
