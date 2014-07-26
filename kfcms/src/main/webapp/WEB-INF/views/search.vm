@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>看开服</title>
+<link rel="stylesheet" id="style-css" href="templates/default/style.css?ver=3.0" type="text/css" media="all">
+<meta name="keywords" content="看开服">
+<meta name="description" content="看开服">
+<!--[if lt IE 9]><script src="js/html5.js"></script><![endif]-->
+<script>window["_GOOG_TRANS_EXT_VER"] = "1";</script>
+</head>
+
+<body class="home blog" cz-shortcut-listen="true">
+<header class="header">
+	<div class="navbar">
+		<h1 class="logo"><a href="#" title="看开服">看开服</a></h1>
+		<ul class="nav">
+			<li id="menu-item-3685" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-3685">
+				<a href="index.html">开服首页</a></li>
+			<li id="menu-item-5154" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5154">
+				<a href="today.html">今日开服</a></li>
+			<li id="menu-item-5012" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5012">
+				<a href="tomorrow.html">明日开服</a></li>
+			<li id="menu-item-5220" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5220">
+				<a href="rank.html">开服排行</a>
+			</li>
+			<li id="menu-item-4244" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-4244">
+				<a href="gift.html">开服礼包</a>
+				<ul class="sub-menu">
+					<li id="menu-item-4438" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4438">
+						<a href="#">新手卡</a></li>
+					<li id="menu-item-4439" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4439">
+						<a href="">道具卡</a></li>
+					<li id="menu-item-4437" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4437">
+						<a href="">激活码</a></li>
+				</ul>
+			</li>
+		</ul>
+		<!--nav end-->
+		<div class="screen-mini"><button data-type="screen-nav" class="btn btn-inverse screen-nav"><i class="icon-tasks icon-white"></i></button></div>
+		<div class="menu pull-right">
+			<form method="get" class="dropdown search-form" action="#">
+				<input class="search-input" name="s" type="text" placeholder="输入关键字搜索" autofocus="" x-webkit-speech="">
+				<input class="btn btn-success search-submit" type="submit" value="搜索">
+			</form>
+			<div class="btn-group pull-left">
+				<button class="btn btn-primary">+提交开服</button>
+				<button class="btn btn-primary" data-toggle="modal" data-target="#feed">订阅</button>
+				<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">关注 <i class="caret"></i></button>
+				<ul class="dropdown-menu pull-right">
+					<li><a rel="external nofollow" href="http://t.qq.com/rolyer" target="_blank">腾讯微博</a></li>					<li><a rel="external nofollow" href="http://weibo.com/rolyer" target="_blank">新浪微博</a></li>														</ul>
+							</div>
+		</div>
+	</div>
+	<!--navbar end-->
+	
+	<div class="speedbar">
+		<div class="pull-right">
+			<i class="icon-user icon12"></i> <a href="#login">登录</a>
+		</div>
+		<div class="toptip">
+			<strong class="text-success">最新消息：</strong><a rel="external nofollow" href="#">用户注册已开放！</a>&nbsp;
+			你还可以：&nbsp;<a rel="external nofollow" href="#">投稿</a>&nbsp;/&nbsp;
+			<a rel="external nofollow" href="#">广告合作</a>&nbsp;/&nbsp;
+			联系邮箱：<strong class="text-info">admin@domian.com</strong>
+		</div>
+	</div>
+	<!--speedbar end-->
+</header>
+<section class="container">
+	<div class="content-wrap">
+	<div class="content">
+	<div class="sticky">
+	<h2 class="title">置顶推荐</h2>
+	<ul>
+		<li class="item">
+			<a href="#"><img src="images/ie11-logo.png" alt="IE11很是生猛：前端们应该关注最近浏览器市场占有率">
+				<h3>IE11很是生猛：前端们应该关注最近浏览器市场占有率</h3>
+				<p class="muted">这两天在做公司关于IE11一些数据的调查，这才发现IE11的生长很是生猛，作为一名前端不得不去关...</p>
+			</a>
+		</li>
+		<li class="item">
+			<a href="#"><img src="images/ctrip-140x98.png" alt="携程(上海)框架研发部招开发工程师(偏前端)">
+				<h3>携程(上海)框架研发部招开发工程师(偏前端)</h3>
+				<p class="muted">携程技术研发中心框架研发部，浩子现在效力的部门，部门主要负责携程前后端框架的开发维护及支持。...</p>
+			</a>
+		</li>
+	</ul>
+	</div>
+	<!--置顶推荐 end -->
+	<!-- 今日开服 start-->
+	<h2 class="title">今日开服</h2>
+	<article class="excerpt">
+		<div class="focus"><a href="#" class="thumbnail"><img src="images/ads.alibaixiu-220x150.png" alt="阿里百秀主题配置功能抢先看"></a></div>
+		<header>
+			<a class="label label-important" href="#topic/wp">Wordpress<i class="label-arrow"></i></a>
+			<h2><a href="#" title="阿里百秀主题配置功能抢先看_大前端">阿里百秀主题配置功能抢先看</a></h2>
+		</header>
+		<p class="muted"><a href="#/author/admin">Admin</a> 发表于 1天前 </p>
+		<p class="note">上个月说到阿里百秀主题于本月9日开售，感谢不少爱好者先行预售，你们的支持给了我莫大的信心，相信在不断完善的基础上大前端的主题会做得更好，同时也希望主题这行能够和谐发展，请大家支持开发者的心血。值得一说的是，这款主题在功能和配置上远比阿里百秀的强大，...</p>
+	</article>
+	<article class="excerpt">
+		<div class="focus"><a href="#" class="thumbnail"><img src="images/ymatou.png" alt="海外购物公司洋码头招Web前端开发工程师（上海）"></a></div>
+		<header>
+			<a class="label label-important" href="#topic/job">名企招聘<i class="label-arrow"></i></a>		<h2><a href="#" title="海外购物公司洋码头招Web前端开发工程师（上海）_大前端">海外购物公司洋码头招Web前端开发工程师（上海）</a></h2>
+		</header>
+		<p class="muted"><a href="#/author/admin">Admin</a> 发表于 3周前 (05-16)  - 12条评论</p>
+		<p class="note">海外购物公司洋码头（ymatou.com）招聘Web前端一枚，有愿意换个环境的朋友可以去试试，笔者有一朋友在内任职，工作地点上海。岗位职责： 负责web前端Javascript的开发工作解决网页及脚本在不同浏览器下的兼容性问题协助UI设计师进...</p>
+	</article>
+	<article class="excerpt">
+		<div class="focus"><a href="#" class="thumbnail"><img src="uploads/2013/11/ie11-logo.png" alt="IE11很是生猛：前端们应该关注最近浏览器市场占有率"></a></div>
+		<header>
+			<a class="label label-important" href="#topic/see">先知<i class="label-arrow"></i></a>		<h2><a href="#" title="IE11很是生猛：前端们应该关注最近浏览器市场占有率_大前端">IE11很是生猛：前端们应该关注最近浏览器市场占有率</a></h2>
+		</header>
+		<p class="muted"><a href="#/author/admin">Admin</a> 发表于 7个月前 (11-12)  - 21条评论</p>
+		<p class="note">这两天在做公司关于IE11一些数据的调查，这才发现IE11的生长很是生猛，作为一名前端不得不去关注下近期的浏览器市场占有率。以下是来自2013年10月份netmarketshare站点的数据调查。IE11 Logo PC端浏览器市场占有率： 浏览器...</p>
+	</article>
+	
+	<article class="excerpt">
+		<div class="focus"><a href="#" class="thumbnail"><img src="images/ads.alibaixiu-220x150.png" alt="阿里百秀主题配置功能抢先看"></a></div>
+		<header>
+			<a class="label label-important" href="#topic/wp">Wordpress<i class="label-arrow"></i></a>
+			<h2><a href="#" title="阿里百秀主题配置功能抢先看_大前端">阿里百秀主题配置功能抢先看</a></h2>
+		</header>
+		<p class="muted"><a href="#/author/admin">Admin</a> 发表于 1天前 </p>
+		<p class="note">上个月说到阿里百秀主题于本月9日开售，感谢不少爱好者先行预售，你们的支持给了我莫大的信心，相信在不断完善的基础上大前端的主题会做得更好，同时也希望主题这行能够和谐发展，请大家支持开发者的心血。值得一说的是，这款主题在功能和配置上远比阿里百秀的强大，...</p>
+	</article>
+	<article class="excerpt">
+		<div class="focus"><a href="#" class="thumbnail"><img src="images/ymatou.png" alt="海外购物公司洋码头招Web前端开发工程师（上海）"></a></div>
+		<header>
+			<a class="label label-important" href="#topic/job">名企招聘<i class="label-arrow"></i></a>		<h2><a href="#" title="海外购物公司洋码头招Web前端开发工程师（上海）_大前端">海外购物公司洋码头招Web前端开发工程师（上海）</a></h2>
+		</header>
+		<p class="muted"><a href="#/author/admin">Admin</a> 发表于 3周前 (05-16)  - 12条评论</p>
+		<p class="note">海外购物公司洋码头（ymatou.com）招聘Web前端一枚，有愿意换个环境的朋友可以去试试，笔者有一朋友在内任职，工作地点上海。岗位职责： 负责web前端Javascript的开发工作解决网页及脚本在不同浏览器下的兼容性问题协助UI设计师进...</p>
+	</article>
+	<article class="excerpt">
+		<div class="focus"><a href="#" class="thumbnail"><img src="uploads/2013/11/ie11-logo.png" alt="IE11很是生猛：前端们应该关注最近浏览器市场占有率"></a></div>
+		<header>
+			<a class="label label-important" href="#topic/see">先知<i class="label-arrow"></i></a>		<h2><a href="#" title="IE11很是生猛：前端们应该关注最近浏览器市场占有率_大前端">IE11很是生猛：前端们应该关注最近浏览器市场占有率</a></h2>
+		</header>
+		<p class="muted"><a href="#/author/admin">Admin</a> 发表于 7个月前 (11-12)  - 21条评论</p>
+		<p class="note">这两天在做公司关于IE11一些数据的调查，这才发现IE11的生长很是生猛，作为一名前端不得不去关注下近期的浏览器市场占有率。以下是来自2013年10月份netmarketshare站点的数据调查。IE11 Logo PC端浏览器市场占有率： 浏览器...</p>
+	</article>
+	
+	<article class="excerpt">
+		<div class="focus"><a href="#" class="thumbnail"><img src="images/ads.alibaixiu-220x150.png" alt="阿里百秀主题配置功能抢先看"></a></div>
+		<header>
+			<a class="label label-important" href="#topic/wp">Wordpress<i class="label-arrow"></i></a>
+			<h2><a href="#" title="阿里百秀主题配置功能抢先看_大前端">阿里百秀主题配置功能抢先看</a></h2>
+		</header>
+		<p class="muted"><a href="#/author/admin">Admin</a> 发表于 1天前 </p>
+		<p class="note">上个月说到阿里百秀主题于本月9日开售，感谢不少爱好者先行预售，你们的支持给了我莫大的信心，相信在不断完善的基础上大前端的主题会做得更好，同时也希望主题这行能够和谐发展，请大家支持开发者的心血。值得一说的是，这款主题在功能和配置上远比阿里百秀的强大，...</p>
+	</article>
+	<article class="excerpt">
+		<div class="focus"><a href="#" class="thumbnail"><img src="images/ymatou.png" alt="海外购物公司洋码头招Web前端开发工程师（上海）"></a></div>
+		<header>
+			<a class="label label-important" href="#topic/job">名企招聘<i class="label-arrow"></i></a>		<h2><a href="#" title="海外购物公司洋码头招Web前端开发工程师（上海）_大前端">海外购物公司洋码头招Web前端开发工程师（上海）</a></h2>
+		</header>
+		<p class="muted"><a href="#/author/admin">Admin</a> 发表于 3周前 (05-16)  - 12条评论</p>
+		<p class="note">海外购物公司洋码头（ymatou.com）招聘Web前端一枚，有愿意换个环境的朋友可以去试试，笔者有一朋友在内任职，工作地点上海。岗位职责： 负责web前端Javascript的开发工作解决网页及脚本在不同浏览器下的兼容性问题协助UI设计师进...</p>
+	</article>
+	<article class="excerpt">
+		<div class="focus"><a href="#" class="thumbnail"><img src="uploads/2013/11/ie11-logo.png" alt="IE11很是生猛：前端们应该关注最近浏览器市场占有率"></a></div>
+		<header>
+			<a class="label label-important" href="#topic/see">先知<i class="label-arrow"></i></a>		<h2><a href="#" title="IE11很是生猛：前端们应该关注最近浏览器市场占有率_大前端">IE11很是生猛：前端们应该关注最近浏览器市场占有率</a></h2>
+		</header>
+		<p class="muted"><a href="#/author/admin">Admin</a> 发表于 7个月前 (11-12)  - 21条评论</p>
+		<p class="note">这两天在做公司关于IE11一些数据的调查，这才发现IE11的生长很是生猛，作为一名前端不得不去关注下近期的浏览器市场占有率。以下是来自2013年10月份netmarketshare站点的数据调查。IE11 Logo PC端浏览器市场占有率： 浏览器...</p>
+	</article>
+	<!-- 今日开服 end-->
+	
+	<!-- 明日开服 start-->
+	<h2 class="title">明日开服</h2>
+	<article class="excerpt">
+		<div class="focus"><a href="#" class="thumbnail"><img src="images/ads.alibaixiu-220x150.png" alt="阿里百秀主题配置功能抢先看"></a></div>
+		<header>
+			<a class="label label-important" href="#topic/wp">Wordpress<i class="label-arrow"></i></a>
+			<h2><a href="#" title="阿里百秀主题配置功能抢先看_大前端">阿里百秀主题配置功能抢先看</a></h2>
+		</header>
+		<p class="muted"><a href="#/author/admin">Admin</a> 发表于 1天前 </p>
+		<p class="note">上个月说到阿里百秀主题于本月9日开售，感谢不少爱好者先行预售，你们的支持给了我莫大的信心，相信在不断完善的基础上大前端的主题会做得更好，同时也希望主题这行能够和谐发展，请大家支持开发者的心血。值得一说的是，这款主题在功能和配置上远比阿里百秀的强大，...</p>
+	</article>
+	<article class="excerpt">
+		<div class="focus"><a href="#" class="thumbnail"><img src="images/ymatou.png" alt="海外购物公司洋码头招Web前端开发工程师（上海）"></a></div>
+		<header>
+			<a class="label label-important" href="#topic/job">名企招聘<i class="label-arrow"></i></a>		<h2><a href="#" title="海外购物公司洋码头招Web前端开发工程师（上海）_大前端">海外购物公司洋码头招Web前端开发工程师（上海）</a></h2>
+		</header>
+		<p class="muted"><a href="#/author/admin">Admin</a> 发表于 3周前 (05-16)  - 12条评论</p>
+		<p class="note">海外购物公司洋码头（ymatou.com）招聘Web前端一枚，有愿意换个环境的朋友可以去试试，笔者有一朋友在内任职，工作地点上海。岗位职责： 负责web前端Javascript的开发工作解决网页及脚本在不同浏览器下的兼容性问题协助UI设计师进...</p>
+	</article>
+	<article class="excerpt">
+		<div class="focus"><a href="#" class="thumbnail"><img src="uploads/2013/11/ie11-logo.png" alt="IE11很是生猛：前端们应该关注最近浏览器市场占有率"></a></div>
+		<header>
+			<a class="label label-important" href="#topic/see">先知<i class="label-arrow"></i></a>		<h2><a href="#" title="IE11很是生猛：前端们应该关注最近浏览器市场占有率_大前端">IE11很是生猛：前端们应该关注最近浏览器市场占有率</a></h2>
+		</header>
+		<p class="muted"><a href="#/author/admin">Admin</a> 发表于 7个月前 (11-12)  - 21条评论</p>
+		<p class="note">这两天在做公司关于IE11一些数据的调查，这才发现IE11的生长很是生猛，作为一名前端不得不去关注下近期的浏览器市场占有率。以下是来自2013年10月份netmarketshare站点的数据调查。IE11 Logo PC端浏览器市场占有率： 浏览器...</p>
+	</article>
+	<!-- 明日开服 end-->
+	
+	<div class="pagination" style="display: none;">
+		<ul>
+			<li class="prev-page"></li><li class="active"><span>1</span></li>
+			<li><a href="#page/2">2</a></li>
+			<li><a href="#page/3">3</a></li>
+			<li><a href="#page/4">4</a></li>
+			<li><a href="#page/5">5</a></li>
+			<li><span> ... </span></li>
+			<li class="next-page"><a href="#page/2">下一页</a></li>
+		</ul>
+	</div>
+	<!-- pagination end -->
+	</div>
+</div>
+
+<aside class="sidebar">	
+<div class="widget d_textbanner">
+<a class="style02" href="#"><strong>热门游戏</strong><h2>阿里百秀主题合作预售【进行中】</h2><p>小乔找到我说要联合我发售这款主题，很诧异，头一次被这么玩，所以考虑了几天，结果就是小乔放权，我全权负责长达两年的售后和期间的12次更新...</p></a>
+</div>
+
+<div class="widget d_banner"><div class="d_banner_inner"><a style="line-height:116px;font-size:16px;" class="banner-your" href="#advertisement/">全站广告机会 360*120px</a></div></div>
+
+<div class="widget d_banner"><div class="d_banner_inner"><a style="line-height:116px;font-size:16px; height:300px;" class="banner-your" href="#advertisement/">Google AdSense 360*120px</a></div></div>
+
+<div class="widget d_tag">
+	<h3 class="widget_tit"><a class="btn btn-primary" href="#tags">游戏分类</a>游戏分类</h3>
+	<div class="d_tags">
+		<a href="#tag/web">冒险 (0)</a>
+		<a href="#tag/web">角色扮演 (1)</a>
+		<a href="#tag/web">休闲 (2)</a>
+		<a href="#tag/web">益智 (3)</a>
+	</div>
+</div>
+
+<div class="widget d_postlist">
+<h3 class="widget_tit"><a class="btn btn-primary" href="#topic/yunying">进入运营商频道</a>运营商</h3>
+<ul>
+<li><a href="#"><span class="thumbnail"><img src="images/ymatou.png" alt="海外购物公司洋码头招Web前端开发工程师（上海）"></span><span class="text">海外购物公司洋码头招Web前端开发工程师（上海）</span><span class="muted">2014-05-16</span><span class="muted">12评论</span></a>
+</li>
+<li><a href="#"><span class="thumbnail"><img src="images/wealink.png" alt="若邻网(上海)急聘资深前端工程师"></span><span class="text">若邻网(上海)急聘资深前端工程师</span><span class="muted">2013-11-11</span><span class="muted">12评论</span></a></li>
+</ul>
+</div>
+
+<div class="widget d_comment">
+<h3 class="widget_tit">最新评论</h3>
+<ul><li><a href="#comment-id" title="Here is the title!"><img alt="" data-original="#avatar/default.png" class="avatar avatar-36 photo" height="36" width="36" src="images/default.png">游客 <span class="muted">16小时前说：<br>真的开发游客评论了吗？</span></a></li>
+</ul></div></aside></section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="copyright pull-left">
+            版权所有，保留一切权利！ © 2014 <a href="#">看开服</a> Dev <a href="#" rel="nofollow" target="_blank">Rolyer Luo</a>
+        </div>
+        <script>
+			window._deel = {
+				name: '',
+				//url: 'http://www.kaikf.com/wp-content/themes/d8',
+				rss: 'http://www.kaikf.com/feed/',
+				maillist: 'on',
+				//maillistCode: 'd7d1324f807337a7207f706466e3e97b1fbc7acbcc484b9f',
+				commenton: 0,
+				roll: [1,3]
+			}
+		</script>
+    </div>
+</footer>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
+</body>
+
+</html>

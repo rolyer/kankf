@@ -11,7 +11,6 @@
 </head>
 
 <body class="home blog" cz-shortcut-listen="true">
-
 <header class="header">
 	<div class="navbar">
 		<h1 class="logo"><a href="#" title="看开服">看开服</a></h1>
@@ -26,7 +25,7 @@
 				<a href="rank.html">开服排行</a>
 			</li>
 			<li id="menu-item-4244" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-4244">
-				<a href="libao.html">开服礼包</a>
+				<a href="gift.html">开服礼包</a>
 				<ul class="sub-menu">
 					<li id="menu-item-4438" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4438">
 						<a href="#">新手卡</a></li>
@@ -104,12 +103,12 @@
 			<li class="list-title ui-left text-overflow">状态</li>
 		</ul>
 		<ul>
-			<li class="list-info ui-left text-overflow"><a href="gourl.html" target="_blank">乱舞江山</a></li>
-			<li class="list-info ui-left text-overflow"><a href="gourl.html" target="_blank">双线2服</a></li>
-			<li class="list-info ui-left text-overflow"><a href="gourl.html" target="_blank">Q版</a></li>
-			<li class="list-info ui-left text-overflow"><a href="gourl.html" target="_blank">--</a></li>
-			<li class="list-info ui-left text-overflow"><a href="gourl.html" target="_blank">哇塞游戏平台</a></li>
-			<li class="list-info ui-left text-overflow"><a href="gourl.html" target="_blank" class="status1">进入游戏</a></li>
+			<li class="list-info ui-left text-overflow"><a href="play.html" target="_blank">乱舞江山</a></li>
+			<li class="list-info ui-left text-overflow"><a href="play.html" target="_blank">双线2服</a></li>
+			<li class="list-info ui-left text-overflow"><a href="play.html" target="_blank">Q版</a></li>
+			<li class="list-info ui-left text-overflow"><a href="play.html" target="_blank">--</a></li>
+			<li class="list-info ui-left text-overflow"><a href="play.html" target="_blank">哇塞游戏平台</a></li>
+			<li class="list-info ui-left text-overflow"><a href="play.html" target="_blank" class="status1">进入游戏</a></li>
 			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
 		</ul>
 		<ul>

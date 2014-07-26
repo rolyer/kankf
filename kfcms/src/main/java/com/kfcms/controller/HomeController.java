@@ -28,4 +28,34 @@ public class HomeController {
 		
 		userService.insertUser(user);
 	}
+	
+	@RequestMapping("today.html")
+	public void today(ModelMap out){
+		
+	}
+	
+	@RequestMapping("tomorrow.html")
+	public void tomorrow(){
+		
+	}
+	
+	@RequestMapping("rank.html")
+	public void rank(){
+		
+	}
+	
+	@RequestMapping("gift.html")
+	public void gift(){
+		
+	}
+	
+	@RequestMapping("search.html")
+	public void search(){
+		
+	}
+	
+	@RequestMapping("play.html")
+	public void play(){
+		
+	}
 }
