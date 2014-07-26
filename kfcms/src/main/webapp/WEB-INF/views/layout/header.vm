@@ -3,16 +3,16 @@
 		<h1 class="logo"><a href="#" title="看开服">看开服</a></h1>
 		<ul class="nav">
 			<li id="menu-item-3685" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-3685">
-				<a href="index.html">开服首页</a></li>
+				<a href="$link.getContextPath()/index.html">开服首页</a></li>
 			<li id="menu-item-5154" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5154">
-				<a href="today.html">今日开服</a></li>
+				<a href="$link.getContextPath()/today.html">今日开服</a></li>
 			<li id="menu-item-5012" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5012">
-				<a href="tomorrow.html">明日开服</a></li>
+				<a href="$link.getContextPath()/tomorrow.html">明日开服</a></li>
 			<li id="menu-item-5220" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5220">
-				<a href="rank.html">开服排行</a>
+				<a href="$link.getContextPath()/rank.html">开服排行</a>
 			</li>
 			<li id="menu-item-4244" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-4244">
-				<a href="gift.html">开服礼包</a>
+				<a href="$link.getContextPath()/gift.html">开服礼包</a>
 				<ul class="sub-menu">
 					<li id="menu-item-4438" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4438">
 						<a href="#">新手卡</a></li>
