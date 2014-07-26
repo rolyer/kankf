@@ -43,11 +43,13 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
 	  <property name="basePackage" value="com.kfcms.mappers" />
 	</bean>
 
+	<!-- 
 	<bean
 		class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping">
 		<property name="caseSensitive" value="false" />
 		<property name="basePackage" value="com.kfcms.controller" />
 	</bean>
+	-->
 
 	<bean id="velocityConfig"
 		class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">

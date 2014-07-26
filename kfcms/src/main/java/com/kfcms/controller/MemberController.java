@@ -11,12 +11,12 @@ import com.kfcms.model.User;
 import com.kfcms.service.UserService;
 
 @Controller
-public class HomeController {
+public class MemberController {
 	
 	@Autowired
 	private UserService userService;
 	
-	@RequestMapping("index.html")
+	@RequestMapping("/member/index.html")
 	public void index(ModelMap out){
 		out.put("message", "Hello World!");
 		out.put("current", new Date());
@@ -24,7 +24,7 @@ public class HomeController {
 		
 		User user = new User();
 		user.setGmtCreated(new Date());
-		user.setUserName("hmoe");
+		user.setUserName("home");
 		
 		userService.insertUser(user);
 	}
