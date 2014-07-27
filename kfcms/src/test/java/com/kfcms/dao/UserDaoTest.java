@@ -1,4 +1,4 @@
-package com.kfcms.mappers;
+package com.kfcms.dao;
 
 import java.util.Date;
 
@@ -16,7 +16,7 @@ import com.kfcms.model.User;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:test-spring-web.xml", "classpath:test-spring-mybatis.xml" })
-public class UserMapperTest {
+public class UserDaoTest {
 
 	@Autowired
 	private UserDao dao;

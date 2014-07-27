@@ -1,6 +1,7 @@
 package com.kfcms.controller;
 
 import java.util.Date;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.kfcms.model.User;
+import com.kfcms.model.Game;
+import com.kfcms.service.GameService;
 import com.kfcms.service.UserService;
 
 @Controller
@@ -18,6 +20,9 @@ public class HomeController {
 	@Autowired
 	private UserService userService;
 	
+	@Autowired
+	private GameService gameService;
+	
 	@RequestMapping("index.html")
 	public void index(ModelMap out){
 		LOGGER.debug("HomeController : index");		
@@ -25,19 +30,9 @@ public class HomeController {
 		out.put("current", new Date());
 		out.put("title", "Index");
 		
-		User user = new User();
-		user.setName("hmoe");
-		user.setEmail("userEmail");
-		user.setPassword("userPassword");
-		user.setQqmsn("userQqmsn");
-		user.setTel("userTel");
+		List<Game> games = gameService.queryList(10);
 		
-		user.setGmtCreated(new Date());
-		user.setGmtModified(new Date());
-		
-		User u = userService.add(user);
-		
-		out.put("id", u.getId());
+		out.put("games", games);
 	}
 	
 	@RequestMapping("today.html")
