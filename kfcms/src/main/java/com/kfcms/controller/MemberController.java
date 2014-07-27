@@ -23,9 +23,15 @@ public class MemberController {
 		out.put("title", "Index");
 		
 		User user = new User();
-		user.setGmtCreated(new Date());
-		user.setUserName("home");
+		user.setName("hmoe");
+		user.setEmail("userEmail");
+		user.setPassword("userPassword");
+		user.setQqmsn("userQqmsn");
+		user.setTel("userTel");
 		
-		userService.insertUser(user);
+		user.setGmtCreated(new Date());
+		user.setGmtModified(new Date());
+		
+		userService.add(user);
 	}
 }

@@ -26,10 +26,18 @@ public class HomeController {
 		out.put("title", "Index");
 		
 		User user = new User();
-		user.setGmtCreated(new Date());
-		user.setUserName("hmoe");
+		user.setName("hmoe");
+		user.setEmail("userEmail");
+		user.setPassword("userPassword");
+		user.setQqmsn("userQqmsn");
+		user.setTel("userTel");
 		
-		userService.insertUser(user);
+		user.setGmtCreated(new Date());
+		user.setGmtModified(new Date());
+		
+		User u = userService.add(user);
+		
+		out.put("id", u.getId());
 	}
 	
 	@RequestMapping("today.html")

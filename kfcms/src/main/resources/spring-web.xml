@@ -10,46 +10,9 @@ http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-3.0.xsd
 http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
 http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
-
-	<context:property-placeholder location="classpath:jdbc.properties" />
 	
 	<mvc:annotation-driven />
 	<context:component-scan base-package="com.kfcms" />
-	
-	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-	  <property name="driverClassName" value="${jdbc.driver}" />
-	  <property name="url" value="${jdbc.dbUrl}" />
-	  <property name="username" value="${jdbc.username}" />
-	  <property name="password" value="${jdbc.password}" />
-	</bean>
-
-	<tx:annotation-driven transaction-manager="transactionManager" />
-	<bean id="transactionManager"
-		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource" ref="dataSource" />
-	</bean>
-	
-	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-	  <property name="dataSource" ref="dataSource" />
-	  <property name="typeAliasesPackage" value="com.kfcms.model"/>
-	  <!-- <property name="mapperLocations" value="classpath*:com/kfcms/mappers/*.xml" /> -->
-	</bean>
-
-	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
-		<constructor-arg index="0" ref="sqlSessionFactory" />
-	</bean>
-	
-	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-	  <property name="basePackage" value="com.kfcms.mappers" />
-	</bean>
-
-	<!-- 
-	<bean
-		class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping">
-		<property name="caseSensitive" value="false" />
-		<property name="basePackage" value="com.kfcms.controller" />
-	</bean>
-	-->
 
 	<bean id="velocityConfig"
 		class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
