@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.kfcms.dao.UserMapper;
+import com.kfcms.dao.UserDao;
 import com.kfcms.model.User;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -19,7 +19,7 @@ import com.kfcms.model.User;
 public class UserMapperTest {
 
 	@Autowired
-	private UserMapper userMapper;
+	private UserDao dao;
 	
 	private final static String NAME = "testUserName";
 	private final static String EMAIL = "test@test.com";
@@ -38,20 +38,20 @@ public class UserMapperTest {
 		User user = new User(NAME, "userPassword", EMAIL, 0,
 				"userTel", "userQqmsn", new Date(), new Date());
 
-		int  id = userMapper.insert(user);
+		int  id = dao.insert(user);
 		
 		Assert.assertTrue(id>0);
 	}
 	
 	public void delete() {
-		int id = userMapper.deleteUserByName(NAME);
+		int id = dao.deleteUserByName(NAME);
 		
 		Assert.assertTrue(id==1);
 	}
 	
 	@Test
 	public void testQueryUserByName() {
-		User user = userMapper.queryUserByName(NAME);
+		User user = dao.queryUserByName(NAME);
 		
 		Assert.assertNotNull(user);
 		Assert.assertTrue(NAME.equals(user.getName()));
@@ -60,7 +60,7 @@ public class UserMapperTest {
 
 	@Test
 	public void testQueryUserByEmail() {
-		User user = userMapper.queryUserByEmail(EMAIL);
+		User user = dao.queryUserByEmail(EMAIL);
 		
 		Assert.assertNotNull(user);
 		Assert.assertTrue(NAME.equals(user.getName()));
