@@ -306,25 +306,6 @@
  *#
 #macro( springCloseTag )#if($springXhtmlCompliant)/>#else>#end #end
 
-#**
- *
-#macro(zz91UlTag $attributes $urlPrefix $id $name $objList  )
- <ul $attributes>
-  #foreach($obj in $objList)
-   <li>·<a href="123${obj.get($id)}.htm">$obj[$name]</a></li>
-  #end
- </ul>
-#end
-*#
-#macro(zz91UlTag $attributes $urlPrefix  $objList  )
- <ul $attributes>
-  #set ($var1="newsId")
-  #evaluate("obj.$var1")
-  #foreach($obj in $objList)
-   <li>·<a href='123#evaluate("$obj.$var1").htm'>$obj.newsName</a></li>
-  #end
- </ul>
-#end
 
 ##通用分页宏,查询参数直接跟在url后面,主要用于生意管家等对URL静态化要求不高的页面
 #macro(pageBar $totalPages $currentPage $suffixUrl)
@@ -535,4 +516,28 @@
 
 #macro( d $name)
     <p>$name</p>
+#end
+
+#macro(gamelist $games)
+	#foreach( $game in $games )
+	<ul>
+	#if($foreach.count % 2 ==  0)
+		<li class="list-info ui-left text-overflow"><a href="play.html?$!{game.url}" target="_blank">$!{game.name}</a></li>
+		<li class="list-info ui-left text-overflow"><a href="play.html" target="_blank">$!{game.serverName}</a></li>
+		<li class="list-info ui-left text-overflow"><a href="play.html" target="_blank">$!{game.category}</a></li>
+		<li class="list-info ui-left text-overflow"><a href="javascript:;" onclick="receive('$!{game.id}', '$!{game.url}');">$!{game.giftName}</a></li>
+		<li class="list-info ui-left text-overflow"><a href="play.html" target="_blank">$!{game.platform}</a></li>
+		<li class="list-info ui-left text-overflow"><a href="play.html" target="_blank" class="status1">进入游戏</a></li>
+		<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
+	#else
+		<li class="list-info ui-left text-overflow">$!{game.name}</li>
+		<li class="list-info ui-left text-overflow">$!{game.serverName}</li>
+		<li class="list-info ui-left text-overflow">$!{game.category}</li>
+		<li class="list-info ui-left text-overflow">$!{game.giftName}</li>
+		<li class="list-info ui-left text-overflow">$!{game.platform}</li>
+		<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+		<li class="list-info ui-left text-overflow"><span class="gray">即将开服</span></li>
+	#end
+	</ul>
+	#end
 #end

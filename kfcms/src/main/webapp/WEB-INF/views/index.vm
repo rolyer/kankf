@@ -25,28 +25,7 @@
 			<li class="list-title ui-left text-overflow">快捷操作</li>
 			<li class="list-title ui-left text-overflow">状态</li>
 		</ul>
-		<ul>
-			<li class="list-info ui-left text-overflow">乱舞江山</li>
-			<li class="list-info ui-left text-overflow">双线2服</li>
-			<li class="list-info ui-left text-overflow">Q版</li>
-			<li class="list-info ui-left text-overflow">
-				<a href="javascript:;" onclick="receive('121295', 'http://t.adango.com.cn/073cy1.html');">礼包</a>
-			</li>
-			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
-			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
-			<li class="list-info ui-left text-overflow"><span class="gray">即将开服</span></li>
-		</ul>
-		#foreach( $game in $games )
-		<ul>
-			<li class="list-info ui-left text-overflow"><a href="play.html?$!{game.url}" target="_blank">$!{game.name}</a></li>
-			<li class="list-info ui-left text-overflow"><a href="play.html" target="_blank">$!{game.serverName}</a></li>
-			<li class="list-info ui-left text-overflow"><a href="play.html" target="_blank">$!{game.category}</a></li>
-			<li class="list-info ui-left text-overflow"><a href="javascript:;" onclick="receive('$!{game.id}', '$!{game.url}');">$!{game.giftName}</a></li>
-			<li class="list-info ui-left text-overflow"><a href="play.html" target="_blank">$!{game.platform}</a></li>
-			<li class="list-info ui-left text-overflow"><a href="play.html" target="_blank" class="status1">进入游戏</a></li>
-			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
-		</ul>
-		#end
+		#gamelist($games)
 	</div>
 	<div class="load-more">
 		<a href="today.html" title="点击加载更多内容">加载更多...</a>
@@ -66,27 +45,7 @@
 			<li class="list-title ui-left text-overflow">快捷操作</li>
 			<li class="list-title ui-left text-overflow">状态</li>
 		</ul>
-		
-		<ul>
-			<li class="list-info ui-left text-overflow">乱舞江山</li>
-			<li class="list-info ui-left text-overflow">双线2服</li>
-			<li class="list-info ui-left text-overflow">Q版</li>
-			<li class="list-info ui-left text-overflow">--</li>
-			<li class="list-info ui-left text-overflow">哇塞游戏平台</li>
-			<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
-			<li class="list-info ui-left text-overflow"><span class="gray">即将开服</span></li>
-		</ul>
-		#foreach( $game in $games )
-		<ul>
-			<li class="list-info ui-left text-overflow"><a href="play.html?$!{game.url}" target="_blank">$!{game.name}</a></li>
-			<li class="list-info ui-left text-overflow"><a href="play.html" target="_blank">$!{game.serverName}</a></li>
-			<li class="list-info ui-left text-overflow"><a href="play.html" target="_blank">$!{game.category}</a></li>
-			<li class="list-info ui-left text-overflow"><a href="javascript:;" onclick="receive('$!{game.id}', '$!{game.url}');">$!{game.giftName}</a></li>
-			<li class="list-info ui-left text-overflow"><a href="play.html" target="_blank">$!{game.platform}</a></li>
-			<li class="list-info ui-left text-overflow"><a href="play.html" target="_blank" class="status1">进入游戏</a></li>
-			<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
-		</ul>
-		#end
+		#gamelist($games)
 	</div>
 	<div class="load-more">
 		<a href="tomorrow.html" title="点击加载更多内容">加载更多...</a>

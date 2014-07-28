@@ -23,26 +23,38 @@ public class HomeController {
 	@Autowired
 	private GameService gameService;
 	
+	private List<Game> games;
+	
+	private void initGameList(){
+		games = gameService.queryList(10);
+	}
+	
 	@RequestMapping("index.html")
 	public void index(ModelMap out){
 		LOGGER.debug("HomeController : index");		
 		out.put("message", "Hello World!");
 		out.put("current", new Date());
 		out.put("title", "Index");
-		
-		List<Game> games = gameService.queryList(10);
-		
+		if(games==null) {
+			initGameList();
+		}
 		out.put("games", games);
 	}
 	
 	@RequestMapping("today.html")
 	public void today(ModelMap out){
-		
+		if(games==null) {
+			initGameList();
+		}
+		out.put("games", games);
 	}
 	
 	@RequestMapping("tomorrow.html")
-	public void tomorrow(){
-		
+	public void tomorrow(ModelMap out){
+		if(games==null) {
+			initGameList();
+		}
+		out.put("games", games);
 	}
 	
 	@RequestMapping("rank.html")
