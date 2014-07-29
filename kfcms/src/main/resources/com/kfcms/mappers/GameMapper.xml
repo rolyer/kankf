@@ -17,12 +17,16 @@
 		<result property="gmtModified" column="gmt_modified" />
 	</resultMap>
 	
-	<select id="queryList" parameterType="java.lang.Integer" resultMap="baseResultMap">
-		<![CDATA[
+	<select id="queryList" parameterType="map" resultMap="baseResultMap">
 			SELECT id, user_name, name, start_time, server_name, url, category, gift_name, platform, gmt_created, gmt_modified
 			FROM game
+			WHERE 1=1
+			<if test="startTime != null">
+			    AND YEAR(start_time) = YEAR(#{startTime}) 
+				AND DAY(start_time) = DAY(#{startTime})
+				AND MONTH(start_time) = MONTH(#{startTime})
+		    </if>
 			ORDER BY id DESC
 			LIMIT 0, #{num} 
-		]]>
 	</select>
 </mapper>

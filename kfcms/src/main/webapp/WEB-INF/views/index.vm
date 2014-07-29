@@ -45,7 +45,7 @@
 			<li class="list-title ui-left text-overflow">快捷操作</li>
 			<li class="list-title ui-left text-overflow">状态</li>
 		</ul>
-		#gamelist($games)
+		#gamelist($tomgames)
 	</div>
 	<div class="load-more">
 		<a href="tomorrow.html" title="点击加载更多内容">加载更多...</a>

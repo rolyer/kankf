@@ -1,5 +1,6 @@
 package com.kfcms.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import org.junit.Assert;
@@ -21,10 +22,10 @@ public class GameDaoTest {
 	
 	@Test
 	public void testList() {
-		List<Game> list = dao.queryList(10);
+		List<Game> list = dao.queryList(10, new Date());
 		
 		Assert.assertNotNull(list);
-		Assert.assertTrue(list.size()==10);
+		Assert.assertEquals(list.size(), 0);
 	}
 
 }

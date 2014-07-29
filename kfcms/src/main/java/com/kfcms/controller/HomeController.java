@@ -1,5 +1,6 @@
 package com.kfcms.controller;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -23,10 +24,20 @@ public class HomeController {
 	@Autowired
 	private GameService gameService;
 	
-	private List<Game> games;
 	
-	private void initGameList(){
-		games = gameService.queryList(10);
+	private List<Game> todayGamesList;
+	private List<Game> tomorrowGamesList;
+	
+	private void initGamesList() {
+		Date date =  new Date();
+		todayGamesList = gameService.queryList(50, date);
+		
+		Calendar c = Calendar.getInstance(); 
+		c.setTime(date); 
+		c.add(Calendar.DATE, 1);
+		date = c.getTime();
+		
+		tomorrowGamesList = gameService.queryList(50, date);
 	}
 	
 	@RequestMapping("index.html")
@@ -35,26 +46,29 @@ public class HomeController {
 		out.put("message", "Hello World!");
 		out.put("current", new Date());
 		out.put("title", "Index");
-		if(games==null) {
-			initGameList();
+		
+		if( todayGamesList == null || tomorrowGamesList == null ) {
+			initGamesList();
 		}
-		out.put("games", games);
+		
+		out.put("games", todayGamesList);
+		out.put("tomgames", tomorrowGamesList);
 	}
 	
 	@RequestMapping("today.html")
 	public void today(ModelMap out){
-		if(games==null) {
-			initGameList();
+		if(todayGamesList==null) {
+			initGamesList();
 		}
-		out.put("games", games);
+		out.put("games", todayGamesList);
 	}
 	
 	@RequestMapping("tomorrow.html")
 	public void tomorrow(ModelMap out){
-		if(games==null) {
-			initGameList();
+		if(tomorrowGamesList==null) {
+			initGamesList();
 		}
-		out.put("games", games);
+		out.put("games", tomorrowGamesList);
 	}
 	
 	@RequestMapping("rank.html")
