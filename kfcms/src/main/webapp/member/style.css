@@ -1,0 +1,259 @@
+body, h1, h2, h3, h4, p, ul, li, a, button, .main-nav, .kendo-nav, #banner p, .browsers, #nav-pager, #examples-list {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+body {
+background-color: #fff;
+color: #555;
+font: 400 12px Arial, Helvetica, sans-serif;
+min-width: 1230px;
+position: relative;
+}
+
+[class^="k-uni"], .tc-activator:after, .back-nav:before, .forward-nav:before {
+font-family: 'demos';
+speak: none;
+font-style: normal;
+font-weight: normal;
+font-variant: normal;
+text-transform: none;
+line-height: 1;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+#header {
+background-color: #2a2d33;
+}
+
+#header:after, #codeStrip:after, #overview-applications:after {
+display: block;
+content: "";
+clear: both;
+}
+
+#logo-bar {
+float: left;
+margin-top: 1.617em;
+margin-bottom: 1.717em;
+margin-left: 1.833em;
+}
+
+#example-search-wrapper, #layout-search-wrapper {
+position: relative;
+text-align: center;
+background-color: #f5f7f8;
+width: 100%;
+}
+
+#example-search-wrapper .search, #layout-search-wrapper .search {
+position: relative;
+vertical-align: middle;
+}
+
+#example-search-wrapper .search {
+margin: 1em;
+}
+
+#example-search-wrapper, #layout-search-wrapper {
+position: relative;
+text-align: center;
+background-color: #f5f7f8;
+width: 100%;
+}
+
+#example-search-wrapper {
+width: 299px;
+float: left;
+border-right: 1px solid #e2e4e7;
+}
+
+#example-nav-bar {
+width: 299px;
+float: left;
+clear: left;
+background-color: #f5f7f8;
+border-right: 1px solid #e2e4e7;
+border-top: 1px solid #e2e4e7;
+}
+
+#back-forward {
+display: block;
+position: relative;
+color: #000;
+font-size: 14px;
+line-height: 15px;
+font-weight: normal;
+padding: 1em 3.5em;
+vertical-align: middle;
+}
+
+.back-nav {
+text-align: left;
+}
+
+a {
+color: #0487c4;
+}
+
+a, li>a, h2>a, h3>a, a {
+text-decoration: none;
+}
+
+.back-nav:before {
+position: absolute;
+top: 1em;
+left: 1.2em;
+}
+
+#nav-wrapper {
+width: 299px;
+border-top: 1px solid #e2e4e7;
+border-right: 1px solid #e2e4e7;
+overflow-x: hidden;
+overflow-y: auto;
+float: left;
+clear: left;
+background-color: #f5f7f8;
+height: 100%;
+}
+
+#nav {
+width: 600px;
+white-space: nowrap;
+margin-left: -300px;
+-webkit-transition: all 0.3s ease-out;
+-moz-transition: all 0.3s ease-out;
+-ms-transition: all 0.3s ease-out;
+-o-transition: all 0.3s ease-out;
+transition: all 0.3s ease-out;
+height: 100%;
+}
+
+#nav #root-nav {
+height: 40px;
+overflow: hidden;
+}
+
+#root-nav, #example-nav {
+width: 299px;
+float: left;
+}
+
+#root-nav, #example-nav {
+padding-bottom: 30px;
+}
+
+#example-nav h3 {
+padding: 1.7em 0 0.5em 3.571em;
+}
+
+.root-nav-categories h3, #example-nav h3 {
+color: #000;
+font-size: 14px;
+line-height: 14px;
+padding: 0.5em 0 0.5em 3.571em;
+text-transform: uppercase;
+}
+
+#nav li {
+position: relative;
+}
+
+#root-nav li, #example-nav li {
+list-style: none;
+}
+
+#root-nav li a, #example-nav li a {
+font-size: 14px;
+line-height: 14px;
+color: #2d3e50;
+display: block;
+padding: 0.5em 0 0.5em 3.571em;
+transition: all .2s ease;
+}
+
+#root-nav li a:hover, #example-nav li a:hover, #back-forward:hover {
+color: #000;
+text-decoration: none;
+background-color: #e2e4e7;
+}
+
+#main {
+float: none;
+width: auto;
+position: relative;
+overflow-x: hidden;
+overflow-y: auto;
+}
+
+.themechooser {
+background-color: #f5f7f8;
+border-bottom: 1px solid #e2e4e7;
+text-align: right;
+}
+
+.themechooser .tc-activator {
+outline: none;
+cursor: pointer;
+color: #2d3e50;
+display: inline-block;
+padding: 0 20px;
+line-height: 3.6em;
+font-size: 1.1667em;
+}
+
+.themechooser .tc-activator:after {
+content: "\e604";
+display: inline-block;
+margin-left: .5em;
+font-size: .8em;
+-webkit-transform: rotate(-90deg);
+-ms-transform: rotate(-90deg);
+transform: rotate(-90deg);
+transition-property: transform;
+transition-duration: 0.2s;
+transition-timing-function: ease;
+}
+
+.themechooser .tc-activator:hover {
+color: #000;
+text-decoration: none;
+background-color: #e2e4e7;
+}
+
+
+
+#exampleTitle {
+margin: 2.250em 3.750em 2.500em 3.750em;
+}
+
+.kendo-nav, #example, #exampleTitle {
+font-family: Arial, Helvetica, sans-serif;
+font-weight: normal;
+}
+
+#exampleTitle, #wrappers-source-code h2 {
+color: #000;
+font-style: normal;
+font-variant: normal;
+font-size: 24px;
+line-height: 1;
+font-family: Arial,Helvetica,sans-serif;
+letter-spacing: -0.04em;
+display: block;
+font-weight: 400;
+z-index: 100;
+}
+
+#footer {
+background-color: #2a2d33;
+text-align: center;
+line-height: 3.6em;
+}
+
+#header, .suite-demos-nav, .demos-nav, #footer, .centerWrap, .submenu-box a {
+font-family: Arial, Helvetica, sans-serif;
+}
+
