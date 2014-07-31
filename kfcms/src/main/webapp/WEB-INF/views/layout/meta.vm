@@ -2,8 +2,8 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-<title>看开服</title>
-<meta name="keywords" content="看开服">
-<meta name="description" content="看开服">
+<title>$!{seo.title}</title>
+<meta name="keywords" content="$!{seo.keywords}">
+<meta name="description" content="$!{seo.description}">
 <link rel="stylesheet" id="style-css" href="$link.getContextPath()/templates/default/style.css?ver=3.0" type="text/css" media="all">
 <!--[if lt IE 9]><script src="$link.getContextPath()/js/html5.js"></script><![endif]-->
