@@ -1511,9 +1511,10 @@ line-height: 23px;
 text-align: center;
 color: #FFFFFF;
 }
-.t2 {
-margin-top:10px;
+.load-more-space {
+	margin-bottom :10px;
 }
+
 .load-more{
 	background:#428bca;
 	text-align: center;

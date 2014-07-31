@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-#parse("layout/meta.vm")
+	#parse("layout/meta.vm")
 </head>
 
 <body class="home blog" cz-shortcut-listen="true">
@@ -10,7 +10,7 @@
 <section class="container">
 	<div class="content-wrap">
 	<div class="content">
-	#parse("layout/toplist.vm")
+	##parse("layout/toplist.vm")
 	<!--置顶推荐 end -->
 	<!-- 今日开服 start-->
 	<h2 class="title t2">今日开服</h2>
@@ -27,7 +27,7 @@
 		</ul>
 		#gamelist($games)
 	</div>
-	<div class="load-more">
+	<div class="load-more load-more-space">
 		<a href="today.html" title="点击加载更多内容">加载更多...</a>
 	</div>
 	
