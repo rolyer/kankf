@@ -2,5 +2,4 @@
 kfcms/.project
 kfcms/.settings
 kfcms/target
-doc
 kfcms/src/main/webapp/WEB-INF/views/temp.vm
