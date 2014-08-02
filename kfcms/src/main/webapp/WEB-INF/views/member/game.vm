@@ -1,44 +1,30 @@
 #set($layout="layout/member/template.vm")
 
-<h1>
-	Activity
-</h1>
+<h1>开服信息</h1>
 <table class="table table-bordered table-striped">
 	<thead>
 		<tr>
 			<th>
-				Project
+				编号
 			</th>
-			<th>
-				Client
-			</th>
-			<th>
-				Type
-			</th>
-			<th>
-				Date
-			</th>
-			<th>
-				View
-			</th>
+			<th>游戏名称</th>
+			<th>服务器名</th>
+			<th>游戏类型</th>
+			<th>开服时间</th>
+			<th>操作</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
+			<td><input type="checkbox" id="optionsCheckbox" value="option1"></td>
+			<td>乱舞江山</td>
+			<td>双线2服</td>
+			<td>Q版</td>
+			<td>2014-08-02 10:35:00</td>
 			<td>
-				Nike.com Redesign
-			</td>
-			<td>
-				Monsters Inc
-			</td>
-			<td>
-				New Task
-			</td>
-			<td>
-				4 days ago
-			</td>
-			<td>
-				<a href="#" class="view-link">View</a>
+				<a href="#" class="view-link">查看</a>
+				<a href="#" class="view-link">修改</a>
+				<a href="#" class="view-link">删除</a>
 			</td>
 		</tr>
 	</tbody>
