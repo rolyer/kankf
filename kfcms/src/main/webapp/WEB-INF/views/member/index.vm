@@ -1,118 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
-    <title>Member Center UI</title>
-    <link rel="shortcut icon" href="favicon.ico"/>
-	<link href="$link.getContextPath()/member/style.css" rel="stylesheet" />
-	  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+#set($layout="layout/member/template.vm")
 
-</head>
-<body>
-	<div id="header">
-        <div id="logo-bar">
-            <a href="/kendo-ui/">
-                <img alt="Kendo UI logo" class="logo" src="$link.getContextPath()/templates/default/img/logo.png"/>
-            </a>
-        </div>
-        <div class="nav-buttons">
-        </div>
-    </div>
-	
-	<div id="example-search-wrapper" class="search-wrapper">
-        <div class="search">
-            <span tabindex="-1" role="presentation" class="k-widget k-autocomplete k-header k-state-default"><input id="example-search" placeholder="Search demos" data-role="examplesearch" type="text" class="k-input" autocomplete="off" role="textbox" aria-haspopup="true" aria-disabled="false" aria-readonly="false" aria-owns="example-search_listbox" aria-autocomplete="list" aria-busy="false" style="width: 100%;"><span class="k-icon k-loading" style="display: none;"></span><span class="k-uniE600"></span></span>
-        </div>
-    </div>
-	
-	<div id="example-nav-bar">
-        <a href="#" title="See all components" id="back-forward" class="back-nav">All Components</a>
-    </div>
-	
-	<div id="nav-wrapper">
-
-        <div id="nav">
-            
-            <div id="root-nav">
-            
-    
-            <ul class="root-nav-categories">
-                <li>
-                    <h3>Editors</h3>
-                    <ul class="root-nav-widgets">
-                        <li><a href="/kendo-ui/autocomplete/index">AutoComplete</a></li>
-                        <li><a href="/kendo-ui/colorpicker/index">ColorPicker</a></li>
-                        <li><a href="/kendo-ui/combobox/index">ComboBox</a></li>
-                        <li><a href="/kendo-ui/datepicker/index">DatePicker</a></li>
-                        <li><a href="/kendo-ui/datetimepicker/index">DateTimePicker</a></li>
-                        <li><a href="/kendo-ui/dropdownlist/index">DropDownList</a></li>
-                        <li><a href="/kendo-ui/editor/index">Editor<span title="Available only in Kendo UI Professional" class="pro-widget"></span></a></li>
-                        <li><a href="/kendo-ui/maskedtextbox/index">MaskedTextBox</a></li>
-                        <li><a href="/kendo-ui/multiselect/index">MultiSelect</a></li>
-                        <li><a href="/kendo-ui/numerictextbox/index">NumericTextBox</a></li>
-                        <li><a href="/kendo-ui/slider/index">Slider</a></li>
-                        <li><a href="/kendo-ui/timepicker/index">TimePicker</a></li>
-                        <li><a href="/kendo-ui/upload/index">Upload<span title="Available only in Kendo UI Professional" class="pro-widget"></span></a></li>
-                        <li><a href="/kendo-ui/validator/index">Validator</a></li>
-                    </ul>
-                </li>
-            </ul>
-            </div>
-            
-            <div id="example-nav">
-                
-            <h3>Button</h3>
-                <ul>
-                        <li><a href="/kendo-ui/button/index">Basic usage</a></li>
-                        <li><a href="/kendo-ui/button/multiple">Multiple buttons</a></li>
-                        <li><a href="/kendo-ui/button/images">Images</a></li>
-                        <li><a class=" active" href="/kendo-ui/button/events">Events</a></li>
-                        <li><a href="/kendo-ui/button/api">API</a></li>
-                        <li><a href="/kendo-ui/button/right-to-left-support">RTL support</a></li>
-                        <li><a href="/kendo-ui/button/keyboard-navigation">Keyboard navigation</a></li>
-                        <li><a href="/kendo-ui/button/mvvm">MVVM</a></li>
-                        <li><a class="new-example" href="/kendo-ui/button/angular"><span class="new-widget"></span>AngularJS</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-	<script>
-        function resizeContainers() {
-           var headerHeight = $("#header").height(),
-                searchWrapper = $("#example-search-wrapper").height(),
-                navbarWrapper = $("#example-nav-bar").height(),
-				footerHeight =  $("#footer").height(),
-                htmlHeight = parseFloat(window.innerHeight);//$('html').height();
-            navHeight = htmlHeight - (headerHeight + searchWrapper + navbarWrapper + footerHeight);
-            $("#nav-wrapper").height(navHeight-2);
-            $("#main").height(navHeight + searchWrapper + navbarWrapper);
-
-        }
-
-        $(document).ready(resizeContainers);
-        $(window).resize(resizeContainers);
-    </script>
-	
-	<div id="main">
-        <div class="themechooser" data-role="details">
-			<span class="tc-activator">Setting</span>
-		</div>
-		
-		<h1 id="exampleTitle">
-            <span class="exampleIcon buttonIcon"></span>
-            <strong>Button /</strong> Images    </h1>
-		
-    </div>
-	
-	<div id="footer">
-         <div class="copyright">
-            <p>Copyright © 2014 kankf.com</p>
-        </div>
-    </div>
+<h1>
+	快捷操作
+</h1>
+<div class="hero-unit">
+	<h1>
+		欢迎您!
+	</h1>
+	<p>
+		最新最全网页游戏开服信息就在看开服。
+	</p>
+	<p>
+		<a href="help.htm" class="btn btn-primary btn-large">添加开服</a> <a class="btn btn-large">添加礼包</a>
+	</p>
 </div>
-</body>
-</html>
-
-

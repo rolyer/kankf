@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html lang="en" class="ie6 ielt7 ielt8 ielt9"><![endif]-->
+<!--[if IE 7 ]><html lang="en" class="ie7 ielt8 ielt9"><![endif]-->
+<!--[if IE 8 ]><html lang="en" class="ie8 ielt9"><![endif]-->
+<!--[if IE 9 ]><html lang="en" class="ie9"> <![endif]--><!--[if (gt IE 9)|!(IE)]><!--> 
+<html lang="en"><!--<![endif]--> 
+	<head>
+		<meta charset="utf-8">
+		<title>Login - Akira</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="$link.getContextPath()/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="$link.getContextPath()/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="$link.getContextPath()/bootstrap/css/site.css" rel="stylesheet">
+		<!--[if lt IE 9]><script src="$link.getContextPath()/js/html5shiv.min.js"></script><![endif]-->
+	</head>
+	<body>
+		<div id="login-page" class="container">
+			<h1>Akira Login</h1>
+			<form id="login-form" class="well" action="$link.getContextPath()/member/index.html">
+			<input type="text" class="span2" placeholder="Email" /><br />
+			<input type="password" class="span2" placeholder="Password" /><br />
+			<label class="checkbox"> <input type="checkbox" /> Remember me </label>
+			<button type="submit" class="btn btn-primary">Sign in</button>
+			<button type="submit" class="btn">Forgot Password</button>
+		</form>	
+		</div>
+		<script src="$link.getContextPath()/bootstrap/js/jquery.min.js"></script>
+		<script src="$link.getContextPath()/bootstrap/js/bootstrap.min.js"></script>
+		<script src="$link.getContextPath()/bootstrap/js/site.js"></script>
+	</body>
+</html>
