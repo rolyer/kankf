@@ -101,7 +101,7 @@
 								我的帐户
 							</li>
 							<li>
-								<a href="$link.getContextPath()/member/profile.html"><i class="icon-user"></i> 用户属性</a>
+								<a href="$link.getContextPath()/member/profile.html"><i class="icon-user"></i> 用户资料</a>
 							</li>
 							<li>
 								<a href="$link.getContextPath()/member/settings.html"><i class="icon-cog"></i> 设置</a>
@@ -121,7 +121,12 @@
 					</div>
 				</div>
 				<div class="span9">
+					
 					$screen_content
+					
+					<div class="pager">
+							© 2014 <a href="#">看开服</a> - 最新最全网页游戏开服信息就在看开服。
+					</div>
 				</div>
 			</div>
 		</div>
