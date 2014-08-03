@@ -1,53 +1,70 @@
 #set($layout="layout/member/template.vm")
 
-<h1>开服信息</h1>
-<table class="table table-bordered table-striped">
-	<thead>
-		<tr>
-			<th>
-				编号
-			</th>
-			<th>游戏名称</th>
-			<th>服务器名</th>
-			<th>游戏类型</th>
-			<th>开服时间</th>
-			<th>操作</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td><input type="checkbox" id="optionsCheckbox" value="option1"></td>
-			<td>乱舞江山</td>
-			<td>双线2服</td>
-			<td>Q版</td>
-			<td>2014-08-02 10:35:00</td>
-			<td>
-				<a href="#" class="view-link">查看</a>
-				<a href="#" class="view-link">修改</a>
-				<a href="#" class="view-link">删除</a>
-			</td>
-		</tr>
-	</tbody>
-</table>				
-<div class="pagination">
-	<ul>
-		<li class="disabled">
-			<a href="#">&laquo;</a>
-		</li>
-		<li class="active">
-			<a href="#">1</a>
-		</li>
-		<li>
-			<a href="#">2</a>
-		</li>
-		<li>
-			<a href="#">3</a>
-		</li>
-		<li>
-			<a href="#">4</a>
-		</li>
-		<li>
-			<a href="#">&raquo;</a>
-		</li>
-	</ul>
-</div>
+<h1>编辑</h1>
+<form class="form-horizontal" action="$link.getContextPath()/member/game/save.html" method="POST">
+	<fieldset>
+		<legend>开服信息</legend>
+		<div class="control-group">
+			<label class="control-label">游戏名称</label>
+			<div class="controls">
+				<input type="text" class="input-xlarge" name="name" value="$!{game.name}" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">开始时间</label>
+			<div class="controls">
+				<div id="datetimepicker1" class="input-append date">
+		    <input data-format="dd/MM/yyyy hh:mm:ss" type="text" ></input>
+		    <span class="add-on">
+		      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+		      </i>
+		    </span>
+		  </div>
+		<script type="text/javascript">
+		  $(function() {
+		    $('#datetimepicker1').datetimepicker({
+		      language: 'zh-CN'
+		    });
+		  });
+		</script>
+				<!--<input type="text" class="input-xlarge" name="_statTime" value="$!{game.statTime}" />-->
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">服务器名</label>
+			<div class="controls">
+				<input type="text" class="input-xlarge" name="serverName" value="$!{game.serverName}" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">URL</label>
+			<div class="controls">
+				<input type="text" class="input-xlarge" name="url" value="$!{game.url}" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">游戏类型</label>
+			<div class="controls">
+				<input type="text" class="input-xlarge" name="category" value="$!{game.category}" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">礼包名称</label>
+			<div class="controls">
+				<input type="text" class="input-xlarge" name="giftName" value="$!{game.giftName}" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">运营商</label>
+			<div class="controls">
+				<input type="text" class="input-xlarge" name="platform" value="$!{game.platform}" />
+			</div>
+		</div>
+		
+		<input type="hidden" name="id" value="$!{game.id}" />
+						
+		<div class="form-actions">
+			<button type="submit" class="btn btn-primary">保存</button> <button class="btn">取消</button>
+		</div>
+	</fieldset>
+</form>

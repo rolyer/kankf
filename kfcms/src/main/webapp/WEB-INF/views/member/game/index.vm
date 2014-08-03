@@ -4,9 +4,7 @@
 <table class="table table-bordered table-striped">
 	<thead>
 		<tr>
-			<th>
-				编号
-			</th>
+			<th>编号</th>
 			<th>游戏名称</th>
 			<th>服务器名</th>
 			<th>游戏类型</th>
@@ -15,39 +13,21 @@
 		</tr>
 	</thead>
 	<tbody>
+		#foreach( $game in $list )
 		<tr>
-			<td><input type="checkbox" id="optionsCheckbox" value="option1"></td>
-			<td>乱舞江山</td>
-			<td>双线2服</td>
-			<td>Q版</td>
-			<td>2014-08-02 10:35:00</td>
+			<td><input type="checkbox" value="$!{game.id}"></td>
+			<td>$!{game.name}</td>
+			<td>$!{game.serverName}</td>
+			<td>$!{game.category}</td>
+			<td>$!date.format('yyyy-MM-dd HH:mm:ss ',$!game.startTime)</td>
 			<td>
-				<a href="#" class="view-link">查看</a>
-				<a href="#" class="view-link">修改</a>
-				<a href="#" class="view-link">删除</a>
+				<a href="edit.html?action=view&id=$!{game.id}" class="view-link">查看</a>
+				<a href="edit.html?action=edit&id=$!{game.id}" class="view-link">修改</a>
+				<a href="edit.html?action=del&id=$!{game.id}" class="view-link">删除</a>
 			</td>
 		</tr>
+		#end
 	</tbody>
-</table>				
-<div class="pagination">
-	<ul>
-		<li class="disabled">
-			<a href="#">&laquo;</a>
-		</li>
-		<li class="active">
-			<a href="#">1</a>
-		</li>
-		<li>
-			<a href="#">2</a>
-		</li>
-		<li>
-			<a href="#">3</a>
-		</li>
-		<li>
-			<a href="#">4</a>
-		</li>
-		<li>
-			<a href="#">&raquo;</a>
-		</li>
-	</ul>
-</div>
+</table>
+
+#pagination2($totalPages $currentPage '?')

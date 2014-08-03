@@ -541,3 +541,58 @@
 	</ul>
 	#end
 #end
+
+##pagination for member
+#macro(pagination2 $totalPages $currentPage $url)
+	#if($totalPages>0)
+		<div class="pagination">
+		<ul>
+		
+		#set($itemCountPerPage=5)
+		
+		#if($currentPage/$itemCountPerPage>0)
+			#set($start=($currentPage/$itemCountPerPage)*$itemCountPerPage)
+		#else
+			#set($start=1)
+		#end
+		
+		#set($end=(($currentPage/$itemCountPerPage+1)*$itemCountPerPage))
+		
+		#if($start > 1)
+			#set($startPage=$start+-1)
+			<li>
+				<a href="${url}p=${startPage}">&laquo;</a>
+			</li>
+		#else
+			<li class="disabled">
+				<a href="#">&laquo;</a>
+			</li>
+		#end
+		
+		#foreach($i in [$start..$end])
+			#if($totalPages >= $i)
+    			#if($currentPage==$i)
+    				<li class="active"><a href="#">$i</a></span>
+    			#else
+    				<li>
+						<a href="${url}p=${i}">$i</a>
+					</li>
+    			#end
+			#end
+		#end
+		
+		#if($end<$totalPages)
+			#set($endPage=$end+1)
+			<li>
+				<a href="${url}p=${endPage}">&raquo;</a>
+			</li>
+		#else
+			<li  class="disabled">
+				<a href="#">&raquo;</a>
+			</li>
+		#end
+		
+		</ul>
+		</div>
+	#end
+#end

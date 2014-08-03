@@ -30,7 +30,7 @@
 			LIMIT 0, #{num}
 	</select>
 	
-	<select id="queryListByGame" parameterType="game" resultMap="baseResultMap">
+	<select id="queryListByConditions" parameterType="game" resultMap="baseResultMap">
 			SELECT g.id, g.user_name, g.name, g.start_time, g.server_name, g.url, g.category, g.gift_name, g.platform, g.gmt_created, g.gmt_modified
 			FROM game g
 			WHERE 1=1
@@ -42,4 +42,66 @@
 			ORDER BY id DESC
 			LIMIT #{offset}, #{rowCount} 
 	</select>
+	
+	<select id="countListByConditions" parameterType="game" resultType="int">
+			SELECT COUNT(g.id) FROM game g
+			WHERE 1=1
+			<if test="game != null">
+				<if test="game.userName != null">
+					AND g.user_name = #{game.userName}
+				</if>
+			</if>
+	</select>
+	
+	<select id="query" parameterType="game" resultMap="baseResultMap">
+			SELECT id, user_name, name, start_time, server_name, url, category, gift_name, platform, gmt_created, gmt_modified
+			FROM game
+			WHERE id = #{id} AND user_name = #{userName}
+	</select>
+	
+	<insert id="insert" parameterType="game">
+		INSERT INTO game
+			(
+			user_name,
+			name,
+			start_time,
+			server_name,
+			url,
+			category,
+			gift_name,
+			platform,
+			gmt_created,
+			gmt_modified)
+		VALUES
+			(
+			#{userName},
+			#{name},
+			#{startTime},
+			#{serverName},
+			#{url},
+			#{category},
+			#{giftName},
+			#{platform},
+			#{gmtCreated},
+			#{gmtModified})
+	</insert>
+	
+	<update id="update" parameterType="game">
+		UPDATE game
+		SET
+		name = #{name},
+		start_time = #{startTime},
+		server_name = #{serverName},
+		url = #{url},
+		category = #{category},
+		gift_name = #{giftName},
+		platform = #{platform},
+		gmt_modified = #{gmtModified}
+		WHERE id = #{id} AND user_name = #{userName}
+	</update>
+	
+	<delete id="delete" parameterType="game">
+		DELETE FROM game
+		WHERE id = #{id} AND user_name = #{userName}
+	</delete>
 </mapper>
