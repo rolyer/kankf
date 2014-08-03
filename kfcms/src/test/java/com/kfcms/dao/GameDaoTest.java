@@ -25,7 +25,17 @@ public class GameDaoTest {
 		List<Game> list = dao.queryList(10, new Date());
 		
 		Assert.assertNotNull(list);
-		Assert.assertEquals(list.size(), 0);
+		Assert.assertEquals(3, list.size());
+	}
+	
+	@Test
+	public void testList2() {
+		Game game = new Game();
+		game.setUserName("test");
+		List<Game> list = dao.queryListByGame(0, 10, game);
+		
+		Assert.assertNotNull(list);
+		Assert.assertEquals(1, list.size());
 	}
 
 }

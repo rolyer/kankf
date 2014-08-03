@@ -27,6 +27,19 @@
 				AND MONTH(start_time) = MONTH(#{startTime})
 		    </if>
 			ORDER BY id DESC
-			LIMIT 0, #{num} 
+			LIMIT 0, #{num}
+	</select>
+	
+	<select id="queryListByGame" parameterType="game" resultMap="baseResultMap">
+			SELECT g.id, g.user_name, g.name, g.start_time, g.server_name, g.url, g.category, g.gift_name, g.platform, g.gmt_created, g.gmt_modified
+			FROM game g
+			WHERE 1=1
+			<if test="game != null">
+				<if test="game.userName != null">
+					AND g.user_name = #{game.userName}
+				</if>
+			</if>
+			ORDER BY id DESC
+			LIMIT #{offset}, #{rowCount} 
 	</select>
 </mapper>
