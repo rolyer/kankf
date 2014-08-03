@@ -15,6 +15,7 @@ import com.kfcms.service.GameService;
 import com.kfcms.service.UserService;
 
 @Controller
+@RequestMapping("/")
 public class HomeController {
 //	private final static Logger LOGGER = Logger.getLogger(HomeController.class);
 	

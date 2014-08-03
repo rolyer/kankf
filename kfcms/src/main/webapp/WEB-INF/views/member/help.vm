@@ -1,0 +1,14 @@
+#set($layout="layout/member/template.vm")
+
+<h1>
+	帮助中心
+</h1>
+<div class="hero-unit">
+	<h1>
+		欢迎来到用户帮助中心!
+	</h1>
+	<p>
+		最新最全网页游戏开服信息就在看开服。
+	</p>
+
+</div>
