@@ -57,7 +57,6 @@ public class UserDaoTest {
 		Assert.assertTrue(NAME.equals(user.getName()));
 	}
 	
-
 	@Test
 	public void testQueryUserByEmail() {
 		User user = dao.queryUserByEmail(EMAIL);

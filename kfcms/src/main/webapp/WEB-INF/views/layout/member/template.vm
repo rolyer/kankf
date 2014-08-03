@@ -8,7 +8,7 @@
 		<meta charset="utf-8">
 		<title>用户中心 - 看开服</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="icon" href="$link.getContextPath()/images/favicon.ico">
+		<link rel="icon"rel="shortcut icon" href="$link.getContextPath()/images/favicon.ico?v=1.0.0">
 		<link href="$link.getContextPath()/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link href="$link.getContextPath()/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
 		<link href="$link.getContextPath()/bootstrap/css/site.css" rel="stylesheet">
@@ -23,7 +23,7 @@
 						<div class="nav-collapse">
 							<ul class="nav">
 								<li>
-									<a href="$link.getContextPath()/index.html">首页</a>
+									<a href="$link.getContextPath()/index.html" target="_blank">首页</a>
 								</li>
 								<li>
 									<a href="$link.getContextPath()/member/profile.html">帐号设置</a>
