@@ -8,8 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.kfcms.dto.Result;
 import com.kfcms.model.Game;
 import com.kfcms.service.GameService;
 import com.kfcms.util.Constants;
@@ -63,8 +66,23 @@ public class GameController {
 		game.setStartTime(new Date());
 		game.setUserName(username);
 		
-		gameService.insert(game);
+		gameService.save(game);
 		
 		return new ModelAndView("/member/game/index");
+	}
+	
+	@RequestMapping(value = "delete.html", method = RequestMethod.POST)
+	public @ResponseBody Result delete(String id) {
+		Result result = new Result();
+		if (StringUtils.isBlank(id) || !StringUtils.isNumeric(id)) {
+			result.setData("Illegally parameter id: " + id);
+			return result;
+		}
+		
+		int count = gameService.deleteByIdAndUserName(Integer.parseInt(id), username);
+		if (count>0) {
+			result.setSuccess(true);
+		}
+		return result;
 	}
 }
