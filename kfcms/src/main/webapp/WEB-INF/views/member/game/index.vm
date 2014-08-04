@@ -1,5 +1,27 @@
 #set($layout="layout/member/template.vm")
-
+<script>
+	$(document).ready(function(){
+		
+	});
+	function del(id){
+		$.ajax({
+	        type: "POST",
+	        url: '$link.getContextPath()/member/game/delete.html',
+	        data : {
+	            id: id
+	        },
+	        dataType:"json",
+	        success: function(response, textStatus, xhr) {
+	        	if(response.success){
+	        		alert(true);
+	        	}
+	        },
+	        error: function(xhr, textStatus, errorThrown) {
+	        	return false;
+	        }
+        });
+	}
+</script>
 <h1>开服信息</h1>
 <table class="table table-bordered table-striped">
 	<thead>
@@ -23,7 +45,7 @@
 			<td>
 				<a href="edit.html?action=view&id=$!{game.id}" class="view-link">查看</a>
 				<a href="edit.html?action=edit&id=$!{game.id}" class="view-link">修改</a>
-				<a href="edit.html?action=del&id=$!{game.id}" class="view-link">删除</a>
+				<a href="javascript:;" class="view-link" onclick="del($!{game.id})">删除</a>
 			</td>
 		</tr>
 		#end
