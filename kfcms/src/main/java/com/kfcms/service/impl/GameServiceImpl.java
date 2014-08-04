@@ -45,6 +45,7 @@ public class GameServiceImpl implements GameService {
 		return gameDao.countListByConditions(game);
 	}
 
+	@Override
 	public Game queryByIdAndUserName(Integer id, String userName) {
 		Assert.notNull(id, "The id must not be null");
 		Assert.hasLength(userName, "User name must not be empty");
@@ -56,6 +57,7 @@ public class GameServiceImpl implements GameService {
 		return gameDao.query(game);
 	}
 
+	@Override
 	public int insert(Game game) {
 		Assert.notNull(game, "The game must not be null");
 		Assert.hasLength(game.getUserName(), "User name must not be empty");
@@ -66,6 +68,7 @@ public class GameServiceImpl implements GameService {
 		return gameDao.insert(game);
 	}
 
+	@Override
 	public int update(Game game) {
 		Assert.notNull(game, "The game must be not null");
 		Assert.notNull(game.getId(), "The id must be not null");
@@ -76,6 +79,7 @@ public class GameServiceImpl implements GameService {
 		return gameDao.update(game);
 	}
 
+	@Override
 	public int deleteByIdAndUserName(Integer id, String userName) {
 		Assert.notNull(id, "The id must be not null");
 		Assert.hasLength(userName, "User name must not be empty");
@@ -85,15 +89,5 @@ public class GameServiceImpl implements GameService {
 		game.setUserName(userName);
 		
 		return gameDao.delete(game);
-	}
-
-	public int save(Game game) {
-		Assert.notNull(game, "The game must not be null");
-		
-		if (game.getId()!=null && game.getId().intValue()>0) {
-			return update(game);
-		}else {
-			return insert(game);
-		}
 	}
 }

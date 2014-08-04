@@ -20,6 +20,4 @@ public interface GameService {
 	public int update(Game game);
 
 	public int deleteByIdAndUserName(Integer id, String userName);
-	
-	public int save(Game game);
 }
