@@ -1,6 +1,6 @@
 #set($layout="layout/member/template.vm")
 
-<h1>编辑</h1>
+<h1>$!{title}</h1>
 <form class="form-horizontal" action="$link.getContextPath()/member/game/save.html" method="POST">
 	<fieldset>
 		<legend>开服信息</legend>
@@ -62,9 +62,13 @@
 		</div>
 		
 		<input type="hidden" name="id" value="$!{game.id}" />
-						
+
+		#if($disabled==true)		
 		<div class="form-actions">
+			
 			<button type="submit" class="btn btn-primary">保存</button> <button class="btn">取消</button>
+
 		</div>
+		#end
 	</fieldset>
 </form>

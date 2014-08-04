@@ -67,7 +67,7 @@
 								<a href="$link.getContextPath()/member/game/index.html"><i class="icon-folder-open"></i> 开服管理</a>
 							</li>
 							<li>
-								<a href="$link.getContextPath()/member/game/edit.html"><i class="icon-check"></i> 发布开服</a>
+								<a href="$link.getContextPath()/member/game/edit.html?action=add"><i class="icon-check"></i> 发布开服</a>
 							</li>
 							<li>
 								<a href="$link.getContextPath()/member/gift/index.html"><i class="icon-envelope"></i> 礼包管理</a>
