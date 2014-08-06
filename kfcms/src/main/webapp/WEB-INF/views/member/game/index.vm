@@ -53,7 +53,7 @@
 			<td>$!{game.name}</td>
 			<td>$!{game.serverName}</td>
 			<td>$!{game.category}</td>
-			<td>$!date.format('yyyy-MM-dd HH:mm:ss ',$!game.startTime)</td>
+			<td>$!date.format('yyyy-MM-dd HH:mm ',$!game.startTime)</td>
 			<td>
 				<a href="edit.html?action=view&id=$!{game.id}" class="view-link">查看</a>
 				<a href="edit.html?action=edit&id=$!{game.id}" class="view-link">修改</a>
