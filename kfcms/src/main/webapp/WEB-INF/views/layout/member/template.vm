@@ -11,12 +11,12 @@
 		<link rel="icon"rel="shortcut icon" href="$link.getContextPath()/images/favicon.ico?v=1.0.0">
 		<link href="$link.getContextPath()/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link href="$link.getContextPath()/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-		<link href="$link.getContextPath()/datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+		<link href="$link.getContextPath()/css/jquery.datetimepicker.css" rel="stylesheet">
 		<link href="$link.getContextPath()/bootstrap/css/site.css" rel="stylesheet">
 		<!--[if lt IE 9]><script src="$link.getContextPath()/js/html5shiv.min.js"></script><![endif]-->
 
 		<script src="$link.getContextPath()/js/jquery-1.11.1.min.js"></script>
-		<script src="$link.getContextPath()/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+		<script src="$link.getContextPath()/js/jquery.datetimepicker.js"></script>
 
 	</head>
 	<body>

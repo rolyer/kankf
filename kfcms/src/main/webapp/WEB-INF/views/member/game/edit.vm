@@ -12,22 +12,19 @@
 		</div>
 		<div class="control-group">
 			<label class="control-label">开始时间</label>
-			<div class="controls">
-				<div id="datetimepicker1" class="input-append date">
-		    <input data-format="dd/MM/yyyy hh:mm:ss" type="text" ></input>
-		    <span class="add-on">
-		      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
-		      </i>
-		    </span>
-		  </div>
-		<script type="text/javascript">
-		  $(function() {
-		    $('#datetimepicker1').datetimepicker({
-		      language: 'zh-CN'
-		    });
-		  });
-		</script>
-				<!--<input type="text" class="input-xlarge" name="_statTime" value="$!{game.statTime}" />-->
+			<div class="controls">		  
+				<input id="datetimepicker" type="text" class="input-xlarge" name="statTime" value="$!{game.statTime}" readonly />
+				<script>
+					
+					$(function(){
+						$('#datetimepicker').datetimepicker({
+							value:'$!date.format('yyyy-MM-dd HH:mm',$!game.startTime)',
+							//mask:"9999-12-31 00:00",
+							format:'Y-m-d H:i',
+							lang:'ch'
+						});
+					});
+				</script>
 			</div>
 		</div>
 		<div class="control-group">

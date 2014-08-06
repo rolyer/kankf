@@ -1,5 +1,7 @@
 package com.kfcms.controller.member;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -73,11 +75,17 @@ public class GameController {
 	}
 	
 	@RequestMapping("save.html")
-	public ModelAndView save(ModelMap out, Game game) {
-		game.setStartTime(new Date());
-		game.setUserName(username);
-		
-		gameService.save(game);
+	public ModelAndView save(ModelMap out, Game game, String statTime) {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		try {
+			Date date = sdf.parse(statTime);
+			game.setStartTime(date);
+			game.setUserName(username);
+			
+			gameService.save(game);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		
 		return new ModelAndView("/member/game/index");
 	}
