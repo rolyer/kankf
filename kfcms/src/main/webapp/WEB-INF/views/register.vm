@@ -62,7 +62,7 @@ $(function(){
 	        dataType:"json",
 	        success: function(response, textStatus, xhr) {
 	        	if(response.success){
-	        		alert(true);
+	        		window.location.href = "$link.getContextPath()/index.html";
 	        	}
 	        },
 	        error: function(xhr, textStatus, errorThrown) {
