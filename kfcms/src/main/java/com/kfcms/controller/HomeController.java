@@ -8,11 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.kfcms.dto.Result;
 import com.kfcms.dto.SeoPage;
 import com.kfcms.model.Game;
+import com.kfcms.model.User;
 import com.kfcms.service.GameService;
 import com.kfcms.service.UserService;
+import com.kfcms.util.Constants.RegisterStatus;
 
 @Controller
 @RequestMapping("/")
@@ -106,5 +110,23 @@ public class HomeController {
 	@RequestMapping("register.html")
 	public void register(ModelMap out) {
 		
+	}
+	
+	@RequestMapping("reg.html")
+	public @ResponseBody Result reg(ModelMap out, User user) {
+		Result result = new Result();
+		
+		RegisterStatus status = userService.register(user);
+		if(RegisterStatus.SUCCESS.equals(status)) {
+			result.setSuccess(true);
+		} else {
+			if (RegisterStatus.DUPLICATE_EMAIL.equals(status)) {
+				result.setData("Duplicate email");
+			} else if (RegisterStatus.DUPLICATE_NAME.equals(status)) {
+				result.setData("Duplicate name");
+			}
+		}
+		
+		return result;
 	}
 }

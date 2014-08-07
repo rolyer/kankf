@@ -32,7 +32,7 @@
 			#{name},
 			#{password},
 			#{email},
-			0,
+			#{status},
 			#{tel},
 			#{qqmsn},
 			#{gmtCreated},
