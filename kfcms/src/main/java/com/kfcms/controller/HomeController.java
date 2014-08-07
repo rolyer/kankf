@@ -102,4 +102,9 @@ public class HomeController {
 		seoPage.setTitle("开始游戏 - 看开服");
 		out.put("seo", seoPage);
 	}
+	
+	@RequestMapping("register.html")
+	public void register(ModelMap out) {
+		
+	}
 }

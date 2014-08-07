@@ -1833,6 +1833,72 @@ cursor: pointer;
 .u_label{
 display: inline-block;
 }
+
+/* register */
+.reg_content {
+	font-size: 13px;
+	line-height: 220%;
+	margin-bottom: 20px;
+	min-height: 350px;
+}
+
+.reg_content p span{
+	font-size: 12px;
+}
+
+.reg_form label {
+	text-align: right;
+	margin-right: 15px;
+	line-height: 30px;
+	width: 110px;
+	display: block;
+	float: left;
+}
+
+.reg_form p {
+	height: 30px;
+	margin-bottom: 15px;
+}
+
+.reg_form input {
+    width: 350px;
+}
+
+.reg_form_p {
+	padding-left: 125px;
+}
+
+.reg_btn:hover {
+    color: #FFF;
+	background: #ea5406;
+}
+
+.reg_btn {
+    background: none repeat scroll 0 0 #01a3f6;
+    border: 0 none;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    height: 35px;
+    line-height: 32px;
+    text-align: center;
+    width: 100px;
+}
+
+.reg_title {
+    padding: 5px;
+    padding-left: 25px;
+    margin-bottom: 15px;
+	height: 20px;
+	line-height: 20px;
+    background-color: #F1F1F1;
+    background-image: url(img/adds.gif);
+    background-repeat: no-repeat;
+    background-position: 10px center;
+	font-size: 15px;
+}
 /*********************************** End ****************************************/
 
 
