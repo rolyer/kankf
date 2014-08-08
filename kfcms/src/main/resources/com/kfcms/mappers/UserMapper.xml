@@ -57,6 +57,23 @@
 		]]>
 	</select>
 	
+	<select id="loginByName" parameterType="map" resultMap="baseResultMap">
+		<![CDATA[
+			SELECT id, name, password, email, status, tel, qqmsn, gmt_created, gmt_modified
+			FROM user
+			WHERE name=#{name} AND password=#{password}
+		]]>
+	</select>
+	
+	<select id="loginByEmail" parameterType="map" resultMap="baseResultMap">
+		<![CDATA[
+			SELECT id, name, password, email, status, tel, qqmsn, gmt_created, gmt_modified
+			FROM user
+			WHERE email=#{email} AND password=#{password}
+		]]>
+	</select>
+	
+	
 	<delete id="deleteUserByName" parameterType="java.lang.String">
 		<![CDATA[
 			DELETE FROM user

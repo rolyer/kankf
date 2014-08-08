@@ -4,6 +4,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -16,6 +19,7 @@ import com.kfcms.model.Game;
 import com.kfcms.model.User;
 import com.kfcms.service.GameService;
 import com.kfcms.service.UserService;
+import com.kfcms.util.Constants;
 import com.kfcms.util.Constants.RegisterStatus;
 
 @Controller
@@ -113,17 +117,21 @@ public class HomeController {
 	}
 	
 	@RequestMapping("reg.html")
-	public @ResponseBody Result reg(ModelMap out, User user) {
+	public @ResponseBody Result reg(HttpServletRequest request, ModelMap out, User user) {
 		Result result = new Result();
 		
 		RegisterStatus status = userService.register(user);
 		if(RegisterStatus.SUCCESS.equals(status)) {
 			result.setSuccess(true);
+			
+			HttpSession session = request.getSession();
+			
+			session.setAttribute(Constants.LOGIN_USER, user);
 		} else {
 			if (RegisterStatus.DUPLICATE_EMAIL.equals(status)) {
-				result.setData("Duplicate email");
+				result.setData("对不起，该邮箱已被注册");
 			} else if (RegisterStatus.DUPLICATE_NAME.equals(status)) {
-				result.setData("Duplicate name");
+				result.setData("对不起，该用户名已被注册");
 			}
 		}
 		

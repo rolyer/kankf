@@ -16,9 +16,9 @@
 	<body>
 		<div id="login-page" class="container">
 			<h1>用户登录</h1>
-		<form id="login-form" class="well" action="$link.getContextPath()/member/index.html">
-			<input type="text" class="span2" placeholder="帐号" required /><br />
-			<input type="password" class="span2" placeholder="密码" required /><br />
+		<form id="login-form" class="well" action="$link.getContextPath()/member/dologin.html">
+			<input type="text" name="account" class="span2" placeholder="帐号" required /><br />
+			<input type="password" name="password" class="span2" placeholder="密码" required /><br />
 			
 			<button type="submit" class="btn btn-primary">登录</button>
 			<a href="$link.getContextPath()/memeber/register.html" class="btn">注册</a>
@@ -27,5 +27,8 @@
 		<script src="$link.getContextPath()/bootstrap/js/jquery.min.js"></script>
 		<script src="$link.getContextPath()/bootstrap/js/bootstrap.min.js"></script>
 		<script src="$link.getContextPath()/bootstrap/js/site.js"></script>
+		<script>
+			
+        </script>
 	</body>
 </html>

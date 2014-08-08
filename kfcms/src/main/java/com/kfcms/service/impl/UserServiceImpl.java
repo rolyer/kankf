@@ -1,5 +1,7 @@
 package com.kfcms.service.impl;
 
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 
 import org.apache.commons.lang.StringUtils;
@@ -11,14 +13,44 @@ import org.springframework.util.Assert;
 import com.kfcms.dao.UserDao;
 import com.kfcms.model.User;
 import com.kfcms.service.UserService;
-import com.kfcms.util.UserStatus;
+import com.kfcms.util.AlgorithmUtils;
 import com.kfcms.util.Constants.RegisterStatus;
+import com.kfcms.util.UserStatus;
 
 @Service("userService")
 public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private UserDao userDao;
+	
+	public User login(String account, String password) {
+		Assert.hasText(account, "Account must not be empty");
+		Assert.hasText(password, "Password must not be empty");
+		
+		// 密码加密
+		String encryptPassword = "";
+		try {
+			encryptPassword = AlgorithmUtils.MD5(password, 16);
+		} catch (NoSuchAlgorithmException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		User user = userDao.loginByName(account, encryptPassword);
+		if (user!=null) {
+			return user;
+		}
+		
+		user = userDao.loginByEmail(account, encryptPassword);
+		if (user!=null) {
+			return user;
+		}
+		
+		return null;
+	}
 	
 	@Transactional
 	public RegisterStatus register(User user) {
@@ -32,9 +64,21 @@ public class UserServiceImpl implements UserService {
 			return RegisterStatus.DUPLICATE_EMAIL;
 		}
 		
-		existUser = userDao.queryUserByEmail(user.getEmail());
+		existUser = userDao.queryUserByName(user.getName());
 		if (existUser != null && existUser.getId() != null && existUser.getId().intValue() > 0) {
 			return RegisterStatus.DUPLICATE_NAME;
+		}
+		
+		// 密码加密
+		try {
+			String encrypt = AlgorithmUtils.MD5(user.getPassword(), 16);
+			user.setPassword(encrypt);
+		} catch (NoSuchAlgorithmException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 		user.setGmtCreated(new Date());

@@ -43,10 +43,16 @@
 	
 	<div class="speedbar">
 		<div class="pull-right">
-			<i class="icon-user icon12"></i> <a href="#login">登录</a>
+			#if($user.name)
+				<i class="icon-user icon12"></i> <a href="$link.getContextPath()/member/index.html">$user.name</a> | 
+				<a href="$link.getContextPath()/member/logout.html">退出</a>
+			#else
+				<i class="icon-user icon12"></i> <a href="$link.getContextPath()/member/login.html">登录</a>
+			#end
+			
 		</div>
 		<div class="toptip">
-			<strong class="text-success">最新消息：</strong><a rel="external nofollow" href="#">用户注册已开放！</a>&nbsp;
+			<strong class="text-success">最新消息：</strong><a rel="external nofollow" href="$link.getContextPath()/register.html" target="_blank">用户注册已开放！</a>&nbsp;
 			你还可以：&nbsp;<a rel="external nofollow" href="#">投稿</a>&nbsp;/&nbsp;
 			<a rel="external nofollow" href="#">广告合作</a>&nbsp;/&nbsp;
 			联系邮箱：<strong class="text-info">admin@domian.com</strong>

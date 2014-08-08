@@ -3,6 +3,7 @@
 <head>
 	#parse("layout/meta.vm")
 	<script type="text/javascript" src="$link.getContextPath()/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="$link.getContextPath()/js/util.js"></script>
 </head>
 <body class="home blog" cz-shortcut-listen="true">
 

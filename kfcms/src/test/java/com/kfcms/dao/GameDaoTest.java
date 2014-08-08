@@ -42,7 +42,7 @@ public class GameDaoTest {
 
 	}
 
-	@Test
+	//@Test
 	public void testList() {
 		List<Game> list = dao.queryList(10, new Date());
 
