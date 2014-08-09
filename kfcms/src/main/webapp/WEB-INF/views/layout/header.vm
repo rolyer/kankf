@@ -8,6 +8,7 @@
 				<a href="$link.getContextPath()/today.html">今日开服</a></li>
 			<li id="menu-item-5012" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5012">
 				<a href="$link.getContextPath()/tomorrow.html">明日开服</a></li>
+			<!--
 			<li id="menu-item-5220" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5220">
 				<a href="$link.getContextPath()/rank.html">开服排行</a>
 			</li>
@@ -22,6 +23,7 @@
 						<a href="">激活码</a></li>
 				</ul>
 			</li>
+			-->
 		</ul>
 		<!--nav end-->
 		<div class="screen-mini"><button data-type="screen-nav" class="btn btn-inverse screen-nav"><i class="icon-tasks icon-white"></i></button></div>
@@ -31,8 +33,12 @@
 				<input class="btn btn-success search-submit" type="submit" value="搜索">
 			</form>
 			<div class="btn-group pull-left">
+				#if($user.name)
 				<button class="btn btn-primary" data-toggle="modal" data-target="#tijiaokaifu">+提交开服</button>
-				<button class="btn btn-primary" data-toggle="modal" data-target="#feed">订阅</button>
+				#else
+					<button class="btn btn-primary" data-toggle="modal" data-target="#login">+提交开服</button>
+				#end
+				<!--<button class="btn btn-primary" data-toggle="modal" data-target="#feed">订阅</button>-->
 				<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">关注 <i class="caret"></i></button>
 				<ul class="dropdown-menu pull-right">
 					<li><a rel="external nofollow" href="http://t.qq.com/rolyer" target="_blank">腾讯微博</a></li>					<li><a rel="external nofollow" href="http://weibo.com/rolyer" target="_blank">新浪微博</a></li>														</ul>
@@ -47,7 +53,7 @@
 				<i class="icon-user icon12"></i> <a href="$link.getContextPath()/member/index.html">$user.name</a> | 
 				<a href="$link.getContextPath()/member/logout.html">退出</a>
 			#else
-				<i class="icon-user icon12"></i> <a href="#" data-toggle="modal" data-target="#login">登录</a>
+				<i class="icon-user icon12"></i> <a href="javascript:" data-toggle="modal" data-target="#login">登录</a>
 			#end
 			
 		</div>
