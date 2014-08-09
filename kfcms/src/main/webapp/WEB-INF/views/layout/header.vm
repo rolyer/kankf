@@ -53,7 +53,8 @@
 				<i class="icon-user icon12"></i> <a href="$link.getContextPath()/member/index.html">$user.name</a> | 
 				<a href="$link.getContextPath()/member/logout.html">退出</a>
 			#else
-				<i class="icon-user icon12"></i> <a href="javascript:" data-toggle="modal" data-target="#login">登录</a>
+				<i class="icon-user icon12"></i> <a href="javascript:" data-toggle="modal" data-target="#login">登录</a>&nbsp;|&nbsp;
+				<a href="$link.getContextPath()/register.html">注册</a>
 			#end
 			
 		</div>
