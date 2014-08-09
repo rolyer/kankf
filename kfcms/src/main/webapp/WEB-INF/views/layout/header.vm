@@ -47,7 +47,7 @@
 				<i class="icon-user icon12"></i> <a href="$link.getContextPath()/member/index.html">$user.name</a> | 
 				<a href="$link.getContextPath()/member/logout.html">退出</a>
 			#else
-				<i class="icon-user icon12"></i> <a href="$link.getContextPath()/member/login.html">登录</a>
+				<i class="icon-user icon12"></i> <a href="#" data-toggle="modal" data-target="#login">登录</a>
 			#end
 			
 		</div>
@@ -60,3 +60,40 @@
 	</div>
 	<!--speedbar end-->
 </header>
+<script>
+function login() {
+	var account = $('input[name="modal_login_account"]').val();
+	var password = $('input[name="modal_login_password"]').val();
+
+	if(utils.isEmpty(account)){
+		alert("请输入您的账号")
+		return false;
+	}
+	
+	if(utils.isEmpty(password)){
+		alert("请输入您的密码")
+		return false;
+	}
+	
+	$.ajax({
+        type: "POST",
+        url: '$link.getContextPath()/member/ajaxlogin.html?t='+utils.random(),
+        data : {
+			account: account,
+			password: password
+        },
+        dataType:"json",
+        success: function(response, textStatus, xhr) {
+        	if(response.success){
+        		window.location.href = "$link.getContextPath()/index.html";
+        	} else {
+				alert(response.data);
+			}
+        },
+        error: function(xhr, textStatus, errorThrown) {
+        	alert("服务器连接错误");
+        }
+    });
+}
+</script>
+</script>

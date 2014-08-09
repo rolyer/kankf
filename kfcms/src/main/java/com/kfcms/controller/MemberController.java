@@ -35,20 +35,6 @@ public class MemberController {
 		
 	}
 	
-	@RequestMapping("dologin.html")
-	public String dologin(HttpServletRequest request, String account, String password) {
-		User user = userService.login(account, password);
-		if (user != null) {
-			HttpSession session = request.getSession();
-			
-			session.setAttribute(Constants.LOGIN_USER, user);
-			
-			return "redirect:index.html";
-		} else {
-			return "redirect:" + request.getHeader("Referer");
-		}
-	}
-	
 	@RequestMapping("ajaxlogin.html")
 	public @ResponseBody Result ajaxlogin(HttpServletRequest request, String account, String password) {
 		Result result = new Result();

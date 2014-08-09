@@ -8,3 +8,6 @@
 <meta name="description" content="$!{seo.description}">
 <link rel="stylesheet" id="style-css" href="$link.getContextPath()/templates/default/style.css?ver=3.0" type="text/css" media="all">
 <!--[if lt IE 9]><script src="$link.getContextPath()/js/html5.js"></script><![endif]-->
+
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/util.js"></script>

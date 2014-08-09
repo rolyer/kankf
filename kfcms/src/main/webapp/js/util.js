@@ -14,7 +14,43 @@ $.extend(Utils.prototype, {
 		var timestamp = Date.parse(new Date());
 		return timestamp;
 	},
-
+	/**
+     * 
+     * @param mixedVariable
+     * @returns {Boolean}
+     */
+	isEmpty: function(mixedVariable) {
+        if(mixedVariable === ""
+            || mixedVariable === 0
+            || mixedVariable === "0"
+            || mixedVariable === null
+            || mixedVariable === false
+            || mixedVariable === undefined
+            ) {
+            return true;
+        }
+        if(typeof mixedVariable == 'object') {
+        	var key = null;
+            for(key in mixedVariable) {
+                if(typeof mixedVariable[key] !== 'function') {
+                    return false;
+                }
+            }
+            return true;
+        }
+        return false;
+    },
+    
+    /**
+     * 
+     * @param regex
+     * @param s
+     * @returns (Boolean)
+     */
+    isValid: function(regex, s) {
+    	var re = new RegExp(regex);
+    	return re.test(s);
+    },
 	/**
 	 * @param str
 	 * @param ftype

@@ -1,76 +1,31 @@
-<style>
-.reg_content {
-	font-size: 13px;
-	line-height: 220%;
-	margin-bottom: 20px;
-	min-height: 350px;
-}
-
-.regist_from {
-	margin-top: 40px;
-}
-
-.regist_from label {
-	text-align: right;
-	margin-right: 15px;
-	line-height: 30px;
-	width: 110px;
-	display: block;
-	float: left;
-}
-
-.regist_from p {
-	height: 30px;
-	margin-bottom: 15px;
-}
-
-.regist_from_jj {
-	padding-left: 142px;
-}
-</style>
-
-<div class="reg_content">
-
-	<form action="" method="post" id="regist" name="regist">
-		<div class="reg_form">
-			<h1>用户注册</h1>
-			<hr />
+<div class="modal hide fade" id="login" tabindex="-1"
+	style="width: 400px; margin-left: -200px;">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal">&times;</button>
+		<h3>用户登录</h3>
+	</div>
+	<div class="modal-body">
+		<form class="subscribe-mail"
+			action="http://list.qq.com/cgi-bin/qf_compose_send" target="_blank"
+			method="post">
 			<p>
-				<label for="username">用 户 名</label><input name="username"
-					id="username" type="text"> 用户名至少6个字符，最多16个字符！
-			</p>
-			<p>
-				<label for="password">密 码</label><input name="password"
-					id="password" type="password"> 至少6个长度，建议设复杂点！
-			</p>
-			<p>
-				<label for="password1">确认密码</label><input name="password1"
-					id="password1" type="password">
-			</p>
-			<p>
-				<label for="email">邮 箱</label><input name="email" id="email"
-					type="text"> 邮箱至少6个字符，建议用QQ邮箱，通过认证后可作登录用！
-			</p>
-			<p>
-				<label for="phone">手 机</label><input name="phone" id="phone"
-					type="text"> 没有可不填，建议填写！
-			</p>
-			<p class="reg_form_jj">
-				<img src="$link.getContextPath()/images/verifycode.png"
-					style="cursor: hand;" alt="验证码" title="点击换图">
-			</p>
-			<p>
-				<label for="code">验 证 码</label><input name="code" id="code"
-					type="text">
-			</p>
-			<p class="reg_form_jj">
-				<input class="btn btn-success search-submit" value="注　册"
-					type="submit">
+				<strong>账号</strong><br> <input type="text"
+					class="input-block-level" value="'+_deel.rss+'">
 			</p>
 
-		</div>
+			<p>
 
-	</form>
+				<strong>邮件订阅</strong><br> <input class="pull-left"
+					style="width: 300px;" type="email" placeholder="a@b.com">
+
+			</p>
+
+			<p>
+				<input class="btn btn-primary pull-right" style="width: 51px;"
+					type="submit" value="登录"> <a
+					class="btn btn-mini btn-success" target="_blank"
+					href="http://www.xianguo.com/subscribe.php?url=http://'+_deel.rss+'">注册</a>
+			</p>
+		</form>
+	</div>
 </div>
-
-</form>
