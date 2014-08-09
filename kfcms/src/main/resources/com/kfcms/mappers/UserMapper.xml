@@ -28,7 +28,7 @@
 			gmt_created,
 			gmt_modified
 			)
-			VALUE (
+			VALUES (
 			#{name},
 			#{password},
 			#{email},

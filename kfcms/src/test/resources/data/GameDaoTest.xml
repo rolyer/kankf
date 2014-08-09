@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<public.game id="1" user_name="testuser" name="testgame"
+		start_time="2014-08-09 12:50:40" server_name="server name" url="http://www.test.com"
+		category="3D" gift_name="礼包" platform="运营商" gmt_created="2014-08-09 12:50:40"
+		gmt_modified="2014-08-09 12:50:40" />
+
+	<public.game id="2" user_name="testuser" name="testgame"
+		start_time="2014-08-09 12:50:40" server_name="server name" url="http://www.test.com"
+		category="3D" gift_name="礼包" platform="运营商" gmt_created="2014-08-09 12:50:40"
+		gmt_modified="2014-08-09 12:50:40" />
+
+	<public.game id="3" user_name="testuser" name="testgame"
+		start_time="2014-08-09 12:50:40" server_name="server name" url="http://www.test.com"
+		category="3D" gift_name="礼包" platform="运营商" gmt_created="2014-08-09 12:50:40"
+		gmt_modified="2014-08-09 12:50:40" />
+
+	<public.game id="4" user_name="username" name="testgame"
+		start_time="2014-08-09 12:50:40" server_name="server name" url="http://www.test.com"
+		category="3D" gift_name="礼包" platform="运营商" gmt_created="2014-08-09 12:50:40"
+		gmt_modified="2014-08-09 12:50:40" />
+
+	<public.game id="5" user_name="username" name="testgame"
+		start_time="2014-08-09 12:50:40" server_name="server name" url="http://www.test.com"
+		category="3D" gift_name="礼包" platform="运营商" gmt_created="2014-08-09 12:50:40"
+		gmt_modified="2014-08-09 12:50:40" />
+</dataset>

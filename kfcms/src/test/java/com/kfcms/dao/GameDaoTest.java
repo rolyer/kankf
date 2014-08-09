@@ -7,23 +7,86 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
 
+import com.github.springtestdbunit.DbUnitTestExecutionListener;
+import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.kfcms.model.Game;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:test-spring-web.xml",
 		"classpath:test-spring-mybatis.xml" })
+@TestExecutionListeners({ DependencyInjectionTestExecutionListener.class,
+		DbUnitTestExecutionListener.class })
+@DatabaseSetup("classpath:/data/GameDaoTest.xml")
+@ActiveProfiles("hsqldb")
 public class GameDaoTest {
 
 	@Autowired
 	private GameDao dao;
 
 	private final String username = "testuser";
+	private final String gamename = "testgame";
 
 	@Test
-	public void testInsert() {
+	public void queryListByConditions() {
+		Integer offset = 0;
+		Integer rowCount = 20;
+		List<Game> list = dao.queryListByConditions(offset, rowCount, null);
+
+		Assert.assertNotNull(list);
+		Assert.assertEquals(5, list.size());
+		Assert.assertEquals(gamename, list.get(0).getName());
+
+		// test row count
+		list = dao.queryListByConditions(offset, 1, null);
+
+		Assert.assertNotNull(list);
+		Assert.assertEquals(1, list.size());
+		Assert.assertEquals(gamename, list.get(0).getName());
+
+		// query with user name
+		Game game = new Game();
+		game.setUserName(username);
+		list = dao.queryListByConditions(offset, rowCount, game);
+
+		Assert.assertNotNull(list);
+		Assert.assertEquals(3, list.size());
+	}
+
+	@Test
+	public void countListByConditions() {
+		Game game = new Game();
+		// query without user name
+		Integer count = dao.countListByConditions(game);
+
+		Assert.assertEquals(5, count.intValue());
+
+		// query with user name
+		game.setUserName(username);
+		count = dao.countListByConditions(game);
+
+		Assert.assertEquals(3, count.intValue());
+	}
+
+	@Test
+	public void query() {
+		Game game = new Game();
+		game.setId(2);
+		game.setUserName(username);
+
+		Game g = dao.query(game);
+
+		Assert.assertNotNull(g);
+		Assert.assertEquals(2, g.getId().intValue());
+	}
+
+	@Test
+	public void insert() {
 		Game game = new Game();
 		game.setCategory("2D");
 		game.setGiftName("giftName");
@@ -36,59 +99,53 @@ public class GameDaoTest {
 		game.setUrl("url");
 		game.setUserName(username);
 
-		int count = dao.insert(game);
+		Integer count = dao.insert(game);
 
-		Assert.assertEquals(1, count);
-
-	}
-
-	//@Test
-	public void testList() {
-		List<Game> list = dao.queryList(10, new Date());
-
-		Assert.assertNotNull(list);
-		Assert.assertTrue(list.size() >= 1);
+		Assert.assertEquals(1, count.intValue());
 	}
 
 	@Test
-	public void testQueryListByConditions() {
+	public void update() {
 		Game game = new Game();
-		game.setUserName(username);
-		List<Game> list = dao.queryListByConditions(0, 10, game);
-
-		Assert.assertNotNull(list);
-		Assert.assertTrue(list.size() >= 1);
-	}
-
-	@Test
-	public void testCountListByConditions() {
-		Game game = new Game();
-		game.setUserName(username);
-		int count = dao.countListByConditions(game);
-
-		Assert.assertTrue(count >= 1);
-	}
-	
-	@Test
-	public void testQueryById() {
-		Game game = new Game();
-		game.setId(1);
+		game.setId(2);
+		game.setCategory("2D");
+		game.setGiftName("giftName");
+		game.setGmtCreated(new Date());
+		game.setGmtModified(new Date());
+		game.setName("name");
+		game.setPlatform("platform");
+		game.setServerName("serverName");
+		game.setStartTime(new Date());
+		game.setUrl("url");
 		game.setUserName(username);
 		
-		Game g = dao.query(game);
-
-		Assert.assertNotNull(g);
+		Integer count = dao.update(game);
+		
+		Assert.assertEquals(1, count.intValue());
+		
+		//update by incorrect user
+		game.setUserName(username+"#^@#%^@");
+		
+		count = dao.update(game);
+		
+		Assert.assertEquals(0, count.intValue());
 	}
 
-	// @Test
-	// public void testDelete() {
-	// Game game = new Game();
-	// game.setId(1);
-	// game.setUserName(username);
-	//
-	// int count = dao.delete(game);
-	//
-	// Assert.assertEquals(1, count);
-	// }
-
+	@Test
+	public void delete() {
+		Game game = new Game();
+		game.setId(3);
+		game.setUserName(username);
+		
+		Integer count = dao.delete(game);
+		
+		Assert.assertEquals(1, count.intValue());
+		
+		//delete by incorrect user
+		game.setUserName(username+"#^@#%^@");
+		
+		count = dao.delete(game);
+		
+		Assert.assertEquals(0, count.intValue());
+	}
 }
