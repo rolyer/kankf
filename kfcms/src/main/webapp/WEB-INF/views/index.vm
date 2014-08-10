@@ -15,18 +15,7 @@
 	<!-- 今日开服 start-->
 	<h2 class="title t2">今日开服</h2>
 	
-	<div class="content-list">
-		<ul>
-			<li class="list-title ui-left text-overflow">游戏名称</li>
-			<li class="list-title ui-left text-overflow">服务器名</li>
-			<li class="list-title ui-left text-overflow">游戏类型</li>
-			<li class="list-title ui-left text-overflow">开服礼包</li>
-			<li class="list-title ui-left text-overflow">运营商</li>
-			<li class="list-title ui-left text-overflow">快捷操作</li>
-			<li class="list-title ui-left text-overflow">状态</li>
-		</ul>
-		#gamelist($games)
-	</div>
+	#gamelist($games)
 	<div class="load-more load-more-space">
 		<a href="today.html" title="点击加载更多内容">加载更多...</a>
 	</div>
@@ -35,18 +24,7 @@
 	
 	<!-- 明日开服 start-->
 	<h2 class="title t2">明日开服</h2>
-	<div class="content-list">
-		<ul>
-			<li class="list-title ui-left text-overflow">游戏名称</li>
-			<li class="list-title ui-left text-overflow">服务器名</li>
-			<li class="list-title ui-left text-overflow">游戏类型</li>
-			<li class="list-title ui-left text-overflow">开服礼包</li>
-			<li class="list-title ui-left text-overflow">运营商</li>
-			<li class="list-title ui-left text-overflow">快捷操作</li>
-			<li class="list-title ui-left text-overflow">状态</li>
-		</ul>
-		#gamelist($tomgames)
-	</div>
+	#gamelist($tomgames)
 	<div class="load-more">
 		<a href="tomorrow.html" title="点击加载更多内容">加载更多...</a>
 	</div>

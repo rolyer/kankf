@@ -38,6 +38,11 @@
 				<if test="game.userName != null">
 					AND g.user_name = #{game.userName}
 				</if>
+				<if test="game.startTime != null">
+					AND YEAR(start_time) = YEAR(#{game.startTime}) 
+					AND DAY(start_time) = DAY(#{game.startTime})
+					AND MONTH(start_time) = MONTH(#{game.startTime})
+				</if>
 			</if>
 			ORDER BY id DESC
 			LIMIT #{offset}, #{rowCount} 
@@ -49,6 +54,11 @@
 			<if test="game != null">
 				<if test="game.userName != null">
 					AND g.user_name = #{game.userName}
+				</if>
+				<if test="game.startTime != null">
+					AND YEAR(start_time) = YEAR(#{game.startTime}) 
+					AND DAY(start_time) = DAY(#{game.startTime})
+					AND MONTH(start_time) = MONTH(#{game.startTime})
 				</if>
 			</if>
 	</select>

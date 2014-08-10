@@ -96,4 +96,21 @@ public class GameServiceImpl implements GameService {
 			return insert(game);
 		}
 	}
+
+	public List<Game> queryListByStartTime(Integer page, Integer pageSize,
+			Date startTime) {
+		Integer offset = (page-1) * pageSize;
+		
+		Game game = new Game();
+		game.setStartTime(startTime);
+		
+		return gameDao.queryListByConditions(offset, pageSize, game);
+	}
+
+	public int countListByStartTime(Date startTime) {
+		Game game = new Game();
+		game.setStartTime(startTime);
+		
+		return gameDao.countListByConditions(game);
+	}
 }

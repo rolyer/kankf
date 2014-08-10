@@ -15,34 +15,10 @@
 	<!-- 明日开服 start-->
 	<h2 class="title">明日开服</h2>
 	##parse("layout/rank.vm")
-	
-	<div class="content-list">
-		<ul>
-			<li class="list-title ui-left text-overflow">游戏名称</li>
-			<li class="list-title ui-left text-overflow">服务器名</li>
-			<li class="list-title ui-left text-overflow">游戏类型</li>
-			<li class="list-title ui-left text-overflow">开服礼包</li>
-			<li class="list-title ui-left text-overflow">运营商</li>
-			<li class="list-title ui-left text-overflow">快捷操作</li>
-			<li class="list-title ui-left text-overflow">状态</li>
-		</ul>
-		#gamelist($games)		
-	</div>
-	
+	#gamelist($games)
 	<!-- 明日开服 end-->
-		
-	<div class="pagination" style="display: ;">
-		<ul>
-			<li class="prev-page"></li><li class="active"><span>1</span></li>
-			<li><a href="#page/2">2</a></li>
-			<li><a href="#page/3">3</a></li>
-			<li><a href="#page/4">4</a></li>
-			<li><a href="#page/5">5</a></li>
-			<li><span> ... </span></li>
-			<li class="next-page"><a href="#page/2">下一页</a></li>
-		</ul>
-	</div>
-	<!-- pagination end -->
+	<!-- pagination -->
+	#pagination3($totalPages, $page, 'tomorrow.html?')		
 
 	</div>
 </div>
@@ -52,6 +28,8 @@
 </section>
 
 #parse("layout/footer.vm")
+
+<script type="text/javascript" src="js/base.js"></script>
 
 #parse("layout/modal.vm")
 </body>

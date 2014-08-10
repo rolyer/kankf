@@ -519,6 +519,23 @@
 #end
 
 #macro(gamelist $games)
+	<div class="content-list">
+	#if($games.size()>0)
+		<ul>
+			<li class="list-title ui-left text-overflow">游戏名称</li>
+			<li class="list-title ui-left text-overflow">服务器名</li>
+			<li class="list-title ui-left text-overflow">游戏类型</li>
+			<li class="list-title ui-left text-overflow">开服礼包</li>
+			<li class="list-title ui-left text-overflow">运营商</li>
+			<li class="list-title ui-left text-overflow">快捷操作</li>
+			<li class="list-title ui-left text-overflow">状态</li>
+		</ul>
+	#else
+		<ul>
+			<li class="color:red;">暂无信息...</li>
+		</ul>
+	#end
+	
 	#foreach( $game in $games )
 	<ul>
 	#if($foreach.count % 2 ==  0)
@@ -540,6 +557,7 @@
 	#end
 	</ul>
 	#end
+    </div>
 #end
 
 ##pagination for member
@@ -572,7 +590,7 @@
 		#foreach($i in [$start..$end])
 			#if($totalPages >= $i)
     			#if($currentPage==$i)
-    				<li class="active"><a href="#">$i</a></span>
+    				<li class="active"><a href="#">$i</a></li>
     			#else
     				<li>
 						<a href="${url}p=${i}">$i</a>
@@ -590,6 +608,60 @@
 			<li  class="disabled">
 				<a href="#">&raquo;</a>
 			</li>
+		#end
+		
+		</ul>
+		</div>
+	#end
+#end
+
+##pagination for front
+#macro(pagination3 $totalPages $currentPage $url)
+	#if($totalPages>0)
+		<div class="pagination">
+		<ul>
+		
+		#set($itemCountPerPage=5)
+		
+		#if($currentPage/$itemCountPerPage>0)
+			#set($start=($currentPage/$itemCountPerPage)*$itemCountPerPage)
+		#else
+			#set($start=1)
+		#end
+		
+		#set($end=(($currentPage/$itemCountPerPage+1)*$itemCountPerPage))
+		
+		#if($start > 1)
+			#set($startPage=$start+-1)
+			<li class="prev-page">
+				<a href="${url}page=${startPage}">上一页</a>
+			</li>
+			<li><span> ... </span></li>
+		#else
+			<li class="prev-page"></li>
+		#end
+		
+		#foreach($i in [$start..$end])
+			#if($totalPages >= $i)
+    			#if($currentPage==$i)
+    				<li class="active"><span>$i</a></span></li>
+    			#else
+    				<li>
+						<a href="${url}page=${i}">$i</a>
+					</li>
+    			#end
+			#end
+		#end
+				
+		#if($end<$totalPages)
+			<li><span> ... </span></li>
+			
+			#set($endPage=$end+1)
+			<li class="next-page">
+				<a href="${url}page=${endPage}">下一页</a>
+			</li>
+		#else
+			<li class="next-page"></li>
 		#end
 		
 		</ul>

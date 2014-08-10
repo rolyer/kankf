@@ -61,20 +61,38 @@ public class HomeController {
 	}
 	
 	@RequestMapping("today.html")
-	public void today(ModelMap out){
+	public void today(ModelMap out, Integer page){
 		seoPage.setTitle("今日开服 - 看开服");
 		out.put("seo", seoPage);
 		
-		Date date =  new Date();
-		todayGamesList = gameService.queryList(50, date);
+		Integer pageSize = 25;
+		if (page == null || page.intValue() <= 0) {
+			page = 1;
+		}
 		
+		Date date =  new Date();
+		Calendar c = Calendar.getInstance(); 
+		c.setTime(date); 
+		date = c.getTime();
+		
+		todayGamesList = gameService.queryListByStartTime(page, pageSize, date);
+		Integer total =  gameService.countListByStartTime(date);
+		Integer totalPages = (total + pageSize - 1) / pageSize;
+		
+		out.put("page", page);
+		out.put("totalPages", totalPages);
 		out.put("games", todayGamesList);
 	}
 	
 	@RequestMapping("tomorrow.html")
-	public void tomorrow(ModelMap out){
+	public void tomorrow(ModelMap out, Integer page){
 		seoPage.setTitle("明日开服 - 看开服");
 		out.put("seo", seoPage);
+		
+		Integer pageSize = 25;
+		if (page == null || page.intValue() <= 0) {
+			page = 1;
+		}
 		
 		Date date =  new Date();
 		Calendar c = Calendar.getInstance(); 
@@ -83,6 +101,11 @@ public class HomeController {
 		date = c.getTime();
 		
 		tomorrowGamesList = gameService.queryList(50, date);
+		Integer total =  gameService.countListByStartTime(date);
+		Integer totalPages = (total + pageSize - 1) / pageSize;
+		
+		out.put("page", page);
+		out.put("totalPages", totalPages);
 		out.put("games", tomorrowGamesList);
 	}
 	

@@ -22,4 +22,8 @@ public interface GameService {
 	public int deleteByIdAndUserName(Integer id, String userName);
 	
 	public int save(Game game);
+	
+	public List<Game> queryListByStartTime(Integer page, Integer pageSize, Date startTime);
+
+	public int countListByStartTime(Date startTime);
 }
