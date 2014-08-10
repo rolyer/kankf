@@ -538,23 +538,17 @@
 	
 	#foreach( $game in $games )
 	<ul>
-	#if($foreach.count % 2 ==  0)
 		<li class="list-info ui-left text-overflow"><a href="play.html?$!{game.url}" target="_blank">$!{game.name}</a></li>
 		<li class="list-info ui-left text-overflow"><a href="play.html" target="_blank">$!{game.serverName}</a></li>
 		<li class="list-info ui-left text-overflow"><a href="play.html" target="_blank">$!{game.category}</a></li>
 		<li class="list-info ui-left text-overflow"><a href="javascript:;" onclick="receive('$!{game.id}', '$!{game.url}');">$!{game.giftName}</a></li>
 		<li class="list-info ui-left text-overflow"><a href="play.html" target="_blank">$!{game.platform}</a></li>
 		<li class="list-info ui-left text-overflow"><a href="play.html" target="_blank" class="status1">进入游戏</a></li>
-		<li class="list-info ui-left text-overflow"><span class="green">已经开服</span></li>
-	#else
-		<li class="list-info ui-left text-overflow">$!{game.name}</li>
-		<li class="list-info ui-left text-overflow">$!{game.serverName}</li>
-		<li class="list-info ui-left text-overflow">$!{game.category}</li>
-		<li class="list-info ui-left text-overflow">$!{game.giftName}</li>
-		<li class="list-info ui-left text-overflow">$!{game.platform}</li>
-		<li class="list-info ui-left text-overflow"><a href="#" class="status1">进入游戏</a></li>
+		#if(${game.serverStatus}==1)
+		<li class="list-info ui-left text-overflow"><span class="green">已经开服 </span></li>
+		#else
 		<li class="list-info ui-left text-overflow"><span class="gray">即将开服</span></li>
-	#end
+		#end
 	</ul>
 	#end
     </div>

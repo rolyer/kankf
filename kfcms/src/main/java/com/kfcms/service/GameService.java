@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import com.kfcms.model.Game;
+import com.kfcms.vo.GameVO;
 
 public interface GameService {
 	public List<Game> queryList(Integer num, Date startTime);
@@ -23,7 +24,7 @@ public interface GameService {
 	
 	public int save(Game game);
 	
-	public List<Game> queryListByStartTime(Integer page, Integer pageSize, Date startTime);
+	public List<GameVO> queryListByStartTime(Integer page, Integer pageSize, Date startTime);
 
 	public int countListByStartTime(Date startTime);
 }

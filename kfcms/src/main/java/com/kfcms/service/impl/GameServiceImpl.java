@@ -1,5 +1,7 @@
 package com.kfcms.service.impl;
 
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -10,6 +12,7 @@ import org.springframework.util.Assert;
 import com.kfcms.dao.GameDao;
 import com.kfcms.model.Game;
 import com.kfcms.service.GameService;
+import com.kfcms.vo.GameVO;
 
 @Service("gameService")
 public class GameServiceImpl implements GameService {
@@ -97,14 +100,47 @@ public class GameServiceImpl implements GameService {
 		}
 	}
 
-	public List<Game> queryListByStartTime(Integer page, Integer pageSize,
+	public List<GameVO> queryListByStartTime(Integer page, Integer pageSize,
 			Date startTime) {
 		Integer offset = (page-1) * pageSize;
 		
 		Game game = new Game();
 		game.setStartTime(startTime);
 		
-		return gameDao.queryListByConditions(offset, pageSize, game);
+		List<Game> list = gameDao.queryListByConditions(offset, pageSize, game);
+		
+		return transformation(list);
+	}
+	
+	private List<GameVO> transformation(List<Game> games) {
+		List<GameVO> list = new ArrayList<GameVO>();
+		
+		for (Game g : games) {
+			GameVO gvo = new GameVO(g.getId(), g.getUserName(), g.getName(),
+					g.getStartTime(), g.getServerName(), g.getUrl(),
+					g.getCategory(), g.getGiftName(), g.getPlatform(),
+					g.getGmtCreated(), g.getGmtModified());
+			
+			if (g.getStartTime()==null) {
+				gvo.setServerStatus(0);
+			} else {
+				
+				Calendar calendar = Calendar.getInstance(); 
+				calendar.setTime(new Date());
+				calendar.set(Calendar.SECOND, 0);
+				calendar.set(Calendar.MILLISECOND, 0);
+				
+				if(calendar.getTimeInMillis() >= g.getStartTime().getTime()){
+					gvo.setServerStatus(1);
+				} else {
+					gvo.setServerStatus(2);
+				}
+			}
+			
+			list.add(gvo);
+		}
+		
+		return list;
 	}
 
 	public int countListByStartTime(Date startTime) {

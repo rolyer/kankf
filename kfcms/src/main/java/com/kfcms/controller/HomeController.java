@@ -21,6 +21,7 @@ import com.kfcms.service.GameService;
 import com.kfcms.service.UserService;
 import com.kfcms.util.Constants;
 import com.kfcms.util.Constants.RegisterStatus;
+import com.kfcms.vo.GameVO;
 
 @Controller
 @RequestMapping("/")
@@ -75,13 +76,14 @@ public class HomeController {
 		c.setTime(date); 
 		date = c.getTime();
 		
-		todayGamesList = gameService.queryListByStartTime(page, pageSize, date);
+		List<GameVO> list = gameService.queryListByStartTime(page, pageSize, date);
+		
 		Integer total =  gameService.countListByStartTime(date);
 		Integer totalPages = (total + pageSize - 1) / pageSize;
 		
 		out.put("page", page);
 		out.put("totalPages", totalPages);
-		out.put("games", todayGamesList);
+		out.put("games", list);
 	}
 	
 	@RequestMapping("tomorrow.html")
@@ -100,13 +102,13 @@ public class HomeController {
 		c.add(Calendar.DATE, 1);
 		date = c.getTime();
 		
-		tomorrowGamesList = gameService.queryList(50, date);
+		List<GameVO> list = gameService.queryListByStartTime(page, pageSize, date);
 		Integer total =  gameService.countListByStartTime(date);
 		Integer totalPages = (total + pageSize - 1) / pageSize;
 		
 		out.put("page", page);
 		out.put("totalPages", totalPages);
-		out.put("games", tomorrowGamesList);
+		out.put("games", list);
 	}
 	
 	@RequestMapping("rank.html")
