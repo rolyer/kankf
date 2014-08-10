@@ -5,6 +5,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.kfcms.dto.Result;
 import com.kfcms.model.Game;
+import com.kfcms.model.User;
 import com.kfcms.service.GameService;
 import com.kfcms.util.Constants;
 
@@ -26,15 +30,15 @@ public class GameController {
 	@Autowired
 	private GameService gameService;
 	
-	private final String username = "test";
-
 	@RequestMapping("index.html")
-	public void index(ModelMap out, String p) {
+	public void index(HttpServletRequest request, ModelMap out, String p) {
 		Integer page = StringUtils.isNumeric(p) ? Integer.parseInt(p) : 1;
-
-		List<Game> list = gameService.queryListByConditions(page, Constants.PAGE_SIZE, username);
 		
-		int totalrecords =  gameService.countListByConditions(username);
+		User user = getLoginUser(request);
+		
+		List<Game> list = gameService.queryListByConditions(page, Constants.PAGE_SIZE, user.getName());
+		
+		int totalrecords =  gameService.countListByConditions(user.getName());
 		int totalPages = (totalrecords + Constants.PAGE_SIZE - 1) / Constants.PAGE_SIZE;
 		
 		out.put("list", list);
@@ -42,9 +46,16 @@ public class GameController {
 		out.put("totalPages", totalPages);
 		out.put("currentPage", page);
 	}
+	
+	private User getLoginUser(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		User user = (User) session.getAttribute(Constants.LOGIN_USER);
+		
+		return user;
+	}
 
 	@RequestMapping("edit.html")
-	public void edit(ModelMap out, String action, String id) {
+	public void edit(HttpServletRequest request, ModelMap out, String action, String id) {
 		
 		if(StringUtils.isNotBlank(action)){
 			String title = "";
@@ -58,7 +69,10 @@ public class GameController {
 			
 			if(StringUtils.isNotBlank(id) && StringUtils.isNumeric(id)) {
 				Integer gid = Integer.parseInt(id);
-				game = gameService.queryByIdAndUserName(gid, username);
+				
+				User user = getLoginUser(request);
+				
+				game = gameService.queryByIdAndUserName(gid, user.getName());
 				
 				if("edit".equals(action)) {
 					disabled = true;
@@ -75,12 +89,14 @@ public class GameController {
 	}
 	
 	@RequestMapping("save.html")
-	public ModelAndView save(ModelMap out, Game game, String statTime) {
+	public ModelAndView save(HttpServletRequest request, ModelMap out, Game game, String statTime) {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		try {
 			Date date = sdf.parse(statTime);
 			game.setStartTime(date);
-			game.setUserName(username);
+			
+			User user = getLoginUser(request);
+			game.setUserName(user.getName());
 			
 			gameService.save(game);
 		} catch (ParseException e) {
@@ -91,14 +107,14 @@ public class GameController {
 	}
 	
 	@RequestMapping(value = "delete.html", method = RequestMethod.POST)
-	public @ResponseBody Result delete(String id) {
+	public @ResponseBody Result delete(HttpServletRequest request, String id) {
 		Result result = new Result();
 		if (StringUtils.isBlank(id) || !StringUtils.isNumeric(id)) {
 			result.setData("Illegally parameter id: " + id);
 			return result;
 		}
-		
-		int count = gameService.deleteByIdAndUserName(Integer.parseInt(id), username);
+		User user = getLoginUser(request);
+		int count = gameService.deleteByIdAndUserName(Integer.parseInt(id), user.getName());
 		if (count>0) {
 			result.setSuccess(true);
 		}

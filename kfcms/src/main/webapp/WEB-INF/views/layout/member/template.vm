@@ -43,7 +43,7 @@
 							</form>
 							<ul class="nav pull-right">
 								<li>
-									<a href="$link.getContextPath()/member/profile.html">@用户名</a>
+									<a href="$link.getContextPath()/member/profile.html">您好，$!{user.name}</a>
 								</li>
 								<li>
 									<a href="$link.getContextPath()/member/logout.html">退出</a>
@@ -69,12 +69,14 @@
 							<li>
 								<a href="$link.getContextPath()/member/game/edit.html?action=add"><i class="icon-check"></i> 发布开服</a>
 							</li>
+							<!--
 							<li>
 								<a href="$link.getContextPath()/member/gift/index.html"><i class="icon-envelope"></i> 礼包管理</a>
 							</li>
 							<li>
 								<a href="$link.getContextPath()/member/gift/edit.html"><i class="icon-file"></i> 发布礼包</a>
 							</li>
+							-->
 							<li class="divider">
 							</li>
 							<li class="nav-header">
