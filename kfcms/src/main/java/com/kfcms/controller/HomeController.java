@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kfcms.dto.Result;
 import com.kfcms.dto.SeoPage;
-import com.kfcms.model.Game;
 import com.kfcms.model.User;
 import com.kfcms.service.GameService;
 import com.kfcms.service.UserService;
@@ -28,6 +27,8 @@ import com.kfcms.vo.GameVO;
 public class HomeController {
 //	private final static Logger LOGGER = Logger.getLogger(HomeController.class);
 	
+	private final static Integer PAGE_SIZE = 50;
+	
 	@Autowired
 	private UserService userService;
 	
@@ -38,23 +39,20 @@ public class HomeController {
 			"网页游戏,网页游戏开服表,网页游戏开服时间表,网页游戏新服,最新网页游戏开服表,最新开服网页游戏,最新最全网页游戏开服信息就在看开服", 
 			"看开服网页游戏开服表最权威页游媒体精心打造，注册、找攻略、领礼包同步进行，尽享便捷一站式服务。最新最全网页游戏开服信息就在看开服。");
 	
-	private List<Game> todayGamesList;
-	private List<Game> tomorrowGamesList;
-	
 	@RequestMapping("index.html")
 	public void index(ModelMap out){
 		seoPage.setTitle("首页 - 看开服");
 		out.put("seo", seoPage);
 		
 		Date date =  new Date();
-		todayGamesList = gameService.queryList(50, date);
+		List<GameVO> todayGamesList = gameService.queryListByStartTime(1, PAGE_SIZE, date);
 		
 		Calendar c = Calendar.getInstance(); 
 		c.setTime(date); 
 		c.add(Calendar.DATE, 1);
 		date = c.getTime();
 		
-		tomorrowGamesList = gameService.queryList(50, date);
+		List<GameVO> tomorrowGamesList = gameService.queryListByStartTime(1, PAGE_SIZE, date);
 		
 		out.put("games", todayGamesList);
 		out.put("tomgames", tomorrowGamesList);
@@ -131,14 +129,17 @@ public class HomeController {
 	}
 	
 	@RequestMapping("play.html")
-	public void play(ModelMap out){
+	public void play(ModelMap out, String url){
 		seoPage.setTitle("开始游戏 - 看开服");
 		out.put("seo", seoPage);
+		
+		out.put("url", url);
 	}
 	
 	@RequestMapping("register.html")
 	public void register(ModelMap out) {
-		
+		seoPage.setTitle("用户注册 - 看开服");
+		out.put("seo", seoPage);
 	}
 	
 	@RequestMapping("reg.html")
@@ -161,5 +162,13 @@ public class HomeController {
 		}
 		
 		return result;
+	}
+	
+	@RequestMapping("error.html")
+	public void error(ModelMap out, String code) {
+		seoPage.setTitle("看开服");
+		out.put("seo", seoPage);
+		
+		out.put("code", code);
 	}
 }

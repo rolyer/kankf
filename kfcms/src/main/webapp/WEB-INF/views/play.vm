@@ -9,13 +9,13 @@
 			</div>
 		</div>
 		<div class="skip_a">
-			<a href="http://www.aiailo.com/kaifu/new">如果页面跳转失败，点击这里手动打开链接</a>
+			<a href="$!{url}">如果页面跳转失败，点击这里手动打开链接</a>
 		</div>
 	</div>
 	
 	<script type="text/javascript">
 		//var look_history={"fu_game_kflist_id":"448488","fu_game_id":"342","fu_game":"\u4fa0\u6b66\u82f1\u96c4\u4f20","fu_name":"\u53cc\u7ebf166\u670d","fu_yys_id":"775","fu_yys":"运营商_","fu_game_py":"xwyxc"};
-		var kfUrl='http://www.aiailo.com/kaifu/new';
+		var kfUrl='$!{url}';
 		if(location.search.indexOf("?=channl")>=0){
 			$("body").html('<iframe scrolling="no" frameborder="0" width="'+$("body").width()+'" height="'+(parseInt($(window).height()))+'" src="'+kfUrl+'"></iframe>');
 		}

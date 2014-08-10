@@ -68,6 +68,14 @@
 	<!--speedbar end-->
 </header>
 <script>
+$(document).ready(function(){
+	$('#login').keypress(function(event){
+    	var keycode = (event.keyCode ? event.keyCode : event.which);
+    	if(keycode == '13'){
+    		login();	
+    	}
+    });
+});
 function login() {
 	var account = $('input[name="modal_login_account"]').val();
 	var password = $('input[name="modal_login_password"]').val();
@@ -102,5 +110,4 @@ function login() {
         }
     });
 }
-</script>
 </script>

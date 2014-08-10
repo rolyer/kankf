@@ -1,0 +1,10 @@
+#set($layout="layout/template.vm")
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<center style="font-size:24px;color:Red;">很遗憾，您所访问的页面出错了！<br /><br />点击这里返回<a href="$link.getContextPath()/index.html">首页</a></center>

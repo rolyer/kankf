@@ -15,7 +15,7 @@
 	<!-- 今日开服 start-->
 	<h2 class="title">今日开服</h2>
 	##parse("layout/rank.vm")
-	#gamelist($games)
+	#gamelist($games 'today')
 	<!-- 今日开服 end-->
 	#pagination3($totalPages, $page, 'today.html?')	
 	<!-- pagination end -->

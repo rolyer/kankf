@@ -518,14 +518,15 @@
     <p>$name</p>
 #end
 
-#macro(gamelist $games)
+#macro(gamelist $games $day)
 	<div class="content-list">
 	#if($games.size()>0)
 		<ul>
 			<li class="list-title ui-left text-overflow">游戏名称</li>
+			<li class="list-title ui-left text-overflow">开服时间</li>
 			<li class="list-title ui-left text-overflow">服务器名</li>
 			<li class="list-title ui-left text-overflow">游戏类型</li>
-			<li class="list-title ui-left text-overflow">开服礼包</li>
+			<!-- <li class="list-title ui-left text-overflow">开服礼包</li> -->
 			<li class="list-title ui-left text-overflow">运营商</li>
 			<li class="list-title ui-left text-overflow">快捷操作</li>
 			<li class="list-title ui-left text-overflow">状态</li>
@@ -537,13 +538,24 @@
 	#end
 	
 	#foreach( $game in $games )
+		#if($day=='today')
+			#set($str='今天 ')
+			#set($stime=$str+$!date.format('HH:mm', $!{game.startTime}))
+		#elseif($day=='tomorrow')
+			#set($str='明天 ')
+			#set($stime=$str+$!date.format('HH:mm', $!{game.startTime}))
+		#else
+			#set($stime=$!date.format('yyyy-MM-dd HH:mm', $!{game.startTime}))
+		#end
+		
 	<ul>
-		<li class="list-info ui-left text-overflow"><a href="play.html?$!{game.url}" target="_blank">$!{game.name}</a></li>
-		<li class="list-info ui-left text-overflow"><a href="play.html" target="_blank">$!{game.serverName}</a></li>
-		<li class="list-info ui-left text-overflow"><a href="play.html" target="_blank">$!{game.category}</a></li>
-		<li class="list-info ui-left text-overflow"><a href="javascript:;" onclick="receive('$!{game.id}', '$!{game.url}');">$!{game.giftName}</a></li>
-		<li class="list-info ui-left text-overflow"><a href="play.html" target="_blank">$!{game.platform}</a></li>
-		<li class="list-info ui-left text-overflow"><a href="play.html" target="_blank" class="status1">进入游戏</a></li>
+		<li class="list-info ui-left text-overflow"><a href="$link.getContextPath()/play.html?url=$!{game.url}" target="_blank">$!{game.name}</a></li>
+		<li class="list-info ui-left text-overflow"><a href="$link.getContextPath()/play.html?url=$!{game.url}" target="_blank">$stime</a></li>
+		<li class="list-info ui-left text-overflow"><a href="$link.getContextPath()/play.html?url=$!{game.url}" target="_blank">$!{game.serverName}</a></li>
+		<li class="list-info ui-left text-overflow"><a href="$link.getContextPath()/play.html?url=$!{game.url}" target="_blank">$!{game.category}</a></li>
+		<!--<li class="list-info ui-left text-overflow"><a href="javascript:;" onclick="receive('$!{game.id}', '$!{game.url}');">$!{game.giftName}</a></li>-->
+		<li class="list-info ui-left text-overflow"><a href="$link.getContextPath()/play.html?url=$!{game.url}" target="_blank">$!{game.platform}</a></li>
+		<li class="list-info ui-left text-overflow"><a href="$link.getContextPath()/play.html?url=$!{game.url}" target="_blank" class="status1">进入游戏</a></li>
 		#if(${game.serverStatus}==1)
 		<li class="list-info ui-left text-overflow"><span class="green">已经开服 </span></li>
 		#else

@@ -58,6 +58,15 @@
 
 </form>
 <script type="text/javascript">
+$(document).ready(function(){
+	$('.reg_form').keypress(function(event){
+    	var keycode = (event.keyCode ? event.keyCode : event.which);
+    	if(keycode == '13'){
+    		$('.reg_btn').click();
+    	}
+    });
+});
+
 $(function(){
 	$('.reg_btn').click(function(){
 		var name = $.trim($('#name').val());

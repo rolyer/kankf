@@ -17,7 +17,7 @@ public class GameVO implements Serializable {
 	private String platform;
 	private Date gmtCreated;
 	private Date gmtModified;
-	private int serverStatus = 2;
+	private int serverStatus;
 	
 	public GameVO(Integer id, String userName, String name, Date startTime,
 			String serverName, String url, String category, String giftName,
