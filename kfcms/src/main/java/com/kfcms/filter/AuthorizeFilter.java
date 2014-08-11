@@ -23,6 +23,8 @@ import com.kfcms.util.Constants;
 
 public class AuthorizeFilter implements Filter {
 	private String loginURL = "";
+	private String adminLoginURL = "";
+	private String adminPath = "/admin/";
 
 	private Set<String> needLoginPage;
 	private Set<String> noAuthPage;
@@ -30,7 +32,9 @@ public class AuthorizeFilter implements Filter {
 	@Override
 	public void init(FilterConfig config) throws ServletException {
 		loginURL = config.getInitParameter("loginURL");
-
+		adminLoginURL = config.getInitParameter("adminLoginURL");
+		adminPath = config.getInitParameter("adminPath");
+		
 		String tmp[] = null;
 		needLoginPage = new HashSet<String>();
 		String e1 = config.getInitParameter("needLoginPage");
@@ -59,6 +63,7 @@ public class AuthorizeFilter implements Filter {
 		HttpServletResponse response = (HttpServletResponse) rp;
 
 		String uri = request.getRequestURI();
+		
 		String queryString = request.getQueryString();
 		if (!StringUtils.isEmpty(queryString)) {
 			queryString = "?" + queryString;
@@ -67,10 +72,15 @@ public class AuthorizeFilter implements Filter {
 		}
 		String path = request.getContextPath();
 		path = path == null ? "" : path;
-		String url = loginURL;
+		
+		boolean isAdminPath = false;
+		if (StringUtils.startsWith(uri, path+adminPath)) {
+			isAdminPath = true;
+		}
+		String url = isAdminPath ? adminLoginURL : loginURL;
 
 		HttpSession session = request.getSession();
-		User loginUser = (User) session.getAttribute(Constants.LOGIN_USER);
+		User loginUser = (User) session.getAttribute(isAdminPath ? Constants.LOGIN_ADMIN : Constants.LOGIN_USER);
 
 		do {
 			if (canFilter(noAuthPage, path, uri)) {
@@ -89,7 +99,7 @@ public class AuthorizeFilter implements Filter {
 			}
 
 			if (loginUser == null) { // no login
-				url = loginURL;
+				url = isAdminPath ? adminLoginURL : loginURL;
 				break;
 			}
 

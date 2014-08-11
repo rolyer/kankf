@@ -1,0 +1,32 @@
+#set($layout="layout/admin/template.vm")
+
+<h1>
+	快捷操作
+</h1>
+<div class="hero-unit">
+	<h1>
+		欢迎您!
+	</h1>
+	<p>
+		最新最全网页游戏开服信息就在看开服。
+	</p>
+	<p>
+		<a href="help.htm" class="btn btn-primary btn-large"><i class="icon-plus icon-white"></i>添加开服</a> <a class="btn btn-large"><i class="icon-plus icon-white"></i>添加礼包</a>
+	</p>
+</div>
+<div class="well summary">
+	<ul>
+		<li>
+			<a href="#"><span class="count">3</span> 开服信息</a>
+		</li>
+		<li>
+			<a href="#"><span class="count">27</span> 礼包信息</a>
+		</li>
+		<li>
+			<a href="#"><span class="count">7</span> 新闻信息</a>
+		</li>
+		<li class="last">
+			<a href="#"><span class="count">5%</span> 资料完善度</a>
+		</li>
+	</ul>
+</div>

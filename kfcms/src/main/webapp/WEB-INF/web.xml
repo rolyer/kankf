@@ -17,12 +17,20 @@
 			<param-value>/member/login.html</param-value>
 		</init-param>
 		<init-param>
+			<param-name>adminLoginURL</param-name>
+			<param-value>/admin/login.html</param-value>
+		</init-param>
+		<init-param>
+			<param-name>adminPath</param-name>
+			<param-value>/admin/</param-value>
+		</init-param>
+		<init-param>
 			<param-name>noAuthPage</param-name>
-			<param-value>register.*|reg.*|/member/login.*|/member/ajaxlogin.*|member/dologin.*</param-value>
+			<param-value>register.*|reg.*|/member/login.*|/member/ajaxlogin.*|member/dologin.*|admin/login.*|/admin/ajaxlogin.*</param-value>
 		</init-param>
 		<init-param>
 			<param-name>needLoginPage</param-name>
-			<param-value>/member/*</param-value>
+			<param-value>/member/*|/admin/*</param-value>
 		</init-param>
 	</filter>
 	<filter-mapping>
@@ -34,6 +42,12 @@
 	<filter-mapping>
 		<filter-name>authorizeFilter</filter-name>
 		<url-pattern>/member/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>authorizeFilter</filter-name>
+		<url-pattern>/admin/*</url-pattern>
 		<dispatcher>REQUEST</dispatcher>
 		<dispatcher>FORWARD</dispatcher>
 	</filter-mapping>

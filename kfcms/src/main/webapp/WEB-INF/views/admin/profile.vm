@@ -1,0 +1,57 @@
+#set($layout="layout/member/template.vm")
+<div class="span9">
+	<form id="edit-profile" class="form-horizontal">
+    	<h1>更新</h1>
+    	<fieldset>
+    		<legend>个人资料</legend>
+    		<div class="control-group">
+    			<label class="control-label">用户名</label>
+    			<div class="controls">
+    				<input type="text" class="input-xlarge" value="John Smith" readonly />
+    			</div>
+    		</div>
+			<div class="control-group">
+    			<label class="control-label">邮箱</label>
+    			<div class="controls">
+    				<input type="text" class="input-xlarge" value="john.smith@example.org" readonly />
+    			</div>
+    		</div>
+    		<div class="control-group">
+    			<label class="control-label">电话</label>
+    			<div class="controls">
+    				<input type="text" class="input-xlarge" value="555 555 555" />
+    			</div>
+    		</div>
+    		<div class="control-group">
+    			<label class="control-label">IM</label>
+    			<div class="controls">
+    				<input type="text" class="input-xlarge" value="555 555 555" />
+    			</div>
+    		</div>
+    		<div class="control-group">
+    			<label class="control-label" for="optionsCheckbox">公开信息</label>
+    			<div class="controls">
+    				<input type="checkbox" id="optionsCheckbox" value="option1" checked="checked" />
+    			</div>
+    		</div>
+    	</fieldset>
+		<fieldset>
+    		<legend>登录密码</legend>
+    		<div class="control-group">
+    			<label class="control-label" for="input01">新密码</label>
+    			<div class="controls">
+    				<input type="password" class="input-xlarge" id="input01" placeholder="不修改请保留空白" />
+    			</div>
+    		</div>
+    		<div class="control-group">
+    			<label class="control-label" for="input01">确认密码</label>
+    			<div class="controls">
+    				<input type="password" class="input-xlarge" id="input01" value="" />
+    			</div>
+    		</div>
+			<div class="form-actions">
+    			<button type="submit" class="btn btn-primary">保存</button> <button class="btn">取消</button>
+    		</div>
+        </fieldset>
+	</form>
+</div>
