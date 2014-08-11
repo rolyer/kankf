@@ -33,7 +33,7 @@
                     type="text"> <span>没有可不填，建议填写！</span>
 			</p>
 			<p>
-				<label for="tel">IM</label><input name="tel" id="tel"
+				<label for="qqmsn">IM</label><input name="qqmsn" id="qqmsn"
                     type="text"> <span>QQ、MSN，没有可不填，建议填写！</span>
 			</p>
 			
@@ -108,6 +108,7 @@ $(function(){
 	        type: "POST",
 	        url: '$link.getContextPath()/reg.html?t='+utils.random(),
 	        data : {
+				qqmsn: $.trim($('#qqmsn').val()),
 				tel: $.trim($('#tel').val()),
 	            name: $.trim($('#name').val()),
 				password: $.trim($('#password').val()),
