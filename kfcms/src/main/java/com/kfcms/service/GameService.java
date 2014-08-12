@@ -14,15 +14,15 @@ public interface GameService {
 
 	public int countListByConditions(String userName);
 
-	public Game queryByIdAndUserName(Integer id, String userName);
+	public Game queryByIdAndUserName(Integer id, String userName, boolean isAmdin);
 
 	public int insert(Game game);
 
-	public int update(Game game);
+	public int update(Game game, boolean isAmdin);
 
-	public int deleteByIdAndUserName(Integer id, String userName);
+	public int deleteByIdAndUserName(Integer id, String userName, boolean isAmdin);
 	
-	public int save(Game game);
+	public int save(Game game, boolean isAmdin);
 	
 	public List<GameVO> queryListByStartTime(Integer page, Integer pageSize, Date startTime);
 

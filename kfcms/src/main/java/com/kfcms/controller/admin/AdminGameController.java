@@ -1,4 +1,4 @@
-package com.kfcms.controller.member;
+package com.kfcms.controller.admin;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -24,8 +24,8 @@ import com.kfcms.service.GameService;
 import com.kfcms.util.Constants;
 
 @Controller
-@RequestMapping("/member/game/")
-public class GameController {
+@RequestMapping("/admin/game/")
+public class AdminGameController {
 
 	@Autowired
 	private GameService gameService;
@@ -34,11 +34,9 @@ public class GameController {
 	public void index(HttpServletRequest request, ModelMap out, String p) {
 		Integer page = StringUtils.isNumeric(p) ? Integer.parseInt(p) : 1;
 		
-		User user = getLoginUser(request);
+		List<Game> list = gameService.queryListByConditions(page, Constants.PAGE_SIZE, null);
 		
-		List<Game> list = gameService.queryListByConditions(page, Constants.PAGE_SIZE, user.getName());
-		
-		int totalrecords =  gameService.countListByConditions(user.getName());
+		int totalrecords =  gameService.countListByConditions(null);
 		int totalPages = (totalrecords + Constants.PAGE_SIZE - 1) / Constants.PAGE_SIZE;
 		
 		out.put("list", list);
@@ -47,13 +45,6 @@ public class GameController {
 		out.put("currentPage", page);
 	}
 	
-	private User getLoginUser(HttpServletRequest request) {
-		HttpSession session = request.getSession();
-		User user = (User) session.getAttribute(Constants.LOGIN_USER);
-		
-		return user;
-	}
-
 	@RequestMapping("edit.html")
 	public void edit(HttpServletRequest request, ModelMap out, String action, String id) {
 		
@@ -70,9 +61,7 @@ public class GameController {
 			if(StringUtils.isNotBlank(id) && StringUtils.isNumeric(id)) {
 				Integer gid = Integer.parseInt(id);
 				
-				User user = getLoginUser(request);
-				
-				game = gameService.queryByIdAndUserName(gid, user.getName(), false);
+				game = gameService.queryByIdAndUserName(gid, null, true);
 				
 				if("edit".equals(action)) {
 					disabled = true;
@@ -95,15 +84,17 @@ public class GameController {
 			Date date = sdf.parse(statTime);
 			game.setStartTime(date);
 			
-			User user = getLoginUser(request);
+			HttpSession session = request.getSession();
+			User user = (User) session.getAttribute(Constants.LOGIN_ADMIN);
+			
 			game.setUserName(user.getName());
 			
-			gameService.save(game, false);
+			gameService.save(game, true);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
 		
-		return new ModelAndView("/member/game/index");
+		return new ModelAndView("/admin/game/index");
 	}
 	
 	@RequestMapping(value = "delete.html", method = RequestMethod.POST)
@@ -113,8 +104,7 @@ public class GameController {
 			result.setData("Illegally parameter id: " + id);
 			return result;
 		}
-		User user = getLoginUser(request);
-		int count = gameService.deleteByIdAndUserName(Integer.parseInt(id), user.getName(), false);
+		int count = gameService.deleteByIdAndUserName(Integer.parseInt(id), null, true);
 		if (count>0) {
 			result.setSuccess(true);
 		}

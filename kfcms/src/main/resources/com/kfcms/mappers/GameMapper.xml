@@ -66,7 +66,10 @@
 	<select id="query" parameterType="game" resultMap="baseResultMap">
 			SELECT id, user_name, name, start_time, server_name, url, category, gift_name, platform, gmt_created, gmt_modified
 			FROM game
-			WHERE id = #{id} AND user_name = #{userName}
+			WHERE id = #{id} 
+			<if test="userName != null">
+				AND user_name = #{userName}
+			</if>
 	</select>
 	
 	<insert id="insert" parameterType="game">
@@ -107,11 +110,17 @@
 		gift_name = #{giftName},
 		platform = #{platform},
 		gmt_modified = #{gmtModified}
-		WHERE id = #{id} AND user_name = #{userName}
+		WHERE id = #{id} 
+		<if test="userName != null">
+			AND user_name = #{userName}
+		</if>
 	</update>
 	
 	<delete id="delete" parameterType="game">
 		DELETE FROM game
-		WHERE id = #{id} AND user_name = #{userName}
+		WHERE id = #{id} 
+		<if test="userName != null">
+			AND user_name = #{userName}
+		</if>
 	</delete>
 </mapper>
