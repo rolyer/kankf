@@ -39,7 +39,7 @@
 							</form>
 							<ul class="nav pull-right">
 								<li>
-									<a href="$link.getContextPath()/admin/profile.html">您好，$!{admin.name}</a>
+									<a href="$link.getContextPath()/admin/profile.html">您好，$!{admin.account}</a>
 								</li>
 								<li>
 									<a href="$link.getContextPath()/admin/logout.html">退出</a>
