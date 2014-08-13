@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
 			e.printStackTrace();
 		}
 		
-		User user = userDao.loginByName(account, encryptPassword);
+		User user = userDao.loginByAccount(account, encryptPassword);
 		if (user!=null) {
 			return user;
 		}
@@ -55,7 +55,7 @@ public class UserServiceImpl implements UserService {
 	@Transactional
 	public RegisterStatus register(User user) {
 		Assert.notNull(user, "The user must not be null");
-		Assert.hasText(user.getName(), "User name must not be empty");
+		Assert.hasText(user.getAccount(), "Account name must not be empty");
 		Assert.hasText(user.getEmail(), "User email must not be empty");
 		
 		User existUser = new User();
@@ -64,7 +64,7 @@ public class UserServiceImpl implements UserService {
 			return RegisterStatus.DUPLICATE_EMAIL;
 		}
 		
-		existUser = userDao.queryUserByName(user.getName());
+		existUser = userDao.queryUserByAccount(user.getAccount());
 		if (existUser != null && existUser.getId() != null && existUser.getId().intValue() > 0) {
 			return RegisterStatus.DUPLICATE_NAME;
 		}
@@ -94,8 +94,8 @@ public class UserServiceImpl implements UserService {
 		if(user == null)
 			return null;
 		
-		if(StringUtils.isNotBlank(user.getName()))
-			return userDao.queryUserByEmail(user.getName());
+		if(StringUtils.isNotBlank(user.getAccount()))
+			return userDao.queryUserByAccount(user.getAccount());
 		
 		if(StringUtils.isNotBlank(user.getEmail()))
 			return userDao.queryUserByEmail(user.getEmail());

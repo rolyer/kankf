@@ -12,15 +12,15 @@ public interface GameService {
 	public List<Game> queryListByConditions(Integer page, Integer pageSize,
 			String userName);
 
-	public int countListByConditions(String userName);
+	public int countListByConditions(String account);
 
-	public Game queryByIdAndUserName(Integer id, String userName, boolean isAmdin);
+	public Game queryByIdAndAccount(Integer id, String account, boolean isAmdin);
 
 	public int insert(Game game);
 
 	public int update(Game game, boolean isAmdin);
 
-	public int deleteByIdAndUserName(Integer id, String userName, boolean isAmdin);
+	public int deleteByIdAndAccount(Integer id, String account, boolean isAmdin);
 	
 	public int save(Game game, boolean isAmdin);
 	

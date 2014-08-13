@@ -27,13 +27,13 @@ public class UserDaoTest {
 	@Autowired
 	private UserDao dao;
 	
-	private final String name = "testuser";
+	private final String account = "testuser";
 	private final String email = "test@test.com";
 	private final String password ="12345678";
 	
 	@Test
 	public void insert(){
-		User user = new User("name", "password", "password", 1, "tel", "qqmsn", new Date(), new Date());
+		User user = new User("account", "password", "email", "tel", "im", 0, new Date(), new Date());
 		dao.insert(user);
 		
 		Assert.assertEquals(true, user.getId().intValue()>0);
@@ -41,28 +41,28 @@ public class UserDaoTest {
 	
 	@Test
 	public void testQueryUserByName() {
-		User user = dao.queryUserByName(name);
+		User user = dao.queryUserByAccount(account);
 		
-		Assert.assertEquals(name, user.getName());
+		Assert.assertEquals(account, user.getAccount());
 	}
 	
 	@Test
 	public void queryUserByEmail() {
 		User user = dao.queryUserByEmail(email);
 		
-		Assert.assertEquals(name, user.getName());
+		Assert.assertEquals(account, user.getAccount());
 	}
 	
 	@Test
 	public void deleteUserByName(){
-		int count = dao.deleteUserByName(name);
+		int count = dao.deleteUserByAccount(account);
 		
 		Assert.assertEquals(1, count);
 	}
 	
 	@Test
 	public void loginByName(){
-		User user = dao.loginByName(name, password);
+		User user = dao.loginByAccount(account, password);
 		
 		Assert.assertNotNull(user);
 		Assert.assertEquals(email, user.getEmail());
@@ -73,6 +73,6 @@ public class UserDaoTest {
 		User user = dao.loginByEmail(email, password);
 		
 		Assert.assertNotNull(user);
-		Assert.assertEquals(name, user.getName());
+		Assert.assertEquals(account, user.getAccount());
 	}
 }

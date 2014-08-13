@@ -12,7 +12,7 @@ public class Game implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Integer id;
-	private String userName;
+	private String account;
 	private String name;
 	private Date startTime;
 	private String serverName;
@@ -20,16 +20,16 @@ public class Game implements java.io.Serializable {
 	private String category;
 	private String giftName;
 	private String platform;
+	private Integer status;
 	private Date gmtCreated;
 	private Date gmtModified;
-
-	public Game() {
-	}
-
-	public Game(String userName, String name, Date startTime,
+	
+	public Game(){}
+	
+	public Game(String account, String name, Date startTime,
 			String serverName, String url, String category, String giftName,
-			String platform, Date gmtCreated, Date gmtModified) {
-		this.userName = userName;
+			String platform, Integer status, Date gmtCreated, Date gmtModified) {
+		this.account = account;
 		this.name = name;
 		this.startTime = startTime;
 		this.serverName = serverName;
@@ -37,96 +37,80 @@ public class Game implements java.io.Serializable {
 		this.category = category;
 		this.giftName = giftName;
 		this.platform = platform;
+		this.status = status;
 		this.gmtCreated = gmtCreated;
 		this.gmtModified = gmtModified;
 	}
-
 	public Integer getId() {
-		return this.id;
+		return id;
 	}
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
-	public String getUserName() {
-		return this.userName;
+	public String getAccount() {
+		return account;
 	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setAccount(String account) {
+		this.account = account;
 	}
-
 	public String getName() {
-		return this.name;
+		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
 	public Date getStartTime() {
-		return this.startTime;
+		return startTime;
 	}
-
 	public void setStartTime(Date startTime) {
 		this.startTime = startTime;
 	}
-
 	public String getServerName() {
-		return this.serverName;
+		return serverName;
 	}
-
 	public void setServerName(String serverName) {
 		this.serverName = serverName;
 	}
-
 	public String getUrl() {
-		return this.url;
+		return url;
 	}
-
 	public void setUrl(String url) {
 		this.url = url;
 	}
-
 	public String getCategory() {
-		return this.category;
+		return category;
 	}
-
 	public void setCategory(String category) {
 		this.category = category;
 	}
-
 	public String getGiftName() {
-		return this.giftName;
+		return giftName;
 	}
-
 	public void setGiftName(String giftName) {
 		this.giftName = giftName;
 	}
-
 	public String getPlatform() {
-		return this.platform;
+		return platform;
 	}
-
 	public void setPlatform(String platform) {
 		this.platform = platform;
 	}
-
-	public Date getGmtCreated() {
-		return this.gmtCreated;
+	public Integer getStatus() {
+		return status;
 	}
-
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+	public Date getGmtCreated() {
+		return gmtCreated;
+	}
 	public void setGmtCreated(Date gmtCreated) {
 		this.gmtCreated = gmtCreated;
 	}
-
 	public Date getGmtModified() {
-		return this.gmtModified;
+		return gmtModified;
 	}
-
 	public void setGmtModified(Date gmtModified) {
 		this.gmtModified = gmtModified;
 	}
-
 }

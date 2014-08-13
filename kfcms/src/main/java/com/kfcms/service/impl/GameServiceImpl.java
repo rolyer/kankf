@@ -32,38 +32,38 @@ public class GameServiceImpl implements GameService {
 	}
 
 	public List<Game> queryListByConditions(Integer page, Integer pageSize,
-			String userName) {
+			String account) {
 		Integer offset = (page-1) * pageSize;
 		
 		Game game = new Game();
-		game.setUserName(userName);
+		game.setAccount(account);
 		
 		return gameDao.queryListByConditions(offset, pageSize, game);
 	}
 
-	public int countListByConditions(String userName) {
+	public int countListByConditions(String account) {
 		Game game = new Game();
-		game.setUserName(userName);
+		game.setAccount(account);
 		
 		return gameDao.countListByConditions(game);
 	}
 
-	public Game queryByIdAndUserName(Integer id, String userName, boolean isAmdin) {
+	public Game queryByIdAndAccount(Integer id, String account, boolean isAmdin) {
 		Assert.notNull(id, "The id must not be null");
 		if (!isAmdin) {
-			Assert.hasLength(userName, "User name must not be empty");
+			Assert.hasLength(account, "Account name must not be empty");
 		}
 		
 		Game game = new Game();
 		game.setId(id);
-		game.setUserName(userName);
+		game.setAccount(account);
 		
 		return gameDao.query(game);
 	}
 
 	public int insert(Game game) {
 		Assert.notNull(game, "The game must not be null");
-		Assert.hasLength(game.getUserName(), "User name must not be empty");
+		Assert.hasLength(game.getAccount(), "Account name must not be empty");
 		
 		game.setGmtCreated(new Date());
 		game.setGmtModified(new Date());
@@ -75,7 +75,7 @@ public class GameServiceImpl implements GameService {
 		Assert.notNull(game, "The game must be not null");
 		Assert.notNull(game.getId(), "The id must be not null");
 		if (!isAmdin) {
-			Assert.hasLength(game.getUserName(), "User name must not be empty");
+			Assert.hasLength(game.getAccount(), "Account name must not be empty");
 		}
 		
 		game.setGmtModified(new Date());
@@ -83,15 +83,15 @@ public class GameServiceImpl implements GameService {
 		return gameDao.update(game);
 	}
 
-	public int deleteByIdAndUserName(Integer id, String userName, boolean isAmdin) {
+	public int deleteByIdAndAccount(Integer id, String account, boolean isAmdin) {
 		Assert.notNull(id, "The id must be not null");
 		if (!isAmdin) {
-			Assert.hasLength(userName, "User name must not be empty");
+			Assert.hasLength(account, "Account name must not be empty");
 		}
 		
 		Game game = new Game();
 		game.setId(id);
-		game.setUserName(userName);
+		game.setAccount(account);
 		
 		return gameDao.delete(game);
 	}
@@ -122,7 +122,7 @@ public class GameServiceImpl implements GameService {
 		List<GameVO> list = new ArrayList<GameVO>();
 		
 		for (Game g : games) {
-			GameVO gvo = new GameVO(g.getId(), g.getUserName(), g.getName(),
+			GameVO gvo = new GameVO(g.getId(), g.getAccount(), g.getName(),
 					g.getStartTime(), g.getServerName(), g.getUrl(),
 					g.getCategory(), g.getGiftName(), g.getPlatform(),
 					g.getGmtCreated(), g.getGmtModified());

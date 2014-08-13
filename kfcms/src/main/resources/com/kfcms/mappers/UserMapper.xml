@@ -5,12 +5,12 @@
 
 	<resultMap id="baseResultMap" type="user">
 		<result property="id" column="id" />
-		<result property="name" column="name" />
+		<result property="account" column="account" />
 		<result property="password" column="password" />
-		<result property="status" column="status" />
 		<result property="email" column="email" />
 		<result property="tel" column="tel" />
-		<result property="qqmsn" column="qqmsn" />
+		<result property="im" column="im" />
+		<result property="status" column="status" />
 		<result property="gmtCreated" column="gmt_created" />
 		<result property="gmtModified" column="gmt_modified" />
 	</resultMap>
@@ -19,65 +19,64 @@
 		keyProperty="id">
 		<![CDATA[
 			INSERT INTO user (
-			name,
+			account,
 			password,
 			email,
-			status,
 			tel,
-			qqmsn,
+			im,
+			status,
 			gmt_created,
 			gmt_modified
 			)
 			VALUES (
-			#{name},
+			#{account},
 			#{password},
 			#{email},
-			#{status},
 			#{tel},
-			#{qqmsn},
+			#{im},
+			#{status},
 			#{gmtCreated},
 			#{gmtModified}
 			)
 		]]>
 	</insert>
 	
-	<select id="queryUserByName" parameterType="java.lang.String" resultMap="baseResultMap">
+	<select id="queryUserByAccount" parameterType="java.lang.String" resultMap="baseResultMap">
 		<![CDATA[
-			SELECT id, name, password, email, status, tel, qqmsn, gmt_created, gmt_modified
+			SELECT id, account, password, email, tel, im, status, gmt_created, gmt_modified
 			FROM user
-			WHERE name=#{name}
+			WHERE account=#{account}
 		]]>
 	</select>
 	
 	<select id="queryUserByEmail" parameterType="java.lang.String" resultMap="baseResultMap">
 		<![CDATA[
-			SELECT id, name, password, email, status, tel, qqmsn, gmt_created, gmt_modified
+			SELECT id, account, password, email, tel, im, status, gmt_created, gmt_modified
 			FROM user
 			WHERE email=#{email}
 		]]>
 	</select>
 	
-	<select id="loginByName" parameterType="map" resultMap="baseResultMap">
+	<select id="loginByAccount" parameterType="map" resultMap="baseResultMap">
 		<![CDATA[
-			SELECT id, name, password, email, status, tel, qqmsn, gmt_created, gmt_modified
+			SELECT id, account, password, email, tel, im, status, gmt_created, gmt_modified
 			FROM user
-			WHERE name=#{name} AND password=#{password}
+			WHERE account=#{account} AND password=#{password}
 		]]>
 	</select>
 	
 	<select id="loginByEmail" parameterType="map" resultMap="baseResultMap">
 		<![CDATA[
-			SELECT id, name, password, email, status, tel, qqmsn, gmt_created, gmt_modified
+			SELECT id, account, password, email, tel, im, status, gmt_created, gmt_modified
 			FROM user
 			WHERE email=#{email} AND password=#{password}
 		]]>
 	</select>
 	
-	
-	<delete id="deleteUserByName" parameterType="java.lang.String">
+	<delete id="deleteUserByAccount" parameterType="java.lang.String">
 		<![CDATA[
 			DELETE FROM user
-			WHERE name=#{name}
+			WHERE account=#{account}
 		]]>
 	</delete>
 	

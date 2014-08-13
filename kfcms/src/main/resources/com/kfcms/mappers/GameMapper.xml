@@ -5,20 +5,20 @@
 
 	<resultMap id="baseResultMap" type="game">
 		<result property="id" column="id" />
-		<result property="userName" column="user_name" />
+		<result property="account" column="account" />
 		<result property="name" column="name" />
 		<result property="startTime" column="start_time" />
 		<result property="serverName" column="server_name" />
 		<result property="url" column="url" />
 		<result property="category" column="category" />
-		<result property="giftName" column="gift_name" />
 		<result property="platform" column="platform" />
+		<result property="status" column="status" />
 		<result property="gmtCreated" column="gmt_created" />
 		<result property="gmtModified" column="gmt_modified" />
 	</resultMap>
 	
 	<select id="queryList" parameterType="map" resultMap="baseResultMap">
-			SELECT id, user_name, name, start_time, server_name, url, category, gift_name, platform, gmt_created, gmt_modified
+			SELECT id, account, name, start_time, server_name, url, category, platform, status, gmt_created, gmt_modified
 			FROM game
 			WHERE 1=1
 			<if test="startTime != null">
@@ -31,12 +31,12 @@
 	</select>
 	
 	<select id="queryListByConditions" parameterType="game" resultMap="baseResultMap">
-			SELECT g.id, g.user_name, g.name, g.start_time, g.server_name, g.url, g.category, g.gift_name, g.platform, g.gmt_created, g.gmt_modified
+			SELECT g.id, g.account, g.name, g.start_time, g.server_name, g.url, g.category, g.platform, status, g.gmt_created, g.gmt_modified
 			FROM game g
 			WHERE 1=1
 			<if test="game != null">
-				<if test="game.userName != null">
-					AND g.user_name = #{game.userName}
+				<if test="game.account != null">
+					AND g.account = #{game.account}
 				</if>
 				<if test="game.startTime != null">
 					AND YEAR(start_time) = YEAR(#{game.startTime}) 
@@ -52,8 +52,8 @@
 			SELECT COUNT(g.id) FROM game g
 			WHERE 1=1
 			<if test="game != null">
-				<if test="game.userName != null">
-					AND g.user_name = #{game.userName}
+				<if test="game.account != null">
+					AND g.account = #{game.account}
 				</if>
 				<if test="game.startTime != null">
 					AND YEAR(start_time) = YEAR(#{game.startTime}) 
@@ -64,37 +64,37 @@
 	</select>
 	
 	<select id="query" parameterType="game" resultMap="baseResultMap">
-			SELECT id, user_name, name, start_time, server_name, url, category, gift_name, platform, gmt_created, gmt_modified
+			SELECT id, account, name, start_time, server_name, url, category, platform, status, gmt_created, gmt_modified
 			FROM game
 			WHERE id = #{id} 
-			<if test="userName != null">
-				AND user_name = #{userName}
+			<if test="account != null">
+				AND account = #{account}
 			</if>
 	</select>
 	
 	<insert id="insert" parameterType="game">
 		INSERT INTO game
 			(
-			user_name,
+			account,
 			name,
 			start_time,
 			server_name,
 			url,
 			category,
-			gift_name,
 			platform,
+			status,
 			gmt_created,
 			gmt_modified)
 		VALUES
 			(
-			#{userName},
+			#{account},
 			#{name},
 			#{startTime},
 			#{serverName},
 			#{url},
 			#{category},
-			#{giftName},
 			#{platform},
+			#{status},
 			#{gmtCreated},
 			#{gmtModified})
 	</insert>
@@ -107,20 +107,20 @@
 		server_name = #{serverName},
 		url = #{url},
 		category = #{category},
-		gift_name = #{giftName},
 		platform = #{platform},
+		status = #{status},
 		gmt_modified = #{gmtModified}
 		WHERE id = #{id} 
-		<if test="userName != null">
-			AND user_name = #{userName}
+		<if test="account != null">
+			AND account = #{account}
 		</if>
 	</update>
 	
 	<delete id="delete" parameterType="game">
 		DELETE FROM game
 		WHERE id = #{id} 
-		<if test="userName != null">
-			AND user_name = #{userName}
+		<if test="account != null">
+			AND account = #{account}
 		</if>
 	</delete>
 </mapper>

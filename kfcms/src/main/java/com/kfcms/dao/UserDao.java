@@ -6,9 +6,9 @@ import com.kfcms.model.User;
 
 public interface UserDao {
 	public int insert(User user);
-	public User queryUserByName(String name);
+	public User queryUserByAccount(String account);
 	public User queryUserByEmail(String email);
-	public int deleteUserByName(String name);
-	public User loginByName(@Param("name") String name, @Param("password") String password);
+	public int deleteUserByAccount(String account);
+	public User loginByAccount(@Param("account") String account, @Param("password") String password);
 	public User loginByEmail(@Param("email") String email, @Param("password") String password);
 }

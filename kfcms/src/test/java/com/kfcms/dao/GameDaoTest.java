@@ -29,7 +29,7 @@ public class GameDaoTest {
 	@Autowired
 	private GameDao dao;
 
-	private final String username = "testuser";
+	private final String account = "testuser";
 	private final String gamename = "testgame";
 
 	@Test
@@ -51,7 +51,7 @@ public class GameDaoTest {
 
 		// query with user name
 		Game game = new Game();
-		game.setUserName(username);
+		game.setAccount(account);
 		list = dao.queryListByConditions(offset, rowCount, game);
 
 		Assert.assertNotNull(list);
@@ -67,7 +67,7 @@ public class GameDaoTest {
 		Assert.assertEquals(5, count.intValue());
 
 		// query with user name
-		game.setUserName(username);
+		game.setAccount(account);
 		count = dao.countListByConditions(game);
 
 		Assert.assertEquals(3, count.intValue());
@@ -77,7 +77,7 @@ public class GameDaoTest {
 	public void query() {
 		Game game = new Game();
 		game.setId(2);
-		game.setUserName(username);
+		game.setAccount(account);
 
 		Game g = dao.query(game);
 
@@ -97,7 +97,7 @@ public class GameDaoTest {
 		game.setServerName("serverName");
 		game.setStartTime(new Date());
 		game.setUrl("url");
-		game.setUserName(username);
+		game.setAccount(account);
 
 		Integer count = dao.insert(game);
 
@@ -117,14 +117,14 @@ public class GameDaoTest {
 		game.setServerName("serverName");
 		game.setStartTime(new Date());
 		game.setUrl("url");
-		game.setUserName(username);
+		game.setAccount(account);
 		
 		Integer count = dao.update(game);
 		
 		Assert.assertEquals(1, count.intValue());
 		
 		//update by incorrect user
-		game.setUserName(username+"#^@#%^@");
+		game.setAccount(account+"#^@#%^@");
 		
 		count = dao.update(game);
 		
@@ -135,14 +135,14 @@ public class GameDaoTest {
 	public void delete() {
 		Game game = new Game();
 		game.setId(3);
-		game.setUserName(username);
+		game.setAccount(account);
 		
 		Integer count = dao.delete(game);
 		
 		Assert.assertEquals(1, count.intValue());
 		
 		//delete by incorrect user
-		game.setUserName(username+"#^@#%^@");
+		game.setAccount(account+"#^@#%^@");
 		
 		count = dao.delete(game);
 		

@@ -1,25 +1,25 @@
 CREATE MEMORY TABLE PUBLIC.user(
 id INTEGER IDENTITY NOT NULL PRIMARY KEY,
-name VARCHAR(16),
+account VARCHAR(16),
 password VARCHAR(32), 
-status INTEGER,
 email VARCHAR(100),
 tel VARCHAR(100),
-qqmsn VARCHAR(100),
+im VARCHAR(100),
+status INTEGER,
 gmt_created TIMESTAMP,
 gmt_modified TIMESTAMP
 );
 
 CREATE MEMORY TABLE PUBLIC.game(
 id INTEGER IDENTITY NOT NULL PRIMARY KEY,
-user_name VARCHAR(16),
-name VARCHAR(100),
+account VARCHAR(16),
+name VARCHAR(45),
 start_time TIMESTAMP,
 server_name VARCHAR(100), 
 url VARCHAR(200),
-category VARCHAR(100),
-gift_name VARCHAR(100),
+category VARCHAR(45),
 platform VARCHAR(100),
+status INTEGER,
 gmt_created TIMESTAMP,
 gmt_modified TIMESTAMP
 );

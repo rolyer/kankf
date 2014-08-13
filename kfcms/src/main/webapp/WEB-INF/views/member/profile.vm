@@ -1,10 +1,16 @@
 #set($layout="layout/member/template.vm")
 <div class="span9">
-	<form id="edit-profile" class="form-horizontal">
-    	<h1>更新</h1>
-    	<fieldset>
-    		<legend>个人资料</legend>
-    		<div class="control-group">
+	
+    	<h1>帐号设置</h1>
+		
+		<ul class="nav nav-tabs" id="myTab">
+          <li class="active"><a href="#info">个人资料</a></li>
+          <li><a href="#pwd">登录密码</a></li>
+        </ul>
+         <form id="edit-profile" class="form-horizontal">
+        <div class="tab-content">
+          <div class="tab-pane active" id="info">
+			<div class="control-group">
     			<label class="control-label">用户名</label>
     			<div class="controls">
     				<input type="text" class="input-xlarge" value="John Smith" readonly />
@@ -34,10 +40,13 @@
     				<input type="checkbox" id="optionsCheckbox" value="option1" checked="checked" />
     			</div>
     		</div>
-    	</fieldset>
-		<fieldset>
-    		<legend>登录密码</legend>
-    		<div class="control-group">
+			
+			<div class="form-actions">
+    			<button type="button" class="btn btn-primary">保存</button> <button class="btn">取消</button>
+    		</div>
+		  </div>
+          <div class="tab-pane" id="pwd">
+			<div class="control-group">
     			<label class="control-label" for="input01">新密码</label>
     			<div class="controls">
     				<input type="password" class="input-xlarge" id="input01" placeholder="不修改请保留空白" />
@@ -49,9 +58,19 @@
     				<input type="password" class="input-xlarge" id="input01" value="" />
     			</div>
     		</div>
+			
 			<div class="form-actions">
-    			<button type="submit" class="btn btn-primary">保存</button> <button class="btn">取消</button>
+    			<button type="button" class="btn btn-primary">保存</button> <button class="btn">取消</button>
     		</div>
-        </fieldset>
-	</form>
+		  </div>
+        </div>
+         </form>
+        <script>
+          $(function () {
+		  	$('#myTab a').click(function (e) {
+              $(this).tab('show');
+            })
+          })
+        </script>
+	
 </div>

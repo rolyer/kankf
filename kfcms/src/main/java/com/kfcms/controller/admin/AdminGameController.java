@@ -61,7 +61,7 @@ public class AdminGameController {
 			if(StringUtils.isNotBlank(id) && StringUtils.isNumeric(id)) {
 				Integer gid = Integer.parseInt(id);
 				
-				game = gameService.queryByIdAndUserName(gid, null, true);
+				game = gameService.queryByIdAndAccount(gid, null, true);
 				
 				if("edit".equals(action)) {
 					disabled = true;
@@ -87,7 +87,7 @@ public class AdminGameController {
 			HttpSession session = request.getSession();
 			User user = (User) session.getAttribute(Constants.LOGIN_ADMIN);
 			
-			game.setUserName(user.getName());
+			game.setAccount(user.getAccount());
 			
 			gameService.save(game, true);
 		} catch (ParseException e) {
@@ -104,7 +104,7 @@ public class AdminGameController {
 			result.setData("Illegally parameter id: " + id);
 			return result;
 		}
-		int count = gameService.deleteByIdAndUserName(Integer.parseInt(id), null, true);
+		int count = gameService.deleteByIdAndAccount(Integer.parseInt(id), null, true);
 		if (count>0) {
 			result.setSuccess(true);
 		}

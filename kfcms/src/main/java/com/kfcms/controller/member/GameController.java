@@ -36,9 +36,9 @@ public class GameController {
 		
 		User user = getLoginUser(request);
 		
-		List<Game> list = gameService.queryListByConditions(page, Constants.PAGE_SIZE, user.getName());
+		List<Game> list = gameService.queryListByConditions(page, Constants.PAGE_SIZE, user.getAccount());
 		
-		int totalrecords =  gameService.countListByConditions(user.getName());
+		int totalrecords =  gameService.countListByConditions(user.getAccount());
 		int totalPages = (totalrecords + Constants.PAGE_SIZE - 1) / Constants.PAGE_SIZE;
 		
 		out.put("list", list);
@@ -72,7 +72,7 @@ public class GameController {
 				
 				User user = getLoginUser(request);
 				
-				game = gameService.queryByIdAndUserName(gid, user.getName(), false);
+				game = gameService.queryByIdAndAccount(gid, user.getAccount(), false);
 				
 				if("edit".equals(action)) {
 					disabled = true;
@@ -96,7 +96,8 @@ public class GameController {
 			game.setStartTime(date);
 			
 			User user = getLoginUser(request);
-			game.setUserName(user.getName());
+			game.setAccount(user.getAccount());
+			game.setStatus(0);
 			
 			gameService.save(game, false);
 		} catch (ParseException e) {
@@ -114,7 +115,7 @@ public class GameController {
 			return result;
 		}
 		User user = getLoginUser(request);
-		int count = gameService.deleteByIdAndUserName(Integer.parseInt(id), user.getName(), false);
+		int count = gameService.deleteByIdAndAccount(Integer.parseInt(id), user.getAccount(), false);
 		if (count>0) {
 			result.setSuccess(true);
 		}

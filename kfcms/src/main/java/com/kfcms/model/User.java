@@ -1,4 +1,5 @@
 package com.kfcms.model;
+
 // default package
 // Generated Jul 27, 2014 11:32:10 AM by Hibernate Tools 3.4.0.CR1
 
@@ -10,102 +11,84 @@ import java.util.Date;
 public class User implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	private Integer id;
-	private String name;
+	private String account;
 	private String password;
 	private String email;
-	private Integer status;
 	private String tel;
-	private String qqmsn;
+	private String im;
+	private Integer status;
 	private Date gmtCreated;
 	private Date gmtModified;
-
-	public User() {
-	}
-
-	public User(String name, String password, String email, Integer status,
-			String tel, String qqmsn, Date gmtCreated, Date gmtModified) {
-		this.name = name;
+	
+	public User(){}
+	
+	public User(String account, String password, String email,
+			String tel, String im, Integer status, Date gmtCreated,
+			Date gmtModified) {
+		this.account = account;
 		this.password = password;
 		this.email = email;
-		this.status = status;
 		this.tel = tel;
-		this.qqmsn = qqmsn;
+		this.im = im;
+		this.status = status;
 		this.gmtCreated = gmtCreated;
 		this.gmtModified = gmtModified;
 	}
-
+	
 	public Integer getId() {
-		return this.id;
+		return id;
 	}
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
-	public String getName() {
-		return this.name;
+	public String getAccount() {
+		return account;
 	}
-
-	public void setName(String name) {
-		this.name = name;
+	public void setAccount(String account) {
+		this.account = account;
 	}
-
 	public String getPassword() {
-		return this.password;
+		return password;
 	}
-
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
 	public String getEmail() {
-		return this.email;
+		return email;
 	}
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	public Integer getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(Integer status) {
-		this.status = status;
-	}
-
 	public String getTel() {
-		return this.tel;
+		return tel;
 	}
-
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
-
-	public String getQqmsn() {
-		return this.qqmsn;
+	public String getIm() {
+		return im;
 	}
-
-	public void setQqmsn(String qqmsn) {
-		this.qqmsn = qqmsn;
+	public void setIm(String im) {
+		this.im = im;
 	}
-
+	public Integer getStatus() {
+		return status;
+	}
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
 	public Date getGmtCreated() {
-		return this.gmtCreated;
+		return gmtCreated;
 	}
-
 	public void setGmtCreated(Date gmtCreated) {
 		this.gmtCreated = gmtCreated;
 	}
-
 	public Date getGmtModified() {
-		return this.gmtModified;
+		return gmtModified;
 	}
-
 	public void setGmtModified(Date gmtModified) {
 		this.gmtModified = gmtModified;
 	}
-
 }
