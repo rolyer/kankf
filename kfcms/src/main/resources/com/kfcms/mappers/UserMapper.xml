@@ -79,5 +79,21 @@
 			WHERE account=#{account}
 		]]>
 	</delete>
+
+	<update id="updateByUser" parameterType="user">
+		SELECT SET 
+			email=#{email}, 
+			tel=#{tel}, 
+			im=#{im}, 
+			gmt_modified = NOW()
+		WHERE account = #{account}
+	</update>
+	
+	<update id="updatePasswordByUser" parameterType="user">
+		SELECT SET 
+			password = #{password}, 
+			gmt_modified = NOW()
+		WHERE account = #{account}
+	</update>	
 	
 </mapper>

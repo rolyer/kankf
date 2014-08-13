@@ -55,7 +55,7 @@ public class UserServiceImpl implements UserService {
 	@Transactional
 	public RegisterStatus register(User user) {
 		Assert.notNull(user, "The user must not be null");
-		Assert.hasText(user.getAccount(), "Account name must not be empty");
+		Assert.hasText(user.getAccount(), "Account must not be empty");
 		Assert.hasText(user.getEmail(), "User email must not be empty");
 		
 		User existUser = new User();
@@ -101,6 +101,19 @@ public class UserServiceImpl implements UserService {
 			return userDao.queryUserByEmail(user.getEmail());
 		
 		return null;
+	}
+
+	public int updateByUser(User user) {
+		Assert.hasText(user.getAccount(), "Account must not be empty");
+		
+		return userDao.updateByUser(user);
+	}
+
+	public int updatePasswordByUser(User user) {
+		Assert.hasText(user.getAccount(), "Account must not be empty");
+		Assert.hasText(user.getPassword(), "Password must not be empty");
+		
+		return userDao.updatePasswordByUser(user);
 	}
 
 }

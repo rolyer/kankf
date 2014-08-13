@@ -11,4 +11,6 @@ public interface UserDao {
 	public int deleteUserByAccount(String account);
 	public User loginByAccount(@Param("account") String account, @Param("password") String password);
 	public User loginByEmail(@Param("email") String email, @Param("password") String password);
+	public int updateByUser(User user);
+	public int updatePasswordByUser(User user);
 }

@@ -1,76 +1,76 @@
 #set($layout="layout/member/template.vm")
-<div class="span9">
 	
-    	<h1>帐号设置</h1>
-		
-		<ul class="nav nav-tabs" id="myTab">
-          <li class="active"><a href="#info">个人资料</a></li>
-          <li><a href="#pwd">登录密码</a></li>
-        </ul>
-         <form id="edit-profile" class="form-horizontal">
-        <div class="tab-content">
-          <div class="tab-pane active" id="info">
-			<div class="control-group">
-    			<label class="control-label">用户名</label>
-    			<div class="controls">
-    				<input type="text" class="input-xlarge" value="John Smith" readonly />
-    			</div>
-    		</div>
-			<div class="control-group">
-    			<label class="control-label">邮箱</label>
-    			<div class="controls">
-    				<input type="text" class="input-xlarge" value="john.smith@example.org" readonly />
-    			</div>
-    		</div>
-    		<div class="control-group">
-    			<label class="control-label">电话</label>
-    			<div class="controls">
-    				<input type="text" class="input-xlarge" value="555 555 555" />
-    			</div>
-    		</div>
-    		<div class="control-group">
-    			<label class="control-label">IM</label>
-    			<div class="controls">
-    				<input type="text" class="input-xlarge" value="555 555 555" />
-    			</div>
-    		</div>
-    		<div class="control-group">
-    			<label class="control-label" for="optionsCheckbox">公开信息</label>
-    			<div class="controls">
-    				<input type="checkbox" id="optionsCheckbox" value="option1" checked="checked" />
-    			</div>
-    		</div>
-			
-			<div class="form-actions">
-    			<button type="button" class="btn btn-primary">保存</button> <button class="btn">取消</button>
-    		</div>
-		  </div>
-          <div class="tab-pane" id="pwd">
-			<div class="control-group">
-    			<label class="control-label" for="input01">新密码</label>
-    			<div class="controls">
-    				<input type="password" class="input-xlarge" id="input01" placeholder="不修改请保留空白" />
-    			</div>
-    		</div>
-    		<div class="control-group">
-    			<label class="control-label" for="input01">确认密码</label>
-    			<div class="controls">
-    				<input type="password" class="input-xlarge" id="input01" value="" />
-    			</div>
-    		</div>
-			
-			<div class="form-actions">
-    			<button type="button" class="btn btn-primary">保存</button> <button class="btn">取消</button>
-    		</div>
-		  </div>
-        </div>
-         </form>
-        <script>
-          $(function () {
-		  	$('#myTab a').click(function (e) {
-              $(this).tab('show');
-            })
-          })
-        </script>
+<h1>帐号设置</h1>
+
+<ul class="nav nav-tabs" id="profile-tab">
+  <li class="active"><a href="#info">个人资料</a></li>
+  <li><a href="#pwd">登录密码</a></li>
+</ul>
+
+<form id="edit-profile" class="form-horizontal">
+<div class="tab-content">
+  <div class="tab-pane active" id="info">
+	<div class="control-group">
+		<label class="control-label">用户名</label>
+		<div class="controls">
+			<input type="text" class="input-xlarge" value="${user.account}" readonly />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label">邮箱</label>
+		<div class="controls">
+			<input type="text" class="input-xlarge" value="${user.email}" readonly />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label">电话</label>
+		<div class="controls">
+			<input type="text" class="input-xlarge" value="${user.tel}" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label">IM</label>
+		<div class="controls">
+			<input type="text" class="input-xlarge" value="${user.im}" />
+		</div>
+	</div>
 	
+	<div class="form-actions">
+		<button type="button" class="btn btn-primary">保存</button> <button class="btn">取消</button>
+	</div>
+  </div>
+  <div class="tab-pane" id="pwd">
+	<div class="control-group">
+		<label class="control-label" for="input01">原密码</label>
+		<div class="controls">
+			<input type="password" class="input-xlarge" id="input01" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="input01">新密码</label>
+		<div class="controls">
+			<input type="password" class="input-xlarge" id="input01" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="input01">确认密码</label>
+		<div class="controls">
+			<input type="password" class="input-xlarge" id="input01" value="" />
+		</div>
+	</div>
+	
+	<div class="form-actions">
+		<button type="button" class="btn btn-primary">保存</button> <button class="btn">取消</button>
+	</div>
+  </div>
 </div>
+</form>
+
+<script>
+  $(function () {
+  	$('#profile-tab a').click(function (e) {
+      $(this).tab('show');
+    })
+  })
+</script>
+	
