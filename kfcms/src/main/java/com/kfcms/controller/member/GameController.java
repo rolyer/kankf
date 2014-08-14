@@ -15,7 +15,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.kfcms.dto.Result;
 import com.kfcms.model.Game;
@@ -88,8 +87,10 @@ public class GameController {
 		}
 	}
 	
-	@RequestMapping("save.html")
-	public ModelAndView save(HttpServletRequest request, ModelMap out, Game game, String statTime) {
+	@RequestMapping(value = "save.html", method = RequestMethod.POST)
+	public @ResponseBody Result save(HttpServletRequest request, ModelMap out, Game game, String statTime) {
+		Result result = new Result();
+		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		try {
 			Date date = sdf.parse(statTime);
@@ -100,11 +101,15 @@ public class GameController {
 			game.setStatus(0);
 			
 			gameService.save(game, false);
+			
+			result.setSuccess(true);
 		} catch (ParseException e) {
 			e.printStackTrace();
+			result.setData("时间格式有误！");
+			result.setSuccess(false);
 		}
 		
-		return new ModelAndView("/member/game/index");
+		return result;
 	}
 	
 	@RequestMapping(value = "delete.html", method = RequestMethod.POST)
