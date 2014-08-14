@@ -17,7 +17,8 @@
 
 		<script src="$link.getContextPath()/js/jquery-1.11.1.min.js"></script>
 		<script src="$link.getContextPath()/js/jquery.datetimepicker.js"></script>
-
+		<script src="$link.getContextPath()/js/util.js"></script>
+		#parse("layout/context.vm")
 	</head>
 	<body>
 		<div class="container">

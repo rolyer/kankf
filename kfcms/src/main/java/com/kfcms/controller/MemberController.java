@@ -70,7 +70,12 @@ public class MemberController {
 	}
 	
 	@RequestMapping("profile.html")
-	public void profile(ModelMap out) {
+	public void profile(HttpServletRequest request, ModelMap out) {
+		User loginUser = getLoginUser(request);
+		
+		User member = userService.queryUserByAccount(loginUser.getAccount());
+		
+		out.put("member", member);
 	}
 	
 	@RequestMapping(value = "updateprofile.html", method = RequestMethod.POST)
@@ -114,7 +119,7 @@ public class MemberController {
 			
 			String encrypteOpwd = AlgorithmUtils.MD5(opwd, 16);
 			
-			if (loginUser.getPassword().equals(encrypteOpwd)) {
+			if (!loginUser.getPassword().equals(encrypteOpwd)) {
 				result.setData(Constants.MSG_PASSWORD_NOT_MATCH);
 				return result;
 			}

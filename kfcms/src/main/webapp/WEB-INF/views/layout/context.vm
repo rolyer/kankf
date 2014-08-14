@@ -1,0 +1,10 @@
+<script type="text/javascript" >
+	var Context = new function() {
+		this.PATH = "$link.getContextPath()";
+	}
+	
+	var Message = new function() {
+		this.SERVER_ERROR = "服务器出错了";
+	}
+	
+</script>

@@ -1,4 +1,5 @@
 #set($layout="layout/member/template.vm")
+<script type="text/javascript" src="$link.getContextPath()/js/member/profile.js"></script>
 	
 <h1>帐号设置</h1>
 
@@ -6,6 +7,7 @@
   <li class="active"><a href="#info">个人资料</a></li>
   <li><a href="#pwd">登录密码</a></li>
 </ul>
+<div id="sys_msg"></div>
 
 <form id="edit-profile" class="form-horizontal">
 <div class="tab-content">
@@ -13,64 +15,55 @@
 	<div class="control-group">
 		<label class="control-label">用户名</label>
 		<div class="controls">
-			<input type="text" class="input-xlarge" value="${user.account}" readonly />
+			<input type="text" class="input-xlarge" value="$!{member.account}" readonly />
 		</div>
 	</div>
 	<div class="control-group">
 		<label class="control-label">邮箱</label>
 		<div class="controls">
-			<input type="text" class="input-xlarge" value="${user.email}" readonly />
+			<input type="text" class="input-xlarge" value="$!{member.email}" readonly />
 		</div>
 	</div>
 	<div class="control-group">
 		<label class="control-label">电话</label>
 		<div class="controls">
-			<input type="text" class="input-xlarge" value="${user.tel}" />
+			<input type="text" id="tel" class="input-xlarge" value="$!{member.tel}" />
 		</div>
 	</div>
 	<div class="control-group">
 		<label class="control-label">IM</label>
 		<div class="controls">
-			<input type="text" class="input-xlarge" value="${user.im}" />
+			<input type="text" id="im" class="input-xlarge" value="$!{member.im}" />
 		</div>
 	</div>
 	
 	<div class="form-actions">
-		<button type="button" class="btn btn-primary">保存</button> <button class="btn">取消</button>
+		<button id="btn_save_profile" type="button" class="btn btn-primary">保存</button>
 	</div>
   </div>
   <div class="tab-pane" id="pwd">
 	<div class="control-group">
 		<label class="control-label" for="input01">原密码</label>
 		<div class="controls">
-			<input type="password" class="input-xlarge" id="input01" />
+			<input type="password" class="input-xlarge" id="opwd" />
 		</div>
 	</div>
 	<div class="control-group">
 		<label class="control-label" for="input01">新密码</label>
 		<div class="controls">
-			<input type="password" class="input-xlarge" id="input01" />
+			<input type="password" class="input-xlarge" id="npwd" />
 		</div>
 	</div>
 	<div class="control-group">
 		<label class="control-label" for="input01">确认密码</label>
 		<div class="controls">
-			<input type="password" class="input-xlarge" id="input01" value="" />
+			<input type="password" class="input-xlarge" id="secpwd" value="" />
 		</div>
 	</div>
 	
 	<div class="form-actions">
-		<button type="button" class="btn btn-primary">保存</button> <button class="btn">取消</button>
+		<button type="button" id="btn_save_pwd" class="btn btn-primary">保存</button>
 	</div>
   </div>
 </div>
 </form>
-
-<script>
-  $(function () {
-  	$('#profile-tab a').click(function (e) {
-      $(this).tab('show');
-    })
-  })
-</script>
-	

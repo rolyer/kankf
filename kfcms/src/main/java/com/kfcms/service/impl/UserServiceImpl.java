@@ -64,7 +64,7 @@ public class UserServiceImpl implements UserService {
 			return RegisterStatus.DUPLICATE_EMAIL;
 		}
 		
-		existUser = userDao.queryUserByAccount(user.getAccount());
+		existUser = queryUserByAccount(user.getAccount());
 		if (existUser != null && existUser.getId() != null && existUser.getId().intValue() > 0) {
 			return RegisterStatus.DUPLICATE_NAME;
 		}
@@ -95,7 +95,7 @@ public class UserServiceImpl implements UserService {
 			return null;
 		
 		if(StringUtils.isNotBlank(user.getAccount()))
-			return userDao.queryUserByAccount(user.getAccount());
+			return queryUserByAccount(user.getAccount());
 		
 		if(StringUtils.isNotBlank(user.getEmail()))
 			return userDao.queryUserByEmail(user.getEmail());
@@ -114,6 +114,10 @@ public class UserServiceImpl implements UserService {
 		Assert.hasText(user.getPassword(), "Password must not be empty");
 		
 		return userDao.updatePasswordByUser(user);
+	}
+
+	public User queryUserByAccount(String account) {
+		return userDao.queryUserByAccount(account);
 	}
 
 }

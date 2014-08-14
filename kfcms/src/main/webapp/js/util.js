@@ -3,9 +3,29 @@
  * 
  * @returns {Utils}
  */
-Utils = function() {
-};
+Utils = function() {};
 $.extend(Utils.prototype, {
+	alert : function(e, message, type) {
+		var _type = "success";
+		var _title = "提示";
+		
+		if(type=="info") {
+			_type = "info";
+			_title = '信息';
+		}
+		if(type=="warning") {
+			_type = "warning";
+		}
+		if(type=="danger") {
+			_type = "danger";
+		}
+		
+		$(e).empty();
+		$(e).append('<div class="alert alert-'+_type+'" role="alert"><strong>'+_title+'：</strong> '+message+'</div>');
+		$(e).show();
+		
+		setTimeout( function(){$(e).fadeOut();}, 5*1000 ); 
+	},
 	/**
 	 * get timestamp
 	 * @returns
@@ -77,7 +97,7 @@ $.extend(Utils.prototype, {
 	}
 });
 
-utils = new Utils();
+utils = new Utils()
 
 /**
  * 定义验证各种格式类型的正则表达式对象

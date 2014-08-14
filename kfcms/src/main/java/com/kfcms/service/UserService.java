@@ -13,4 +13,6 @@ public interface UserService {
 	public int updateByUser(User user);
 
 	public int updatePasswordByUser(User user);
+	
+	public User queryUserByAccount(String account);
 }
