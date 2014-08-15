@@ -23,23 +23,31 @@
     			<button type="submit" class="btn btn-primary" onclick="login()">登录</button>
     			<a href="$link.getContextPath()/register.html" class="btn">注册</a>
     		</div>
+            <div id="sys_msg"></div>
 		</div>
 		<script src="$link.getContextPath()/bootstrap/js/jquery.min.js"></script>
 		<script src="$link.getContextPath()/js/util.js"></script>
 		<script src="$link.getContextPath()/bootstrap/js/bootstrap.min.js"></script>
 		<script src="$link.getContextPath()/bootstrap/js/site.js"></script>
 		<script>
+			$(function(){
+				$('#login-form').bind('keydown',function(e){
+            	      if(e.keyCode==13){
+            	    	  login();
+            	      }
+            	});
+			});
 			function login() {
             	var account = $('input[name="account"]').val();
             	var password = $('input[name="password"]').val();
             
             	if(utils.isEmpty(account)){
-            		alert("请输入您的账号")
+					utils.alert('#sys_msg', '请输入您的账号', 'danger');
             		return false;
             	}
             	
             	if(utils.isEmpty(password)){
-            		alert("请输入您的密码")
+					utils.alert('#sys_msg', '请输入您的密码', 'danger');
             		return false;
             	}
             	
@@ -55,11 +63,11 @@
                     	if(response.success){
                     		window.location.href = "/web/member/index.html";
                     	} else {
-            				alert(response.data);
+							utils.alert('#sys_msg', response.data, 'danger');
             			}
                     },
                     error: function(xhr, textStatus, errorThrown) {
-                    	alert("服务器连接错误");
+						utils.alert('#sys_msg', '服务器连接错误', 'danger');
                     }
                 });
             }

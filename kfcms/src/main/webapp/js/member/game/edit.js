@@ -4,6 +4,12 @@ $(document).ready(function(){
 	});
 });
 
+function reset(){
+	$('input[type="text"]').each(function( index ) {
+		$(this).val('');
+	});
+}
+
 function save() {
 	var name = $.trim($('#name').val());
 	var statTime = $.trim($('#statTime').val());
@@ -48,12 +54,15 @@ function save() {
 			url:url,
 			category:category,
 			platform:platform,
-			id:2
+			id:id
 		},
 		dataType : "json",
 		success : function(response, textStatus, xhr) {
 			if (response.success) {
-				utils.alert('#sys_msg', '信息更新成功', null);
+				utils.alert('#sys_msg', '保存成功', null);
+				if(utils.isEmpty(id)) {
+					reset();
+				}
 			} else {
 				utils.alert('#sys_msg', response.data, 'danger');
 			}

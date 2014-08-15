@@ -4,11 +4,14 @@ public class SeoPage {
 	private String title;
 	private String keywords;
 	private String description;
+	private String currentPage;
 	
-	public SeoPage(String title, String keywords, String description) {
+	public SeoPage(String title, String keywords, String description,
+			String currentPage) {
 		this.title = title;
 		this.keywords = keywords;
 		this.description = description;
+		this.currentPage = currentPage;
 	}
 	
 	public String getTitle() {
@@ -29,6 +32,10 @@ public class SeoPage {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	
+	public String getCurrentPage() {
+		return currentPage;
+	}
+	public void setCurrentPage(String currentPage) {
+		this.currentPage = currentPage;
+	}
 }

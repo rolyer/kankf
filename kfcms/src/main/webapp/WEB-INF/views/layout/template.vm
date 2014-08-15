@@ -12,7 +12,7 @@
 	<section class="container">
 		<div class="content-wrap">
 			<div class="content">
-				#parse("layout/toplist.vm")
+				##parse("layout/toplist.vm")
 				$screen_content
 			</div>
 		</div>

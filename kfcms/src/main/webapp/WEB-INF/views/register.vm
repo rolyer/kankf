@@ -50,7 +50,8 @@
 			<p class="reg_form_p">
 				<input class="reg_btn" value="注　册" type="button">
 			</p>
-
+			
+			<div id="reg_msg"></div>
 		</div>
 
 	</form>
@@ -76,27 +77,27 @@ $(function(){
 		var tel = $.trim($('#tel').val());
 	
 		if(!utils.checkFormat(account,'account')){
-			alert("账号格式不正确")
+			utils.alert("#reg_msg", "账号格式不正确", "danger");
 			return false;
 		}
 		
 		if(!utils.checkFormat(password,'password')){
-			alert("密码格式不正确")
+			utils.alert("#reg_msg", "密码格式不正确", "danger");
 			return false;
 		}
 		
 		if($('#password').val()!=$('#password1').val()){
-			alert("两次输入的密码不一致")
+			utils.alert("#reg_msg", "两次输入的密码不一致", "danger");
 			return false;
 		}
 		
 		if(!utils.checkFormat(email,'email')){
-			alert("邮箱格式不正确")
+			utils.alert("#reg_msg", "邮箱格式不正确", "danger");
 			return false;
 		}
 		
 		if(tel != null && tel != "" && !utils.checkFormat(tel,'mobile') && !utils.checkFormat(tel,'tel')){
-			alert("电话格式不正确")
+			utils.alert("#reg_msg", "电话格式不正确", "danger");
 			return false;
 		}
 	
@@ -119,11 +120,11 @@ $(function(){
 	        	if(response.success){
 	        		window.location.href = "$link.getContextPath()/index.html";
 	        	} else {
-					alert(response.data);
+					utils.alert("#reg_msg", response.data, "danger");
 				}
 	        },
 	        error: function(xhr, textStatus, errorThrown) {
-	        	alert("服务器连接错误");
+				utils.alert("#reg_msg", "服务器连接错误", "danger");
 	        }
         });
 	}

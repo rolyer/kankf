@@ -61,13 +61,13 @@
 							<li class="nav-header">
 								菜单
 							</li>
-							<li class="active">
-								<a href="$link.getContextPath()/member/index.html"><i class="icon-white icon-home"></i> 用户主页</a>
+							<li #if($nav=='index') class="active" #end>
+								<a href="$link.getContextPath()/member/index.html"><i class="icon-home"></i> 用户主页</a>
 							</li>
-							<li>
+							<li #if($nav=='gamelist') class="active" #end>
 								<a href="$link.getContextPath()/member/game/index.html"><i class="icon-folder-open"></i> 开服管理</a>
 							</li>
-							<li>
+							<li #if($nav=='editgame') class="active" #end>
 								<a href="$link.getContextPath()/member/game/edit.html?action=add"><i class="icon-check"></i> 发布开服</a>
 							</li>
 							<!--
@@ -83,10 +83,10 @@
 							<li class="nav-header">
 								我的帐户
 							</li>
-							<li>
+							<li #if($nav=='profile') class="active" #end>
 								<a href="$link.getContextPath()/member/profile.html"><i class="icon-user"></i> 用户资料</a>
 							</li>
-							<li>
+							<li #if($nav=='help') class="active" #end>
 								<a href="$link.getContextPath()/member/help.html"><i class="icon-info-sign"></i> 帮助</a>
 							</li>
 						</ul>

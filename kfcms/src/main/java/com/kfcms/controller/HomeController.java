@@ -35,15 +35,18 @@ public class HomeController {
 	@Autowired
 	private GameService gameService;
 	
-	private SeoPage seoPage = new SeoPage("看开服", 
-			"网页游戏,网页游戏开服表,网页游戏开服时间表,网页游戏新服,最新网页游戏开服表,最新开服网页游戏,最新最全网页游戏开服信息就在看开服", 
-			"看开服网页游戏开服表最权威页游媒体精心打造，注册、找攻略、领礼包同步进行，尽享便捷一站式服务。最新最全网页游戏开服信息就在看开服。");
+	private SeoPage getSeoPage(String title, String currentPage) {
+		SeoPage seo = new SeoPage(
+				title != null ? title : "看开服",
+				"网页游戏,网页游戏开服表,网页游戏开服时间表,网页游戏新服,最新网页游戏开服表,最新开服网页游戏,最新最全网页游戏开服信息就在看开服",
+				"看开服网页游戏开服表最权威页游媒体精心打造，注册、找攻略、领礼包同步进行，尽享便捷一站式服务。最新最全网页游戏开服信息就在看开服。",
+				currentPage != null ? currentPage : "home");
+
+		return seo;
+	}
 	
 	@RequestMapping("index.html")
 	public void index(ModelMap out){
-		seoPage.setTitle("首页 - 看开服");
-		out.put("seo", seoPage);
-		
 		Date date =  new Date();
 		List<GameVO> todayGamesList = gameService.queryListByStartTime(1, PAGE_SIZE, date);
 		
@@ -56,14 +59,11 @@ public class HomeController {
 		
 		out.put("games", todayGamesList);
 		out.put("tomgames", tomorrowGamesList);
-		
+		out.put("seo", getSeoPage("首页 - 看开服", "home"));
 	}
 	
 	@RequestMapping("today.html")
 	public void today(ModelMap out, Integer page){
-		seoPage.setTitle("今日开服 - 看开服");
-		out.put("seo", seoPage);
-		
 		Integer pageSize = 25;
 		if (page == null || page.intValue() <= 0) {
 			page = 1;
@@ -82,12 +82,11 @@ public class HomeController {
 		out.put("page", page);
 		out.put("totalPages", totalPages);
 		out.put("games", list);
+		out.put("seo", getSeoPage("今日开服 - 看开服", "today"));
 	}
 	
 	@RequestMapping("tomorrow.html")
 	public void tomorrow(ModelMap out, Integer page){
-		seoPage.setTitle("明日开服 - 看开服");
-		out.put("seo", seoPage);
 		
 		Integer pageSize = 25;
 		if (page == null || page.intValue() <= 0) {
@@ -107,39 +106,33 @@ public class HomeController {
 		out.put("page", page);
 		out.put("totalPages", totalPages);
 		out.put("games", list);
+		out.put("seo", getSeoPage("明日开服 - 看开服", "tomorrow"));
 	}
 	
 	@RequestMapping("rank.html")
 	public void rank(ModelMap out){
-		seoPage.setTitle("开服排行 - 看开服");
-		out.put("seo", seoPage);
-		
+		out.put("seo", getSeoPage("开服排行 - 看开服", "rank"));
 	}
 	
 	@RequestMapping("gift.html")
 	public void gift(ModelMap out){
-		seoPage.setTitle("开服礼包 - 看开服");
-		out.put("seo", seoPage);
+		out.put("seo", getSeoPage("开服礼包 - 看开服", "gift"));
 	}
 	
 	@RequestMapping("search.html")
 	public void search(ModelMap out){
-		seoPage.setTitle("搜索 - 看开服");
-		out.put("seo", seoPage);
+		out.put("seo", getSeoPage("搜索 - 看开服", "search"));
 	}
 	
 	@RequestMapping("play.html")
 	public void play(ModelMap out, String url){
-		seoPage.setTitle("开始游戏 - 看开服");
-		out.put("seo", seoPage);
-		
 		out.put("url", url);
+		out.put("seo", getSeoPage("开始游戏 - 看开服", "play"));
 	}
 	
 	@RequestMapping("register.html")
 	public void register(ModelMap out) {
-		seoPage.setTitle("用户注册 - 看开服");
-		out.put("seo", seoPage);
+		out.put("seo", getSeoPage("用户注册 - 看开服", "register"));
 	}
 	
 	@RequestMapping("reg.html")
@@ -166,9 +159,7 @@ public class HomeController {
 	
 	@RequestMapping("error.html")
 	public void error(ModelMap out, String code) {
-		seoPage.setTitle("看开服");
-		out.put("seo", seoPage);
-		
 		out.put("code", code);
+		out.put("seo", getSeoPage("看开服", "error"));
 	}
 }

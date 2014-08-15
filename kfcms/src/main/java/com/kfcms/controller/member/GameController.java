@@ -44,6 +44,7 @@ public class GameController {
 		
 		out.put("totalPages", totalPages);
 		out.put("currentPage", page);
+		out.put("nav", "gamelist");
 	}
 	
 	private User getLoginUser(HttpServletRequest request) {
@@ -84,6 +85,7 @@ public class GameController {
 			out.put("game", game);
 			out.put("disabled", disabled);
 			out.put("title", title);
+			out.put("nav", "editgame");
 		}
 	}
 	

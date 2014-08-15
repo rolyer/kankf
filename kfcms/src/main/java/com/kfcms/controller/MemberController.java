@@ -2,7 +2,6 @@ package com.kfcms.controller;
 
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
-import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -30,9 +29,8 @@ public class MemberController {
 
 	@RequestMapping("index.html")
 	public void index(ModelMap out) {
-		out.put("message", "Hello World!");
-		out.put("current", new Date());
-		out.put("title", "Index");
+		out.put("nav", "index");
+		
 	}
 
 	@RequestMapping("login.html")
@@ -76,6 +74,7 @@ public class MemberController {
 		User member = userService.queryUserByAccount(loginUser.getAccount());
 		
 		out.put("member", member);
+		out.put("nav", "profile");
 	}
 	
 	@RequestMapping(value = "updateprofile.html", method = RequestMethod.POST)
@@ -145,6 +144,7 @@ public class MemberController {
 
 	@RequestMapping("help.html")
 	public void help(ModelMap out) {
+		out.put("nav", "help");
 	}
 	
 	private User getLoginUser(HttpServletRequest request) {
