@@ -2,6 +2,7 @@ package com.kfcms.service.impl;
 
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -51,6 +52,31 @@ public class AdminServiceImpl implements AdminService {
 		}
 		
 		return result;
+	}
+
+	public List<Admin> queryAll() {
+		return adminDao.queryAll();
+	}
+
+	public int updatePassword(String account, String password) {
+		Assert.hasLength(account, "Account must not be empty");
+		Assert.hasLength(password, "Password must not be empty");
+		
+		return adminDao.updatePassword(account, password);
+	}
+
+	public int delete(Integer id) {
+		Assert.notNull(id, "Admin id must not be null");
+		
+		return adminDao.deleteById(id);
+	}
+
+	public int add(Admin admin) {
+		Assert.notNull(admin, "Admin must not be null");
+		Assert.hasLength(admin.getAccount(), "Account must not be empty");
+		Assert.hasLength(admin.getPassword(), "Password must not be empty");
+		
+		return adminDao.insert(admin);
 	}
 
 }

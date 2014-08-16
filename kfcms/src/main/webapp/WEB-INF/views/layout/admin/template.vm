@@ -64,15 +64,15 @@
 								<a href="$link.getContextPath()/admin/game/index.html"><i class="icon-folder-open"></i> 开服管理</a>
 							</li>
 							<li #if($nav=='user') class="active" #end>
-								<a href="$link.getContextPath()/admin/user/index.html"><i class="icon-folder-open"></i> 用户管理</a>
+								<a href="$link.getContextPath()/admin/user/index.html"><i class="icon-user"></i> 用户管理</a>
 							</li>
 							<li class="divider">
 							</li>
 							<li class="nav-header">
 								我的帐户
 							</li>
-							<li #if($nav=='admin') class="active" #end>
-								<a href="$link.getContextPath()/admin/user.html"><i class="icon-user"></i> 帐号管理</a>
+							<li #if($nav=='profile') class="active" #end>
+								<a href="$link.getContextPath()/admin/profile.html"><i class="icon-user"></i> 帐号管理</a>
 							</li>
 						</ul>
 					</div>

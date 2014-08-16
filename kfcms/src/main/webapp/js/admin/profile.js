@@ -3,13 +3,13 @@ $(function() {
 		$(this).tab('show');
 	});
 	
-	$('#btn_save_profile').click(function(){
-		update();
+	$('#btn_add').click(function(){
+		add();
 	});
 	
-	$('#info input').keyup(function(e){
+	$('#add input').keyup(function(e){
 	    if(e.keyCode == 13) {
-	    	update();
+	    	add();
 	    }
 	});
 	
@@ -52,15 +52,20 @@ function savepwd(){
 		type : "POST",
 		url : Context.PATH + '/admin/updatepwd.html?t=' + utils.random(),
 		data : {
+			secpwd : secpwd,
 			npwd : npwd,
 			opwd : opwd
 		},
 		dataType : "json",
 		success : function(response, textStatus, xhr) {
 			if (response.success) {
+				$('#npwd').val('');
+				$('#opwd').val('');
+				$('#secpwd').val('');
 				utils.alert('#sys_msg', '密码更新成功', null);
 			} else {
-				utils.alert('#sys_msg', response.data, 'danger');
+				var msg = utils.isEmpty(response.data)?"更新失败":response.data;
+				utils.alert('#sys_msg', msg, 'danger');
 			}
 		},
 		error : function(xhr, textStatus, errorThrown) {
@@ -69,36 +74,81 @@ function savepwd(){
 	});
 }
 
-function update() {
-	var tel = $.trim($('#tel').val());
-	var im = $.trim($('#im').val());
+function add() {
+	var account = $.trim($('#account').val());
+	var password = $.trim($('#password').val());
 	
-	if(utils.isEmpty(tel)) {
-		utils.alert('#sys_msg', '电话号码不能为空', 'danger');
+	if(utils.isEmpty(account)) {
+		utils.alert('#sys_msg', '账号不能为空', 'danger');
 		return false;
 	}
-	if(utils.isEmpty(im)) {
-		utils.alert('#sys_msg', 'IM号不能为空', 'danger');
+	
+	if(!utils.checkFormat(account,'account')){
+		utils.alert('#sys_msg', '账号格式不正确', 'danger');
 		return false;
 	}
-	if(!utils.checkFormat(tel,'mobile') && !utils.checkFormat(tel,'tel')){
-		utils.alert('#sys_msg', '电话格式不正确', 'danger');
+	
+	if(utils.isEmpty(password)) {
+		utils.alert('#sys_msg', '密码不能为空', 'danger');
+		return false;
+	}
+	
+	if(!utils.checkFormat(password,'password')){
+		utils.alert('#sys_msg', '密码格式不正确', 'danger');
 		return false;
 	}
 
 	$.ajax({
 		type : "POST",
-		url : Context.PATH + '/admin/updateprofile.html?t=' + utils.random(),
+		url : Context.PATH + '/admin/addadmin.html?t=' + utils.random(),
 		data : {
-			im : im,
-			tel : tel
+			account : account,
+			password : password
 		},
 		dataType : "json",
 		success : function(response, textStatus, xhr) {
 			if (response.success) {
-				utils.alert('#sys_msg', '个人信息更新成功', null);
+				$('#account').val('');
+				$('#password').val('');
+				
+				utils.alert('#sys_msg', '账号添加成功', null);
 			} else {
-				utils.alert('#sys_msg', response.data, 'danger');
+				var msg = utils.isEmpty(response.data)?"添加失败":response.data;
+				utils.alert('#sys_msg', msg, 'danger');
+			}
+		},
+		error : function(xhr, textStatus, errorThrown) {
+			utils.alert('#sys_msg', Message.SERVER_ERROR, 'danger');
+		}
+	});
+}
+
+function del(id) {
+	var msg = "您真的确定要删除吗？";
+	if (confirm(msg)==false){
+		return false;
+	} 
+	
+	if(utils.isEmpty(id)) {
+		utils.alert('#sys_msg', '参数错误', 'danger');
+		return false;
+	}
+	
+	$.ajax({
+		type : "POST",
+		url : Context.PATH + '/admin/delete.html?t=' + utils.random(),
+		data : {
+			id : id
+		},
+		dataType : "json",
+		success : function(response, textStatus, xhr) {
+			if (response.success) {
+				utils.alert('#sys_msg', '账号删除成功', null);
+				
+				$('#admin_list_tr_gid_'+id).remove();
+			} else {
+				var msg = utils.isEmpty(response.data)?"删除失败":response.data;
+				utils.alert('#sys_msg', msg, 'danger');
 			}
 		},
 		error : function(xhr, textStatus, errorThrown) {
