@@ -23,7 +23,7 @@
 			<td>
 				<a href="edit.html?action=view&id=$!{game.id}&account=$!{game.account}" class="view-link">查看</a>
 				<a href="edit.html?action=edit&id=$!{game.id}&account=$!{game.account}" class="view-link">修改</a>
-				<a href="javascript:;" class="view-link" onclick="javascript: return doDelete($!{game.id}, '$!{game.account}');">删除</a>
+				<a href="javascript:;" class="view-link" onclick="javascript: return del($!{game.id}, '$!{game.account}');">删除</a>
 			</td>
 		</tr>
 		#end

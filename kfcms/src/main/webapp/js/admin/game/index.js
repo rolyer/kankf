@@ -1,14 +1,9 @@
-function doDelete(id){
+function del(id, account){
 	var msg = "您真的确定要删除吗？";
-	if (confirm(msg)==true){
-		del(id);
-		return true;
-	}else{
+	if (confirm(msg)==false){
 		return false;
 	} 
-}
-
-function del(id, account){
+	
 	$.ajax({
         type: "POST",
         url: Context.PATH + '/admin/game/delete.html',
