@@ -1,0 +1,38 @@
+#set($layout="layout/admin/template.vm")
+<script type="text/javascript" src="$link.getContextPath()/js/admin/game/index.js"></script>
+<h1>用戶管理</h1>
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>编号</th>
+			<th>账号</th>
+			<th>邮箱</th>
+			<th>电话</th>
+			<th>IM</th>
+			<th>状态</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		#if(0>=$users.size())
+            <tr><td colspan="7">暂无数据...</td></tr>
+		#end
+		#foreach( $u in $users )
+		<tr id="list_tr_gid_$!{u.id}">
+			<td><input type="checkbox" value="$!{u.id}"></td>
+			<td>$!{u.account}</td>
+			<td>$!{u.email}</td>
+			<td>$!{u.tel}</td>
+			<td>$!{u.im}</td>
+			<td>$!{u.status}</td>
+			<td>
+				<a href="edit.html?action=view&id=$!{u.id}" class="view-link">查看</a>
+				<a href="edit.html?action=edit&id=$!{u.id}" class="view-link">修改</a>
+				<a href="javascript:;" class="view-link" onclick="javascript: return del($!{u.id});">删除</a>
+			</td>
+		</tr>
+		#end
+	</tbody>
+</table>
+
+#pagination2($totalPages $currentPage '?')

@@ -3,6 +3,7 @@ package com.kfcms.service.impl;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Date;
+import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -118,6 +119,17 @@ public class UserServiceImpl implements UserService {
 
 	public User queryUserByAccount(String account) {
 		return userDao.queryUserByAccount(account);
+	}
+
+	public List<User> queryListByConditions(Integer page, Integer pageSize,
+			User user) {
+		Integer offset = (page-1) * pageSize;
+		
+		return userDao.queryListByConditions(offset, pageSize, user);
+	}
+
+	public int countListByConditions(User user) {
+		return userDao.countListByConditions(user);
 	}
 
 }

@@ -1,6 +1,7 @@
 package com.kfcms.dao;
 
 import java.util.Date;
+import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -74,5 +75,42 @@ public class UserDaoTest {
 		
 		Assert.assertNotNull(user);
 		Assert.assertEquals(account, user.getAccount());
+	}
+	
+	@Test
+	public void queryListByConditions(){
+		Integer offset = 0;
+		Integer rowCount = 20;
+		
+		User user = new User();
+		user.setAccount("testuser");
+		user.setStatus(1);
+		
+		List<User> list = dao.queryListByConditions(offset, rowCount, user);
+		
+		Assert.assertNotNull(list);
+		Assert.assertEquals(1, list.size());
+	}
+	
+	@Test
+	public void queryListWithoutConditions(){
+		Integer offset = 0;
+		Integer rowCount = 20;
+		
+		List<User> list = dao.queryListByConditions(offset, rowCount, null);
+		
+		Assert.assertNotNull(list);
+		Assert.assertEquals(2, list.size());
+	}
+	
+	@Test
+	public void countListConditions(){
+		User user = new User();
+		user.setAccount("testuser");
+		user.setStatus(1);
+		
+		int count = dao.countListByConditions(user);
+		
+		Assert.assertEquals(1, count);
 	}
 }

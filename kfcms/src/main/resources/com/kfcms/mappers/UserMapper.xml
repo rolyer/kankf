@@ -88,6 +88,35 @@
 	<update id="updatePasswordByUser" parameterType="user">
 		UPDATE user SET password = #{password}, gmt_modified = NOW()
 		WHERE account = #{account}
-	</update>	
+	</update>
+	
+	<select id="queryListByConditions" parameterType="user" resultMap="baseResultMap">
+			SELECT u.id, u.account, u.password, u.email, u.tel, u.im, u.status, u.gmt_created, u.gmt_modified
+			FROM user u
+			WHERE 1=1
+			<if test="user != null">
+				<if test="user.account != null">
+					AND u.account = #{user.account}
+				</if>
+				<if test="user.status != null">
+					AND u.status = #{user.status}
+				</if>
+			</if>
+			ORDER BY u.id DESC
+			LIMIT #{offset}, #{rowCount} 
+	</select>
+	
+	<select id="countListByConditions" parameterType="user" resultType="int">
+			SELECT COUNT(u.id) FROM user u
+			WHERE 1=1
+			<if test="user != null">
+				<if test="user.account != null">
+					AND u.account = #{user.account}
+				</if>
+				<if test="user.status != null">
+					AND u.status = #{user.status}
+				</if>
+			</if>
+	</select>
 	
 </mapper>
