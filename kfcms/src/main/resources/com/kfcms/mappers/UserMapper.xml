@@ -79,6 +79,13 @@
 			WHERE account=#{account}
 		]]>
 	</delete>
+	
+	<delete id="deleteUserById" parameterType="java.lang.Integer">
+		<![CDATA[
+			DELETE FROM user
+			WHERE id=#{id}
+		]]>
+	</delete>
 
 	<update id="updateByUser" parameterType="user">
 		UPDATE user SET tel=#{tel}, im=#{im}, gmt_modified = NOW()
@@ -118,5 +125,10 @@
 				</if>
 			</if>
 	</select>
+	
+	<update id="updateStatusById" parameterType="map">
+		UPDATE user SET status = #{status}, gmt_modified = NOW()
+		WHERE id = #{id}
+	</update>
 	
 </mapper>

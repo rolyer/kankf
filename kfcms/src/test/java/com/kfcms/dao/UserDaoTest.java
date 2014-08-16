@@ -113,4 +113,17 @@ public class UserDaoTest {
 		
 		Assert.assertEquals(1, count);
 	}
+	
+	@Test
+	public void deleteUserById(){
+		int count = dao.deleteUserById(1);
+		Assert.assertEquals(1, count);
+	}
+	
+	@Test
+	public void updateStatusById() {
+		int count = dao.updateStatusById(1, 2);
+		Assert.assertEquals(1, count);
+		
+	}
 }
