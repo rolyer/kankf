@@ -16,5 +16,41 @@
 			WHERE account=#{account}
 		]]>
 	</select>
+	
+	<select id="queryAll" resultMap="baseResultMap">
+		<![CDATA[
+			SELECT id, account, password, gmt_created, gmt_modified
+			FROM admin
+		]]>
+	</select>
+	
+	<update id="updateByPassword" parameterType="map">
+		UPDATE admin SET password=#{password}, gmt_modified = NOW()
+		WHERE account = #{account}
+	</update>
+	
+	<delete id="deleteById" parameterType="java.lang.Integer">
+		<![CDATA[
+			DELETE FROM admin
+			WHERE id=#{id}
+		]]>
+	</delete>
 
+	<insert id="insert" parameterType="admin" useGeneratedKeys="true"
+		keyProperty="id">
+		<![CDATA[
+			INSERT INTO admin (
+			account,
+			password,
+			gmt_created,
+			gmt_modified
+			)
+			VALUES (
+			#{account},
+			#{password},
+			NOW(),
+			NOW()
+			)
+		]]>
+	</insert>
 </mapper>

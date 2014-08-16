@@ -65,4 +65,34 @@ public class AdminController {
 		
 		return "redirect:" + request.getHeader("Referer");
 	}
+	
+	@RequestMapping("profile.html")
+	public void profile(ModelMap out) {
+		out.put("nav", "admin");
+		//TODO: read admin list
+	}
+	
+	@RequestMapping("addadmin.html")
+	public @ResponseBody Result addadmin(ModelMap out) {
+		out.put("nav", "admin");
+		//TODO: read admin list
+		
+		return null;
+	}
+	
+	@RequestMapping("deladmin.html")
+	public @ResponseBody Result deladmin(ModelMap out) {
+		out.put("nav", "admin");
+		//TODO: read admin list
+		
+		return null;
+	}
+	
+	@RequestMapping("updatepwd.html")
+	public @ResponseBody Result updatepwd (ModelMap out) {
+		out.put("nav", "admin");
+		//TODO: read admin list
+		
+		return null;
+	}
 }
