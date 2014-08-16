@@ -132,4 +132,17 @@ public class UserServiceImpl implements UserService {
 		return userDao.countListByConditions(user);
 	}
 
+	public int deleteUserById(Integer id) {
+		Assert.notNull(id, "User id must not be null");
+		
+		return userDao.deleteUserById(id);
+	}
+
+	public int updateStatusById(Integer id, Integer status) {
+		Assert.notNull(id, "User id must not be null");
+		Assert.notNull(status, "User status must not be empty");
+		
+		return userDao.updateStatusById(id, status);
+	}
+
 }

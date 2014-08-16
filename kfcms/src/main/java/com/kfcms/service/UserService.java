@@ -18,7 +18,12 @@ public interface UserService {
 
 	public User queryUserByAccount(String account);
 
-	public List<User> queryListByConditions(Integer page, Integer pageSize, User user);
+	public List<User> queryListByConditions(Integer page, Integer pageSize,
+			User user);
 
 	public int countListByConditions(User user);
+
+	public int deleteUserById(Integer id);
+
+	public int updateStatusById(Integer id, Integer status);
 }
