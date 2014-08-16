@@ -1,25 +1,19 @@
-function doDelete(id){
+function del(id){
 	var msg = "您真的确定要删除吗？";
-	if (confirm(msg)==true){
-		del(id);
-		return true;
-	}else{
+	if (confirm(msg)==false){
 		return false;
 	} 
-}
-
-function del(id, account){
+	
 	$.ajax({
         type: "POST",
-        url: Context.PATH + '/admin/game/delete.html',
+        url: Context.PATH + '/admin/user/delete.html',
         data : {
-        	account: account,
             id: id
         },
         dataType:"json",
         success: function(response, textStatus, xhr) {
         	if(response.success){
-        		$('#game_list_tr_gid_'+id).remove();
+        		$('#list_tr_gid_'+id).remove();
         	}
         },
         error: function(xhr, textStatus, errorThrown) {

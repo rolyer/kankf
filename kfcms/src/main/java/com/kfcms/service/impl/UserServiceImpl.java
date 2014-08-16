@@ -145,4 +145,8 @@ public class UserServiceImpl implements UserService {
 		return userDao.updateStatusById(id, status);
 	}
 
+	public User queryById(Integer id) {
+		return userDao.queryById(id);
+	}
+
 }

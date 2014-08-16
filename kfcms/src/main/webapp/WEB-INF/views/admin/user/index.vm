@@ -1,6 +1,7 @@
 #set($layout="layout/admin/template.vm")
-<script type="text/javascript" src="$link.getContextPath()/js/admin/game/index.js"></script>
-<h1>用戶管理</h1>
+<script type="text/javascript" src="$link.getContextPath()/js/admin/user/index.js"></script>
+<h1 style="float:left;">用戶管理</h1>
+<a style="float:right;" href="$link.getContextPath()/admin/user/edit.html?action=add" class="btn btn-primary btn-large"><i class="icon-plus icon-white"></i>添加用户</a>
 <table class="table table-bordered table-striped">
 	<thead>
 		<tr>

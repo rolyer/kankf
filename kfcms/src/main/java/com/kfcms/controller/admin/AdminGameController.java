@@ -106,7 +106,7 @@ public class AdminGameController {
 	Result delete(HttpServletRequest request, String id, String account) {
 		Result result = new Result();
 		if (StringUtils.isBlank(id) || !StringUtils.isNumeric(id)) {
-			result.setData("Illegally parameter id: " + id);
+			result.setData("参数错误");
 			return result;
 		}
 		int count = gameService.deleteByIdAndAccount(Integer.parseInt(id),

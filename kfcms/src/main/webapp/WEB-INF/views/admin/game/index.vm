@@ -13,6 +13,9 @@
 		</tr>
 	</thead>
 	<tbody>
+		#if(0>=$list.size())
+            <tr><td colspan="6">暂无数据...</td></tr>
+		#end
 		#foreach( $game in $list )
 		<tr id="game_list_tr_gid_$!{game.id}">
 			<td><input type="checkbox" value="$!{game.id}"></td>

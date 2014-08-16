@@ -124,6 +124,14 @@ public class UserDaoTest {
 	public void updateStatusById() {
 		int count = dao.updateStatusById(1, 2);
 		Assert.assertEquals(1, count);
-		
 	}
+	
+	@Test
+	public void queryById() {
+		User user = dao.queryById(1);
+		
+		Assert.assertNotNull(user);
+		Assert.assertEquals("testuser", user.getAccount());
+	}
+	
 }

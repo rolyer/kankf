@@ -131,4 +131,12 @@
 		WHERE id = #{id}
 	</update>
 	
+	<select id="queryById" parameterType="java.lang.Integer" resultMap="baseResultMap">
+		<![CDATA[
+			SELECT id, account, password, email, tel, im, status, gmt_created, gmt_modified
+			FROM user
+			WHERE id=#{id}
+		]]>
+	</select>
+	
 </mapper>

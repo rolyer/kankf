@@ -9,7 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.kfcms.dto.Result;
 import com.kfcms.model.User;
 import com.kfcms.service.UserService;
 import com.kfcms.util.Constants;
@@ -49,8 +52,68 @@ public class AdminUserController {
 	}
 	
 	@RequestMapping("edit.html")
-	public void edit(ModelMap out) {
-		
-		out.put("nav", "user");
+	public void edit(HttpServletRequest request, ModelMap out, String action,
+			String id) {
+
+		if (StringUtils.isNotBlank(action)) {
+			String title = "";
+			User user = new User();
+
+			boolean disabled = false;
+			if ("add".equals(action)) {
+				disabled = true;
+				title = "添加";
+			}
+
+			if (StringUtils.isNotBlank(id) && StringUtils.isNumeric(id)) {
+				user = userService.queryById(Integer.parseInt(id));
+
+				if ("edit".equals(action)) {
+					disabled = true;
+					title = "编辑";
+				} else if ("view".equals(action)) {
+					title = "查看";
+				}
+			}
+
+			out.put("user", user);
+			out.put("disabled", disabled);
+			out.put("title", title);
+			out.put("action", action);
+			out.put("nav", "user");
+		}
+	}
+	
+	@RequestMapping(value = "updateStatus.html", method = RequestMethod.POST)
+	public @ResponseBody
+	Result updateStatus(HttpServletRequest request, String id, String status) {
+		Result result = new Result();
+		if (StringUtils.isBlank(id) || !StringUtils.isNumeric(id)
+				|| StringUtils.isBlank(status)
+				|| !StringUtils.isNumeric(status)) {
+			result.setData("参数错误");
+			return result;
+		}
+		int count = userService.updateStatusById(Integer.parseInt(id),
+				Integer.parseInt(status));
+		if (count > 0) {
+			result.setSuccess(true);
+		}
+		return result;
+	}
+	
+	@RequestMapping(value = "delete.html", method = RequestMethod.POST)
+	public @ResponseBody
+	Result delete(HttpServletRequest request, String id) {
+		Result result = new Result();
+		if (StringUtils.isBlank(id) || !StringUtils.isNumeric(id)) {
+			result.setData("参数错误");
+			return result;
+		}
+		int count = userService.deleteUserById(Integer.parseInt(id));
+		if (count > 0) {
+			result.setSuccess(true);
+		}
+		return result;
 	}
 }

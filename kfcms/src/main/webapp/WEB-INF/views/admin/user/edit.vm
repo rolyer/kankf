@@ -1,20 +1,44 @@
 #set($layout="layout/admin/template.vm")
-<script type="text/javascript" src="$link.getContextPath()/js/admin/game/edit.js"></script>
+<script type="text/javascript" src="$link.getContextPath()/js/admin/user/edit.js"></script>
 <h1>$!{title}</h1>
 <form class="form-horizontal">
 	<fieldset>
-		<legend>开服信息</legend>
+		<legend>用户信息</legend>
 		<div id="sys_msg"></div>
 		<div class="control-group">
-			<label class="control-label">游戏名称</label>
+			<label class="control-label">用户账号</label>
 			<div class="controls">
-				<input type="text" class="input-xlarge" id="name" value="$!{game.name}" />
+				<input type="text" class="input-xlarge" id="account" value="$!{user.account}" #if($action!='add') readonly #end />
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">开始时间</label>
+			<label class="control-label">用户邮箱</label>
+			<div class="controls">
+				<input type="text" class="input-xlarge" id="email" value="$!{user.email}" #if($action!='add') readonly #end />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">联系电话</label>
+			<div class="controls">
+				<input type="text" class="input-xlarge" id="tel" value="$!{user.tel}" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">IM</label>
+			<div class="controls">
+				<input type="text" class="input-xlarge" id="im" value="$!{user.im}" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">注册时间</label>
 			<div class="controls">		  
-				<input type="text" class="input-xlarge" id="statTime" value="$!{game.statTime}" readonly />
+				<input type="text" class="input-xlarge" id="gmtCreated" value="$!{user.gmtCreated}" readonly />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">更新时间</label>
+			<div class="controls">		  
+				<input type="text" class="input-xlarge" id="gmtModified" value="$!{user.gmtModified}" readonly />
 				<script>
 					$(function(){
 						#if($disabled==true)
@@ -25,8 +49,15 @@
                     	});
 						#end
 					
-						$('#statTime').datetimepicker({
-							value:'$!date.format('yyyy-MM-dd HH:mm',$!game.startTime)',
+						$('#gmtCreated').datetimepicker({
+							value:'$!date.format('yyyy-MM-dd HH:mm',$!user.gmtCreated)',
+							//mask:"9999-12-31 00:00",
+							format:'Y-m-d H:i',
+							lang:'ch'
+						});
+						
+						$('#gmtModified').datetimepicker({
+							value:'$!date.format('yyyy-MM-dd HH:mm',$!user.gmtModified)',
 							//mask:"9999-12-31 00:00",
 							format:'Y-m-d H:i',
 							lang:'ch'
@@ -35,43 +66,8 @@
 				</script>
 			</div>
 		</div>
-		<div class="control-group">
-			<label class="control-label">服务器名</label>
-			<div class="controls">
-				<input type="text" class="input-xlarge" id="serverName" value="$!{game.serverName}" />
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label">URL</label>
-			<div class="controls">
-				<input type="text" class="input-xlarge" id="url" value="$!{game.url}" />
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label">游戏类型</label>
-			<div class="controls">
-				<input type="text" class="input-xlarge" id="category" value="$!{game.category}" />
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label">运营商</label>
-			<div class="controls">
-				<input type="text" class="input-xlarge" id="platform" value="$!{game.platform}" />
-			</div>
-		</div>
-		#if($action=='add')
-		<div class="control-group">
-			<label class="control-label">账号</label>
-			<div class="controls">
-				<input type="text" class="input-xlarge" id="account" value="$!{game.account}" />
-			</div>
-		</div>
-		#else
-			<input type="hidden" id="account" value="$!{game.account}" />
-		#end
 		
-		
-		<input type="hidden" id="id" value="$!{game.id}" />
+		<input type="hidden" id="id" value="$!{user.id}" />
 		#if($disabled==true)		
 		<div class="form-actions">
 			<button type="button" class="btn btn-primary" id="btn_save">保存</button>

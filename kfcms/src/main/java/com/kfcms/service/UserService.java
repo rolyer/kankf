@@ -26,4 +26,6 @@ public interface UserService {
 	public int deleteUserById(Integer id);
 
 	public int updateStatusById(Integer id, Integer status);
+	
+	public User queryById(Integer id);
 }
