@@ -11,7 +11,7 @@ public interface AdminDao {
 	
 	public List<Admin> queryAll();
 	
-	public int updateByPassword(@Param("account") String account, @Param("password") String password);
+	public int updatePassword(@Param("account") String account, @Param("password") String password);
 	
 	public int deleteById(@Param("id") Integer id);
 	

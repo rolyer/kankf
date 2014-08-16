@@ -24,7 +24,7 @@
 		]]>
 	</select>
 	
-	<update id="updateByPassword" parameterType="map">
+	<update id="updatePassword" parameterType="map">
 		UPDATE admin SET password=#{password}, gmt_modified = NOW()
 		WHERE account = #{account}
 	</update>

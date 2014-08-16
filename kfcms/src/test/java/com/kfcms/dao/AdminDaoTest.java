@@ -49,8 +49,8 @@ public class AdminDaoTest {
 	private static final String password = "password";
 
 	@Test
-	public void testUpdateByPassword() {
-		int count = dao.updateByPassword(account, password);
+	public void testUpdatePassword() {
+		int count = dao.updatePassword(account, password);
 
 		Assert.assertEquals(1, count);
 	}
