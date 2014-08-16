@@ -18,6 +18,7 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang.StringUtils;
 
+import com.kfcms.model.Admin;
 import com.kfcms.model.User;
 import com.kfcms.util.Constants;
 
@@ -80,7 +81,14 @@ public class AuthorizeFilter implements Filter {
 		String url = isAdminPath ? adminLoginURL : loginURL;
 
 		HttpSession session = request.getSession();
-		User loginUser = (User) session.getAttribute(isAdminPath ? Constants.LOGIN_ADMIN : Constants.LOGIN_USER);
+		User loginUser = null;
+		Admin loginAdmin = null;
+		
+		if (isAdminPath) {
+			loginAdmin = (Admin) session.getAttribute(Constants.LOGIN_ADMIN);
+		} else {
+			loginUser =  (User) session.getAttribute(Constants.LOGIN_USER);
+		}
 
 		do {
 			if (canFilter(noAuthPage, path, uri)) {
@@ -92,15 +100,33 @@ public class AuthorizeFilter implements Filter {
 				chain.doFilter(request, response);
 				return;
 			} else {
-				if (loginUser != null) {
-					chain.doFilter(request, response);
-					return;
+				if (isAdminPath) {
+					if (loginAdmin != null) {
+						chain.doFilter(request, response);
+						return;
+					}
+
+				} else {
+					
+					if (loginUser != null) {
+						chain.doFilter(request, response);
+						return;
+					}
 				}
 			}
 
-			if (loginUser == null) { // no login
-				url = isAdminPath ? adminLoginURL : loginURL;
-				break;
+			if (isAdminPath) {
+				if (loginAdmin != null) {
+					url = adminLoginURL;
+					break;
+				}
+
+			} else {
+				
+				if (loginUser == null) { // no login
+					url = loginURL;
+					break;
+				}
 			}
 
 		} while (false);
