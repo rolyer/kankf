@@ -15,6 +15,9 @@
 INSERT INTO `kfcms_db`.`admin`(`account`,`password`,`gmt_created`,`gmt_modified`)
 VALUES('rolyer','7c80699075388206',NOW(),NOW());
 
+INSERT INTO `kfcms_db`.`admin`(`account`,`password`,`gmt_created`,`gmt_modified`)
+VALUES('admin','7a57a5a743894a0e',NOW(),NOW());
+
 SELECT id, user_name, name, start_time, server_name, url, category, gift_name, platform, gmt_created, gmt_modified 
 FROM game 
 WHERE 1=1 AND YEAR(start_time) = YEAR('2014-08-01 21:41:12.111') 
