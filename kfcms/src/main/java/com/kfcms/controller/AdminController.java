@@ -3,6 +3,7 @@ package com.kfcms.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -10,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kfcms.dto.Result;
-import com.kfcms.model.User;
-import com.kfcms.service.UserService;
+import com.kfcms.model.Admin;
+import com.kfcms.service.AdminService;
 import com.kfcms.util.Constants;
 
 @Controller
@@ -19,10 +20,11 @@ import com.kfcms.util.Constants;
 public class AdminController {
 	
 	@Autowired
-	private UserService userService;
+	private AdminService adminService;
 	
 	@RequestMapping("index.html")
 	public void index(ModelMap out) {
+		out.put("nav", "index");
 	}
 	
 	@RequestMapping("login.html")
@@ -33,16 +35,21 @@ public class AdminController {
 	@RequestMapping("ajaxlogin.html")
 	public @ResponseBody Result ajaxlogin(HttpServletRequest request, String account, String password) {
 		Result result = new Result();
+		if (StringUtils.isBlank(account)) {
+			result.setData("账号不能为空");
+			return result;
+		}
 		
-		User user = userService.login(account, password);
-		if (user != null) {
+		if (StringUtils.isBlank(password)) {
+			result.setData("密码不能为空");
+			return result;
+		}
+		
+		result = adminService.login(account, password);
+		
+		if(result.isSuccess()) {
 			HttpSession session = request.getSession();
-			
-			session.setAttribute(Constants.LOGIN_ADMIN, user);
-			
-			result.setSuccess(true);
-		} else {
-			result.setData("用户名或者密码有误");
+			session.setAttribute(Constants.LOGIN_ADMIN, (Admin)result.getData());
 		}
 		
 		return result;
@@ -51,7 +58,7 @@ public class AdminController {
 	@RequestMapping("logout.html")
 	public String logout(HttpServletRequest request) {
 		HttpSession session = request.getSession();
-		User user  = (User) session.getAttribute(Constants.LOGIN_ADMIN);
+		Admin user  = (Admin) session.getAttribute(Constants.LOGIN_ADMIN);
 		if (user!=null) {
 			session.removeAttribute(Constants.LOGIN_ADMIN);
 		}

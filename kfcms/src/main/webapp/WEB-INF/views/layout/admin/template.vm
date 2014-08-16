@@ -17,7 +17,8 @@
 
 		<script src="$link.getContextPath()/js/jquery-1.11.1.min.js"></script>
 		<script src="$link.getContextPath()/js/jquery.datetimepicker.js"></script>
-
+		<script src="$link.getContextPath()/js/util.js"></script>
+		#parse("layout/context.vm")
 	</head>
 	<body>
 		<div class="container">
@@ -39,7 +40,7 @@
 							</form>
 							<ul class="nav pull-right">
 								<li>
-									<a href="$link.getContextPath()/admin/profile.html">您好，$!{admin.account}</a>
+									<a href="$link.getContextPath()/admin/profile.html">您好，$!{LOGIN_ADMIN.account}</a>
 								</li>
 								<li>
 									<a href="$link.getContextPath()/admin/logout.html">退出</a>
@@ -56,13 +57,13 @@
 							<li class="nav-header">
 								菜单
 							</li>
-							<li class="active">
-								<a href="$link.getContextPath()/admin/index.html"><i class="icon-white icon-home"></i> 后台主页</a>
+							<li #if($nav=='index') class="active" #end>
+								<a href="$link.getContextPath()/admin/index.html"><i class="icon-home"></i> 后台主页</a>
 							</li>
-							<li>
+							<li #if($nav=='game') class="active" #end>
 								<a href="$link.getContextPath()/admin/game/index.html"><i class="icon-folder-open"></i> 开服管理</a>
 							</li>
-							<li>
+							<li #if($nav=='user') class="active" #end>
 								<a href="$link.getContextPath()/admin/user/index.html"><i class="icon-folder-open"></i> 用户管理</a>
 							</li>
 							<li class="divider">
@@ -70,7 +71,7 @@
 							<li class="nav-header">
 								我的帐户
 							</li>
-							<li>
+							<li #if($nav=='admin') class="active" #end>
 								<a href="$link.getContextPath()/admin/user.html"><i class="icon-user"></i> 帐号管理</a>
 							</li>
 						</ul>

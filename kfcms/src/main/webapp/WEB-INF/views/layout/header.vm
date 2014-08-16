@@ -34,7 +34,7 @@
 				<input class="btn btn-success search-submit" type="submit" value="搜索">
 			</form>
 			<div class="btn-group pull-left">
-				#if($user.account)
+				#if($LOGIN_USER.account)
 				<button class="btn btn-primary" data-toggle="modal" data-target="#tijiaokaifu">+提交开服</button>
 				#else
 					<button class="btn btn-primary" data-toggle="modal" data-target="#login">+提交开服</button>
@@ -50,8 +50,8 @@
 	
 	<div class="speedbar">
 		<div class="pull-right">
-			#if($user.account)
-				<i class="icon-user icon12"></i> <a href="$link.getContextPath()/member/index.html" target="_blank">$user.account</a> | 
+			#if($LOGIN_USER.account)
+				<i class="icon-user icon12"></i> <a href="$link.getContextPath()/member/index.html" target="_blank">$LOGIN_USER.account</a> | 
 				<a href="$link.getContextPath()/member/logout.html">退出</a>
 			#else
 				<i class="icon-user icon12"></i> <a href="javascript:" data-toggle="modal" data-target="#login">登录</a>&nbsp;|&nbsp;

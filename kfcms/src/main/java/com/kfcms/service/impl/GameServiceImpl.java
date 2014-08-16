@@ -48,11 +48,9 @@ public class GameServiceImpl implements GameService {
 		return gameDao.countListByConditions(game);
 	}
 
-	public Game queryByIdAndAccount(Integer id, String account, boolean isAmdin) {
+	public Game queryByIdAndAccount(Integer id, String account) {
 		Assert.notNull(id, "The id must not be null");
-		if (!isAmdin) {
-			Assert.hasLength(account, "Account name must not be empty");
-		}
+		Assert.hasLength(account, "Account must not be empty");
 		
 		Game game = new Game();
 		game.setId(id);
@@ -63,7 +61,7 @@ public class GameServiceImpl implements GameService {
 
 	public int insert(Game game) {
 		Assert.notNull(game, "The game must not be null");
-		Assert.hasLength(game.getAccount(), "Account name must not be empty");
+		Assert.hasLength(game.getAccount(), "Account must not be empty");
 		
 		game.setGmtCreated(new Date());
 		game.setGmtModified(new Date());
@@ -71,23 +69,19 @@ public class GameServiceImpl implements GameService {
 		return gameDao.insert(game);
 	}
 
-	public int update(Game game, boolean isAmdin) {
+	public int update(Game game) {
 		Assert.notNull(game, "The game must be not null");
 		Assert.notNull(game.getId(), "The id must be not null");
-		if (!isAmdin) {
-			Assert.hasLength(game.getAccount(), "Account name must not be empty");
-		}
+		Assert.hasLength(game.getAccount(), "Account must not be empty");
 		
 		game.setGmtModified(new Date());
 		
 		return gameDao.update(game);
 	}
 
-	public int deleteByIdAndAccount(Integer id, String account, boolean isAmdin) {
+	public int deleteByIdAndAccount(Integer id, String account) {
 		Assert.notNull(id, "The id must be not null");
-		if (!isAmdin) {
-			Assert.hasLength(account, "Account name must not be empty");
-		}
+		Assert.hasLength(account, "Account must not be empty");
 		
 		Game game = new Game();
 		game.setId(id);
@@ -96,11 +90,11 @@ public class GameServiceImpl implements GameService {
 		return gameDao.delete(game);
 	}
 
-	public int save(Game game, boolean isAmdin) {
+	public int save(Game game) {
 		Assert.notNull(game, "The game must not be null");
 		
 		if (game.getId()!=null && game.getId().intValue()>0) {
-			return update(game, isAmdin);
+			return update(game);
 		}else {
 			return insert(game);
 		}

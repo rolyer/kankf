@@ -1,23 +1,31 @@
 #set($layout="layout/admin/template.vm")
-
+<script type="text/javascript" src="$link.getContextPath()/js/admin/game/edit.js"></script>
 <h1>$!{title}</h1>
-<form class="form-horizontal" action="$link.getContextPath()/admin/game/save.html" method="POST">
+<form class="form-horizontal">
 	<fieldset>
 		<legend>开服信息</legend>
+		<div id="sys_msg"></div>
 		<div class="control-group">
 			<label class="control-label">游戏名称</label>
 			<div class="controls">
-				<input type="text" class="input-xlarge" name="name" value="$!{game.name}" />
+				<input type="text" class="input-xlarge" id="name" value="$!{game.name}" />
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">开始时间</label>
 			<div class="controls">		  
-				<input id="datetimepicker" type="text" class="input-xlarge" name="statTime" value="$!{game.statTime}" readonly />
+				<input type="text" class="input-xlarge" id="statTime" value="$!{game.statTime}" readonly />
 				<script>
-					
 					$(function(){
-						$('#datetimepicker').datetimepicker({
+						#if($disabled==true)
+						$('.form-horizontal input').keyup(function(e){
+                    	    if(e.keyCode == 13) {
+                    	    	save();
+                    	    }
+                    	});
+						#end
+					
+						$('#statTime').datetimepicker({
 							value:'$!date.format('yyyy-MM-dd HH:mm',$!game.startTime)',
 							//mask:"9999-12-31 00:00",
 							format:'Y-m-d H:i',
@@ -30,33 +38,43 @@
 		<div class="control-group">
 			<label class="control-label">服务器名</label>
 			<div class="controls">
-				<input type="text" class="input-xlarge" name="serverName" value="$!{game.serverName}" />
+				<input type="text" class="input-xlarge" id="serverName" value="$!{game.serverName}" />
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">URL</label>
 			<div class="controls">
-				<input type="text" class="input-xlarge" name="url" value="$!{game.url}" />
+				<input type="text" class="input-xlarge" id="url" value="$!{game.url}" />
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">游戏类型</label>
 			<div class="controls">
-				<input type="text" class="input-xlarge" name="category" value="$!{game.category}" />
+				<input type="text" class="input-xlarge" id="category" value="$!{game.category}" />
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">运营商</label>
 			<div class="controls">
-				<input type="text" class="input-xlarge" name="platform" value="$!{game.platform}" />
+				<input type="text" class="input-xlarge" id="platform" value="$!{game.platform}" />
 			</div>
 		</div>
+		#if($action=='add')
+		<div class="control-group">
+			<label class="control-label">账号</label>
+			<div class="controls">
+				<input type="text" class="input-xlarge" id="account" value="$!{game.account}" />
+			</div>
+		</div>
+		#else
+			<input type="hidden" id="account" value="$!{game.account}" />
+		#end
 		
-		<input type="hidden" name="id" value="$!{game.id}" />
-
+		
+		<input type="hidden" id="id" value="$!{game.id}" />
 		#if($disabled==true)		
 		<div class="form-actions">
-			<button type="submit" class="btn btn-primary">保存</button> <button class="btn">取消</button>
+			<button type="button" class="btn btn-primary" id="btn_save">保存</button>
 		</div>
 		#end
 	</fieldset>

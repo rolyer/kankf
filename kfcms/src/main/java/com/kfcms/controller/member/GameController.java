@@ -72,7 +72,7 @@ public class GameController {
 				
 				User user = getLoginUser(request);
 				
-				game = gameService.queryByIdAndAccount(gid, user.getAccount(), false);
+				game = gameService.queryByIdAndAccount(gid, user.getAccount());
 				
 				if("edit".equals(action)) {
 					disabled = true;
@@ -102,7 +102,7 @@ public class GameController {
 			game.setAccount(user.getAccount());
 			game.setStatus(0);
 			
-			gameService.save(game, false);
+			gameService.save(game);
 			
 			result.setSuccess(true);
 		} catch (ParseException e) {
@@ -122,7 +122,7 @@ public class GameController {
 			return result;
 		}
 		User user = getLoginUser(request);
-		int count = gameService.deleteByIdAndAccount(Integer.parseInt(id), user.getAccount(), false);
+		int count = gameService.deleteByIdAndAccount(Integer.parseInt(id), user.getAccount());
 		if (count>0) {
 			result.setSuccess(true);
 		}

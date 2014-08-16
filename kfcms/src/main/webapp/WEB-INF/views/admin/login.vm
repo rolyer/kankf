@@ -8,6 +8,7 @@
 		<meta charset="utf-8">
 		<title>管理员登录 - 看开服</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon"rel="shortcut icon" href="$link.getContextPath()/images/favicon.ico?v=1.0.0">
 		<link href="$link.getContextPath()/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link href="$link.getContextPath()/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
 		<link href="$link.getContextPath()/bootstrap/css/site.css" rel="stylesheet">
@@ -22,23 +23,31 @@
     			
     			<button type="submit" class="btn btn-primary" onclick="login()">登录</button>
     		</div>
+			<div id="sys_msg"></div>
 		</div>
 		<script src="$link.getContextPath()/bootstrap/js/jquery.min.js"></script>
 		<script src="$link.getContextPath()/js/util.js"></script>
 		<script src="$link.getContextPath()/bootstrap/js/bootstrap.min.js"></script>
 		<script src="$link.getContextPath()/bootstrap/js/site.js"></script>
-		<script>
+		<script type="text/javascript">
+			$(function(){
+				$('#login-form').bind('keydown',function(e){
+            	      if(e.keyCode==13){
+            	    	  login();
+            	      }
+            	});
+			});
 			function login() {
             	var account = $('input[name="account"]').val();
             	var password = $('input[name="password"]').val();
             
             	if(utils.isEmpty(account)){
-            		alert("请输入您的账号")
+            		utils.alert('#sys_msg', '请输入您的账号', 'danger');
             		return false;
             	}
             	
             	if(utils.isEmpty(password)){
-            		alert("请输入您的密码")
+            		utils.alert('#sys_msg', '请输入您的密码', 'danger');
             		return false;
             	}
             	
@@ -54,11 +63,11 @@
                     	if(response.success){
                     		window.location.href = "/web/admin/index.html";
                     	} else {
-            				alert(response.data);
+            				utils.alert('#sys_msg', response.data, 'danger');
             			}
                     },
                     error: function(xhr, textStatus, errorThrown) {
-                    	alert("服务器连接错误");
+                    	utils.alert('#sys_msg', '服务器连接错误', 'danger');
                     }
                 });
             }
