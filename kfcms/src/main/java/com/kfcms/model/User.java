@@ -18,6 +18,9 @@ public class User implements java.io.Serializable {
 	private String email;
 	private String tel;
 	private String im;
+	/**
+	 * 状态： 0 未审核 1  已审核 2 已锁定
+	 */
 	private Integer status;
 	private Date gmtCreated;
 	private Date gmtModified;

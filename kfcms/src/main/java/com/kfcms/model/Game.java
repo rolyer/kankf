@@ -20,6 +20,9 @@ public class Game implements java.io.Serializable {
 	private String category;
 	private String giftName;
 	private String platform;
+	/**
+	 * 状态： 0 未审核 1  已审核 2 已锁定
+	 */
 	private Integer status;
 	private Date gmtCreated;
 	private Date gmtModified;
