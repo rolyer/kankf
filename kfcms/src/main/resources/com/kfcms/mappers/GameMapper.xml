@@ -20,7 +20,7 @@
 	<select id="queryList" parameterType="map" resultMap="baseResultMap">
 			SELECT id, account, name, start_time, server_name, url, category, platform, status, gmt_created, gmt_modified
 			FROM game
-			WHERE 1=1
+			WHERE status = 1
 			<if test="startTime != null">
 			    AND YEAR(start_time) = YEAR(#{startTime}) 
 				AND DAY(start_time) = DAY(#{startTime})
@@ -38,6 +38,9 @@
 				<if test="game.account != null">
 					AND g.account = #{game.account}
 				</if>
+				<if test="game.status != null">
+					AND g.status = #{game.status}
+				</if>
 				<if test="game.startTime != null">
 					AND YEAR(start_time) = YEAR(#{game.startTime}) 
 					AND DAY(start_time) = DAY(#{game.startTime})
@@ -54,6 +57,9 @@
 			<if test="game != null">
 				<if test="game.account != null">
 					AND g.account = #{game.account}
+				</if>
+				<if test="game.status != null">
+					AND g.status = #{game.status}
 				</if>
 				<if test="game.startTime != null">
 					AND YEAR(start_time) = YEAR(#{game.startTime}) 

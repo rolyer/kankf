@@ -148,4 +148,12 @@ public class GameDaoTest {
 		
 		Assert.assertEquals(0, count.intValue());
 	}
+	
+	@Test
+	public void queryListWithoutStartDateDate(){
+		List<Game> list = dao.queryList(10, null);
+		
+		Assert.assertNotNull(list);
+		Assert.assertEquals(1, list.size());
+	}
 }

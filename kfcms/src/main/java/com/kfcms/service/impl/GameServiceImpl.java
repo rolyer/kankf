@@ -106,6 +106,7 @@ public class GameServiceImpl implements GameService {
 		
 		Game game = new Game();
 		game.setStartTime(startTime);
+		game.setStatus(1);
 		
 		List<Game> list = gameDao.queryListByConditions(offset, pageSize, game);
 		

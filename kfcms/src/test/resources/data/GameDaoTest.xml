@@ -7,21 +7,21 @@
 
 	<public.game id="2" account="testuser" name="testgame"
 		start_time="2014-08-09 12:50:40" server_name="server name" url="http://www.test.com"
-		category="3D" platform="运营商" status="1" gmt_created="2014-08-09 12:50:40"
+		category="3D" platform="运营商" status="0" gmt_created="2014-08-09 12:50:40"
 		gmt_modified="2014-08-09 12:50:40" />
 
 	<public.game id="3" account="testuser" name="testgame"
 		start_time="2014-08-09 12:50:40" server_name="server name" url="http://www.test.com"
-		category="3D" platform="运营商" status="1" gmt_created="2014-08-09 12:50:40"
+		category="3D" platform="运营商" status="0" gmt_created="2014-08-09 12:50:40"
 		gmt_modified="2014-08-09 12:50:40" />
 
 	<public.game id="4" account="username" name="testgame"
 		start_time="2014-08-09 12:50:40" server_name="server name" url="http://www.test.com"
-		category="3D" platform="运营商" status="1" gmt_created="2014-08-09 12:50:40"
+		category="3D" platform="运营商" status="0" gmt_created="2014-08-09 12:50:40"
 		gmt_modified="2014-08-09 12:50:40" />
 
 	<public.game id="5" account="username" name="testgame"
 		start_time="2014-08-09 12:50:40" server_name="server name" url="http://www.test.com"
-		category="3D" platform="运营商" status="1" gmt_created="2014-08-09 12:50:40"
+		category="3D" platform="运营商" status="0" gmt_created="2014-08-09 12:50:40"
 		gmt_modified="2014-08-09 12:50:40" />
 </dataset>
