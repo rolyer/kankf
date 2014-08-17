@@ -11,6 +11,14 @@
 				<input type="text" class="input-xlarge" id="account" value="$!{user.account}" #if($action!='add') readonly #end />
 			</div>
 		</div>
+		#if($action=='add')
+			<div class="control-group">
+			<label class="control-label">登录密码</label>
+			<div class="controls">
+				<input type="password" class="input-xlarge" id="password" value="$!{user.password}" #if($action!='add') readonly #end />
+			</div>
+		</div>
+		#end
 		<div class="control-group">
 			<label class="control-label">用户邮箱</label>
 			<div class="controls">
@@ -29,6 +37,7 @@
 				<input type="text" class="input-xlarge" id="im" value="$!{user.im}" />
 			</div>
 		</div>
+		#if($action!='add')
 		<div class="control-group">
 			<label class="control-label">注册时间</label>
 			<div class="controls">
@@ -66,11 +75,16 @@
 				</script>
 			</div>
 		</div>
-		
+		#end
 		<input type="hidden" id="id" value="$!{user.id}" />
 		#if($disabled==true)		
 		<div class="form-actions">
-			<button type="button" class="btn btn-primary" id="btn_save">保存</button>  <input type="reset" class="btn" value="重置" />
+			#if($action=='add')
+			<button type="button" class="btn btn-primary" id="btn_reg">添加</button> 
+			#else
+			<button type="button" class="btn btn-primary" id="btn_save">保存</button> 
+			#end
+			<input type="reset" class="btn" value="重置" />
 		</div>
 		#end
 	</fieldset>
