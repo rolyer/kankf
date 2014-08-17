@@ -32,13 +32,13 @@
 		<div class="control-group">
 			<label class="control-label">注册时间</label>
 			<div class="controls">
-				<input type="text" class="input-xlarge" id="gmtCreated" value="$!{user.gmtCreated}" readonly #if($action=='view') disabled #end />
+				<input type="text" class="input-xlarge" id="gmtCreated" value="$!date.format('yyyy-MM-dd HH:mm',$!user.gmtCreated)" readonly #if($action=='view') disabled #end />
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">更新时间</label>
 			<div class="controls">		  
-				<input type="text" class="input-xlarge" id="gmtModified" value="$!{user.gmtModified}" readonly #if($action=='view') disabled #end />
+				<input type="text" class="input-xlarge" id="gmtModified" value="$!date.format('yyyy-MM-dd HH:mm',$!user.gmtModified)" readonly #if($action=='view') disabled #end />
 				<script>
 					$(function(){
 						#if($disabled==true)
@@ -70,7 +70,7 @@
 		<input type="hidden" id="id" value="$!{user.id}" />
 		#if($disabled==true)		
 		<div class="form-actions">
-			<button type="button" class="btn btn-primary" id="btn_save">保存</button>
+			<button type="button" class="btn btn-primary" id="btn_save">保存</button>  <input type="reset" class="btn" value="重置" />
 		</div>
 		#end
 	</fieldset>
