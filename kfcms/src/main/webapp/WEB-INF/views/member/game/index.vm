@@ -1,6 +1,7 @@
 #set($layout="layout/member/template.vm")
 <script type="text/javascript" src="$link.getContextPath()/js/member/game/index.js"></script>
-<h1>开服信息</h1>
+<h1 class="float_left">开服信息</h1>
+<a href="$link.getContextPath()/member/game/edit.html?action=add" class="float_right btn btn-primary btn-large"><i class="icon-plus icon-white"></i>添加开服</a>
 <table class="table table-bordered table-striped">
 	<thead>
 		<tr>
@@ -9,6 +10,7 @@
 			<th>服务器名</th>
 			<th>游戏类型</th>
 			<th>开服时间</th>
+			<th>状态</th>
 			<th>操作</th>
 		</tr>
 	</thead>
@@ -23,6 +25,15 @@
 			<td>$!{game.serverName}</td>
 			<td>$!{game.category}</td>
 			<td>$!date.format('yyyy-MM-dd HH:mm ',$!game.startTime)</td>
+			<td>
+				#if($game.status==1)
+					<span class="label label-success">已审核</span>
+				#elseif($game.status==2)
+					<span class="label label-warning">未通过</span>
+				#else
+					<span class="label label-default">待审核</span>
+				#end
+			</td>
 			<td>
 				<a href="edit.html?action=view&id=$!{game.id}" class="view-link">查看</a>
 				<a href="edit.html?action=edit&id=$!{game.id}" class="view-link">修改</a>

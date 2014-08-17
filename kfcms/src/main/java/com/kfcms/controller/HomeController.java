@@ -148,10 +148,10 @@ public class HomeController {
 			
 			session.setAttribute(Constants.LOGIN_USER, user);
 		} else {
-			if (RegisterStatus.DUPLICATE_EMAIL.equals(status)) {
-				result.setData("对不起，该邮箱已被注册");
-			} else if (RegisterStatus.DUPLICATE_NAME.equals(status)) {
+			if (RegisterStatus.DUPLICATE_NAME.equals(status)) {
 				result.setData("对不起，该用户名已被注册");
+			} else if (RegisterStatus.DUPLICATE_EMAIL.equals(status)) {
+				result.setData("对不起，该邮箱已被注册");
 			}
 		}
 		

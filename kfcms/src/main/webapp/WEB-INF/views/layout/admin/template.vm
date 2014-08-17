@@ -19,6 +19,11 @@
 		<script src="$link.getContextPath()/js/jquery.datetimepicker.js"></script>
 		<script src="$link.getContextPath()/js/util.js"></script>
 		#parse("layout/context.vm")
+		<style <style type="text/css">
+			body,table,input,textarea,select {font-family:微软雅黑,宋体,Arial,Verdana,sans-serif;}
+			.float_left {float:left;}
+			.float_right {float:right;}
+        </style>
 	</head>
 	<body>
 		<div class="container">

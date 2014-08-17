@@ -15,7 +15,7 @@
 			<div class="control-group">
 			<label class="control-label">登录密码</label>
 			<div class="controls">
-				<input type="password" class="input-xlarge" id="password" value="" placeholder="不更新密码，请保留空白" />
+				<input type="password" class="input-xlarge" id="password" value="" #if($action=='edit') placeholder="不更新密码，请保留空白" #end />
 			</div>
 		</div>
 		#end
@@ -42,7 +42,7 @@
           <div class="controls">
             <select id="status" class="input-xlarge" #if($action=='view') disabled #end >
               <option value="1" #if($user.status==1) selected #end>已审核</option>
-              <option value="0" #if($user.status==0) selected #end>未审核</option>
+              <option value="0" #if($user.status==0) selected #end>待审核</option>
 			  <option value="2" #if($user.status==2) selected #end>已锁定</option>
             </select>
           </div>

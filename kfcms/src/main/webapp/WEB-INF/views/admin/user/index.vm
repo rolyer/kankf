@@ -1,7 +1,7 @@
 #set($layout="layout/admin/template.vm")
 <script type="text/javascript" src="$link.getContextPath()/js/admin/user/index.js"></script>
-<h1 style="float:left;">用戶管理</h1>
-<a style="float:right;" href="$link.getContextPath()/admin/user/edit.html?action=add" class="btn btn-primary btn-large"><i class="icon-plus icon-white"></i>添加用户</a>
+<h1 class="float_left">用戶管理</h1>
+<a href="$link.getContextPath()/admin/user/edit.html?action=add&amp;account=admins" class="float_right btn btn-primary btn-large"><i class="icon-plus icon-white"></i>添加用户</a>
 <table class="table table-bordered table-striped">
 	<thead>
 		<tr>
@@ -25,7 +25,15 @@
 			<td>$!{u.email}</td>
 			<td>$!{u.tel}</td>
 			<td>$!{u.im}</td>
-			<td>$!{u.status}</td>
+			<td>
+				#if($u.status==1)
+					<span class="label label-success">已审核</span>
+				#elseif($u.status==2)
+					<span class="label label-warning">未通过</span>
+				#else
+					<span class="label label-default">待审核</span>
+				#end
+			</td>
 			<td>
 				<a href="edit.html?action=view&id=$!{u.id}" class="view-link">查看</a>
 				<a href="edit.html?action=edit&id=$!{u.id}" class="view-link">修改</a>

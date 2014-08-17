@@ -11,6 +11,7 @@ function reset(){
 }
 
 function save() {
+	var status = $.trim($('#status').val());
 	var name = $.trim($('#name').val());
 	var statTime = $.trim($('#statTime').val());
 	var serverName = $.trim($('#serverName').val());
@@ -53,6 +54,7 @@ function save() {
 		type : "POST",
 		url : Context.PATH + '/admin/game/save.html?t=' + utils.random(),
 		data : {
+			status:status,
 			name:name,
 			statTime:statTime,
 			serverName:serverName,

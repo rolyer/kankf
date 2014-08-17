@@ -59,6 +59,16 @@
 				<input type="text" class="input-xlarge" id="platform" value="$!{game.platform}" />
 			</div>
 		</div>
+		<div class="control-group">
+          <label class="control-label">用户状态</label>
+          <div class="controls">
+            <select id="status" class="input-xlarge" #if($game=='view') disabled #end >
+              <option value="0" #if($game.status==0) selected #end>待审核</option>
+              <option value="1" #if($game.status==1) selected #end>已审核</option>
+			  <option value="2" #if($game.status==2) selected #end>未通过</option>
+            </select>
+          </div>
+        </div>
 		#if($action=='add')
 		<div class="control-group">
 			<label class="control-label">账号</label>
