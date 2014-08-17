@@ -84,7 +84,9 @@ public class UserServiceImpl implements UserService {
 		
 		user.setGmtCreated(new Date());
 		user.setGmtModified(new Date());
-		user.setStatus(UserStatus.UNCKECKED.getValue());
+		if (user.getStatus()==null) {
+			user.setStatus(UserStatus.UNCKECKED.getValue());
+		}
 		
 		userDao.insert(user);
 		
@@ -147,6 +149,59 @@ public class UserServiceImpl implements UserService {
 
 	public User queryById(Integer id) {
 		return userDao.queryById(id);
+	}
+
+	public RegisterStatus update(User user) {
+		Assert.notNull(user, "The user must not be null");
+		Assert.notNull(user.getId(), "User id must not be null");
+		Assert.hasText(user.getAccount(), "Account must not be empty");
+		Assert.hasText(user.getEmail(), "User email must not be empty");
+		
+		// get the originally user
+		User original = queryById(user.getId());
+		if (original==null) {
+			return RegisterStatus.NO_SUCH_USER;
+		}
+		// duplicate email checked
+		if (!original.getEmail().equals(user.getEmail())) {
+			User exist = userDao.queryUserByEmail(user.getEmail());
+			if (exist != null && exist.getId() != null && exist.getId().intValue() > 0) {
+				return RegisterStatus.DUPLICATE_EMAIL;
+			}
+		}
+		
+		// duplicate name checked
+		if (!original.getAccount().equals(user.getAccount())) {
+			User exist = queryUserByAccount(user.getAccount());
+			if (exist != null && exist.getId() != null && exist.getId().intValue() > 0) {
+				return RegisterStatus.DUPLICATE_NAME;
+			}
+		}
+		
+		// 密码加密
+		if (StringUtils.isNotBlank(user.getPassword())) {
+			try {
+				String encrypt = AlgorithmUtils.MD5(user.getPassword(), 16);
+				user.setPassword(encrypt);
+			} catch (NoSuchAlgorithmException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				
+				return RegisterStatus.PWD_ENCRYPT_ERORR;
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				
+				return RegisterStatus.PWD_ENCRYPT_ERORR;
+			}
+		}
+		
+		int count = userDao.update(user);
+		if (count<=0) {
+			return RegisterStatus.FAIL;
+		}
+		
+		return RegisterStatus.SUCCESS;
 	}
 
 }

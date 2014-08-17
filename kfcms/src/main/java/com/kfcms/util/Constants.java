@@ -15,6 +15,6 @@ public class Constants {
 	public static final String MSG_PASSWORD_NOT_MATCH = "您输入的密码不正确！";
 
 	public enum RegisterStatus {
-		SUCCESS, DUPLICATE_NAME, DUPLICATE_EMAIL
+		SUCCESS, DUPLICATE_NAME, DUPLICATE_EMAIL, FAIL, NO_SUCH_USER, PWD_ENCRYPT_ERORR
 	}
 }

@@ -36,4 +36,6 @@ public interface UserDao {
 			@Param("status") Integer status);
 	
 	public User queryById(Integer id);
+	
+	public int update(User user);
 }

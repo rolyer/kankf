@@ -19,6 +19,7 @@ import com.kfcms.model.User;
 import com.kfcms.service.GameService;
 import com.kfcms.service.UserService;
 import com.kfcms.util.Constants;
+import com.kfcms.util.UserStatus;
 import com.kfcms.util.Constants.RegisterStatus;
 import com.kfcms.vo.GameVO;
 
@@ -138,7 +139,7 @@ public class HomeController {
 	@RequestMapping("reg.html")
 	public @ResponseBody Result reg(HttpServletRequest request, ModelMap out, User user) {
 		Result result = new Result();
-		
+		user.setStatus(UserStatus.UNCKECKED.getValue());
 		RegisterStatus status = userService.register(user);
 		if(RegisterStatus.SUCCESS.equals(status)) {
 			result.setSuccess(true);

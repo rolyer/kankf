@@ -28,4 +28,6 @@ public interface UserService {
 	public int updateStatusById(Integer id, Integer status);
 	
 	public User queryById(Integer id);
+	
+	public RegisterStatus update(User user);
 }

@@ -16,6 +16,7 @@ import com.kfcms.dto.Result;
 import com.kfcms.model.User;
 import com.kfcms.service.UserService;
 import com.kfcms.util.Constants;
+import com.kfcms.util.Constants.RegisterStatus;
 
 @Controller
 @RequestMapping("/admin/user/")
@@ -114,6 +115,48 @@ public class AdminUserController {
 		if (count > 0) {
 			result.setSuccess(true);
 		}
+		return result;
+	}
+	
+	@RequestMapping(value = "add.html", method = RequestMethod.POST)
+	public @ResponseBody Result add(HttpServletRequest request, ModelMap out, User user) {
+		Result result = new Result();
+		RegisterStatus status = userService.register(user);
+		if(RegisterStatus.SUCCESS.equals(status)) {
+			result.setSuccess(true);
+		} else {
+			if (RegisterStatus.DUPLICATE_EMAIL.equals(status)) {
+				result.setData("对不起，该邮箱已被注册");
+			} else if (RegisterStatus.DUPLICATE_NAME.equals(status)) {
+				result.setData("对不起，该用户名已被注册");
+			} else {
+				result.setData("添加失败");
+			}
+		}
+		
+		return result;
+	}
+	
+	@RequestMapping(value = "update.html", method = RequestMethod.POST)
+	public @ResponseBody Result update(HttpServletRequest request, ModelMap out, User user) {
+		Result result = new Result();
+		RegisterStatus status = userService.update(user);
+		if(RegisterStatus.SUCCESS.equals(status)) {
+			result.setSuccess(true);
+		} else {
+			if (RegisterStatus.NO_SUCH_USER.equals(status)) {
+				result.setData("该用户不存在或已删除");
+			} else if (RegisterStatus.DUPLICATE_EMAIL.equals(status)) {
+				result.setData("对不起，该邮箱已被注册");
+			} else if (RegisterStatus.DUPLICATE_NAME.equals(status)) {
+				result.setData("对不起，该用户名已被注册");
+			} else if (RegisterStatus.PWD_ENCRYPT_ERORR.equals(status)) {
+				result.setData("密码加密失败，请重试！");
+			} else {
+				result.setData("更新失败");
+			}
+		}
+		
 		return result;
 	}
 }
