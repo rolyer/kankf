@@ -31,14 +31,14 @@
 		</div>
 		<div class="control-group">
 			<label class="control-label">注册时间</label>
-			<div class="controls">		  
-				<input type="text" class="input-xlarge" id="gmtCreated" value="$!{user.gmtCreated}" readonly />
+			<div class="controls">
+				<input type="text" class="input-xlarge" id="gmtCreated" value="$!{user.gmtCreated}" readonly #if($action=='view') disabled #end />
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">更新时间</label>
 			<div class="controls">		  
-				<input type="text" class="input-xlarge" id="gmtModified" value="$!{user.gmtModified}" readonly />
+				<input type="text" class="input-xlarge" id="gmtModified" value="$!{user.gmtModified}" readonly #if($action=='view') disabled #end />
 				<script>
 					$(function(){
 						#if($disabled==true)

@@ -39,7 +39,7 @@
 	</div>
 	
 	<div class="form-actions">
-		<button id="btn_save_profile" type="button" class="btn btn-primary">保存</button>
+		<button id="btn_save_profile" type="button" class="btn btn-primary">保存</button> <input type="reset" class="btn" value="重置" />
 	</div>
   </div>
   <div class="tab-pane" id="pwd">
@@ -63,7 +63,7 @@
 	</div>
 	
 	<div class="form-actions">
-		<button type="button" id="btn_save_pwd" class="btn btn-primary">保存</button>
+		<button type="button" id="btn_save_pwd" class="btn btn-primary">保存</button> <input type="reset" class="btn" value="重置" />
 	</div>
   </div>
 </div>
