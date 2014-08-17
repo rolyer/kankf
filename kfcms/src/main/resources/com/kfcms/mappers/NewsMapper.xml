@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kfcms.dao.NewsDao">
+	<resultMap id="baseResultMap" type="news">
+		<result property="id" column="id" />
+		<result property="account" column="account" />
+		<result property="category" column="category" />
+		<result property="title" column="title" />
+		<result property="content" column="content" />
+		<result property="status" column="status" />
+		<result property="gmtCreated" column="gmt_created" />
+		<result property="gmtModified" column="gmt_modified" />
+	</resultMap>
+
+	<insert id="insert" parameterType="news" useGeneratedKeys="true"
+		keyProperty="id">
+		<![CDATA[
+			INSERT INTO news (
+				account,
+				category,
+				title,
+				content,
+				status,
+				gmt_created,
+				gmt_modified
+			)
+			VALUES (
+				#{account},
+				#{category},
+				#{title},
+				#{content},
+				#{status},
+				NOW(),
+				NOW()
+			)
+		]]>
+	</insert>
+	
+	<delete id="deleteById" parameterType="java.lang.Integer">
+		<![CDATA[
+			DELETE FROM news
+			WHERE id=#{id}
+		]]>
+	</delete>
+	
+	<update id="update" parameterType="news">
+		UPDATE news SET category=#{category}, title=#{title}, content=#{content}, status=#{status}, gmt_modified = NOW()
+		WHERE id = #{id}
+	</update>
+	
+	<select id="findTopOneByCategory" parameterType="java.lang.Integer" resultMap="baseResultMap">
+			SELECT id, account, category, title, content, status, gmt_created, gmt_modified
+			FROM news
+			WHERE status=1
+			<if test="category != null">
+				AND category = #{category}
+			</if>
+			ORDER BY gmt_modified DESC
+			LIMIT 0, 1
+	</select>
+	
+	<select id="findOne" parameterType="java.lang.Integer" resultMap="baseResultMap">
+			SELECT id, account, category, title, content, status, gmt_created, gmt_modified
+			FROM news
+			WHERE id=#{id}
+	</select>
+	
+	<select id="queryListByConditions" parameterType="news" resultMap="baseResultMap">
+			SELECT n.id, n.account, n.category, n.title, n.content, n.status, n.gmt_created, n.gmt_modified
+			FROM news n
+			WHERE 1=1
+			<if test="news != null">
+				<if test="news.account != null">
+					AND n.account = #{news.account}
+				</if>
+				<if test="news.category != null">
+					AND n.category = #{news.category}
+				</if>
+				<if test="news.status != null">
+					AND n.status = #{news.status}
+				</if>
+			</if>
+			ORDER BY n.id DESC
+			LIMIT #{offset}, #{rowCount} 
+	</select>
+	
+	<select id="countListByConditions" parameterType="news" resultType="int">
+			SELECT COUNT(n.id)
+			FROM news n
+			WHERE 1=1
+			<if test="news != null">
+				<if test="news.account != null">
+					AND n.account = #{news.account}
+				</if>
+				<if test="news.category != null">
+					AND n.category = #{news.category}
+				</if>
+				<if test="news.status != null">
+					AND n.status = #{news.status}
+				</if>
+			</if>
+	</select>
+</mapper>

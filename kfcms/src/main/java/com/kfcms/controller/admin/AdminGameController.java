@@ -49,7 +49,7 @@ public class AdminGameController {
 	public void edit(HttpServletRequest request, ModelMap out, String action,
 			String id, String account) {
 
-		if (StringUtils.isNotBlank(action) && StringUtils.isNotBlank(account)) {
+		if (StringUtils.isNotBlank(action)) {
 			String title = "";
 			Game game = new Game();
 

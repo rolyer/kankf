@@ -1,0 +1,81 @@
+#set($layout="layout/admin/template.vm")
+<script type="text/javascript" src="$link.getContextPath()/js/admin/profile.js"></script>
+<h1>帐号管理</h1>
+
+<ul class="nav nav-tabs" id="profile-tab">
+  <li class="active"><a href="#list">管理员列表</a></li>
+  <li><a href="#add">添加管理员</a></li>
+  <li><a href="#pwd">修改密码</a></li>
+</ul>
+	
+<div id="sys_msg"></div>
+	
+<form id="edit-profile" class="form-horizontal">
+<div class="tab-content">
+  <div class="tab-pane active" id="list">
+	<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>用户名</th>
+			<th>创建时间</th>
+			<th>开服时间</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		#foreach( $admin in $admins )
+		<tr id="admin_list_tr_gid_$!{admin.id}">
+			<td>$!{admin.account}</td>
+			<td>$!date.format('yyyy-MM-dd HH:mm ',$!admin.gmtModified)</td>
+			<td>$!date.format('yyyy-MM-dd HH:mm ',$!admin.gmtCreated)</td>
+			<td>
+				<a  href="javascript:;" class="view-link" onclick="javascript: return del($!{admin.id});">删除</a>
+			</td>
+		</tr>
+		#end
+	</tbody>
+</table>
+  </div>
+   <div class="tab-pane" id="add">
+	<div class="control-group">
+		<label class="control-label" for="input01">账号</label>
+		<div class="controls">
+			<input type="text" class="input-xlarge" id="account" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="input01">密码</label>
+		<div class="controls">
+			<input type="password" class="input-xlarge" id="password" />
+		</div>
+	</div>
+	<div class="form-actions">
+		<button type="button" id="btn_add" class="btn btn-primary">添加</button>  <input type="reset" class="btn" value="重置" />
+	</div>
+  </div>
+  <div class="tab-pane" id="pwd">
+	<div class="control-group">
+		<label class="control-label" for="input01">原密码</label>
+		<div class="controls">
+			<input type="password" class="input-xlarge" id="opwd" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="input01">新密码</label>
+		<div class="controls">
+			<input type="password" class="input-xlarge" id="npwd" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="input01">确认密码</label>
+		<div class="controls">
+			<input type="password" class="input-xlarge" id="secpwd" value="" />
+		</div>
+	</div>
+	
+	<div class="form-actions">
+		<button type="button" id="btn_save_pwd" class="btn btn-primary">保存</button>  <input type="reset" class="btn" value="重置" />
+	</div>
+  </div>
+</div>
+</form>

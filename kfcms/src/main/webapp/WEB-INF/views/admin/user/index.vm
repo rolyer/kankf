@@ -1,7 +1,7 @@
 #set($layout="layout/admin/template.vm")
 <script type="text/javascript" src="$link.getContextPath()/js/admin/user/index.js"></script>
 <h1 class="float_left">用戶管理</h1>
-<a href="$link.getContextPath()/admin/user/edit.html?action=add&amp;account=admins" class="float_right btn btn-primary btn-large"><i class="icon-plus icon-white"></i>添加用户</a>
+<a href="$link.getContextPath()/admin/user/edit.html?action=add" class="float_right btn btn-primary btn-large"><i class="icon-plus icon-white"></i>添加用户</a>
 <table class="table table-bordered table-striped">
 	<thead>
 		<tr>

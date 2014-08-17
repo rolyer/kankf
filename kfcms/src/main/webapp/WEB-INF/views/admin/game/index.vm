@@ -1,7 +1,7 @@
 #set($layout="layout/admin/template.vm")
 <script type="text/javascript" src="$link.getContextPath()/js/admin/game/index.js"></script>
 <h1 class="float_left">开服信息</h1>
-<a href="$link.getContextPath()/admin/game/edit.html?action=add&amp;account=admins" class="float_right btn btn-primary btn-large"><i class="icon-plus icon-white"></i>添加开服</a>
+<a href="$link.getContextPath()/admin/game/edit.html?action=add" class="float_right btn btn-primary btn-large"><i class="icon-plus icon-white"></i>添加开服</a>
 <table class="table table-bordered table-striped">
 	<thead>
 		<tr>

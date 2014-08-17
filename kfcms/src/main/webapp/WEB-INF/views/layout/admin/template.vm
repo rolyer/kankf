@@ -63,10 +63,19 @@
 								<a href="$link.getContextPath()/admin/index.html"><i class="icon-home"></i> 后台主页</a>
 							</li>
 							<li #if($nav=='game') class="active" #end>
-								<a href="$link.getContextPath()/admin/game/index.html"><i class="icon-folder-open"></i> 开服管理</a>
+								<a href="$link.getContextPath()/admin/game/index.html"><i class="icon-list-alt"></i> 开服管理</a>
 							</li>
 							<li #if($nav=='user') class="active" #end>
 								<a href="$link.getContextPath()/admin/user/index.html"><i class="icon-user"></i> 用户管理</a>
+							</li>
+							<li #if($nav=='news') class="active" #end>
+								<a href="$link.getContextPath()/admin/news/index.html"><i class=" icon-edit"></i> 资讯管理</a>
+							</li>
+							<li #if($nav=='ads') class="active" #end>
+								<a href="#"><i class="icon-screenshot"></i> 广告管理</a>
+							</li>
+							<li #if($nav=='ads') class="active" #end>
+								<a href="#"><i class="icon-gift"></i> 礼包管理</a>
 							</li>
 							<li class="divider">
 							</li>
@@ -75,6 +84,9 @@
 							</li>
 							<li #if($nav=='profile') class="active" #end>
 								<a href="$link.getContextPath()/admin/profile.html"><i class="icon-user"></i> 帐号管理</a>
+							</li>
+							<li #if($nav=='setting') class="active" #end>
+								<a href="#"><i class="icon-cog"></i> 系统设置</a>
 							</li>
 						</ul>
 					</div>

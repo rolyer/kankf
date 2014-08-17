@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<public.news id="1" account="testuser" category="1" title="title"
+		content="content" status="1" gmt_created="2014-08-09 12:50:40"
+		gmt_modified="2014-08-09 12:50:40" />
+		
+	<public.news id="2" account="testuser2" category="0" title="this is title"
+		content="this is content" status="0" gmt_created="2014-08-09 12:50:40"
+		gmt_modified="2014-08-09 12:50:40" />
+		
+	<public.news id="3" account="testuser3" category="1" title="this is title2"
+		content="this is content2" status="1" gmt_created="2014-08-10 12:50:40"
+		gmt_modified="2014-08-10 12:50:40" />
+</dataset>

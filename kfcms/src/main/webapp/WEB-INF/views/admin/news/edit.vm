@@ -1,0 +1,69 @@
+#set($layout="layout/admin/template.vm")
+<script type="text/javascript" src="$link.getContextPath()/js/admin/news/edit.js"></script>
+<h1>$!{title}</h1>
+<form class="form-horizontal">
+	<fieldset>
+		<legend>资讯信息</legend>
+		<div id="sys_msg"></div>
+		<div class="control-group">
+			<label class="control-label">标题</label>
+			<div class="controls">
+				<input type="text" class="input-xlarge" id="title" value="$!{news.title}" #if($action=='view') disabled #end />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">内容</label>
+			<div class="controls">
+				<input type="text" class="input-xlarge" id="content" value="$!{news.content}" #if($action=='view') disabled #end />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">作者</label>
+			<div class="controls">
+				<input type="text" class="input-xlarge" id="account" value="$!{news.account}" #if($action=='view') disabled #end />
+			</div>
+		</div>
+		<div class="control-group">
+          <label class="control-label">类别</label>
+          <div class="controls">
+            <select id="category" class="input-xlarge" #if($action=='view') disabled #end >
+              <option value="0" #if($news.category==0) selected #end>热门游戏</option>
+              <option value="1" #if($news.category==1) selected #end>公告</option>
+			  <option value="2" #if($news.category==2) selected #end>资讯</option>
+            </select>
+          </div>
+        </div>
+		<div class="control-group">
+          <label class="control-label">状态</label>
+          <div class="controls">
+            <select id="status" class="input-xlarge" #if($action=='view') disabled #end >
+              <option value="0" #if($news.status==0) selected #end>未发布</option>
+              <option value="1" #if($news.status==1) selected #end>已发布</option>
+            </select>
+          </div>
+        </div>
+		#if($action=='view')
+		<div class="control-group">
+			<label class="control-label">创建时间</label>
+			<div class="controls">		  
+				<input type="text" class="input-xlarge" id="gmtCreated" value="$!date.format('yyyy-MM-dd HH:mm',$!news.gmtCreated)" readonly />
+			</div>
+		</div>
+		
+		<div class="control-group">
+			<label class="control-label">更新时间</label>
+			<div class="controls">		  
+				<input type="text" class="input-xlarge" id="gmtModified" value="$!date.format('yyyy-MM-dd HH:mm',$!news.gmtModified)" readonly />
+			</div>
+		</div>
+		#end
+		
+		<input type="hidden" id="id" value="$!{news.id}" />
+		
+		#if($disabled==true)		
+		<div class="form-actions">
+			<button type="button" class="btn btn-primary" id="btn_save">保存</button> <input type="reset" class="btn" value="重置" />
+		</div>
+		#end
+	</fieldset>
+</form>
