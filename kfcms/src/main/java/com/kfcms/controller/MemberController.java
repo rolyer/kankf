@@ -43,15 +43,21 @@ public class MemberController {
 		Result result = new Result();
 		
 		User user = userService.login(account, password);
-		if (user != null) {
-			HttpSession session = request.getSession();
-			
-			session.setAttribute(Constants.LOGIN_USER, user);
-			
-			result.setSuccess(true);
-		} else {
+		if (user == null) {
 			result.setData("用户名或者密码有误");
+			return result;
 		}
+		
+		if (Constants.LOCKED_USER == user.getStatus().intValue()) {
+			result.setData(" 对不起,您的账号已被冻结");
+			
+			return result;
+		}
+		
+		HttpSession session = request.getSession();
+		session.setAttribute(Constants.LOGIN_USER, user);
+		
+		result.setSuccess(true);
 		
 		return result;
 	}

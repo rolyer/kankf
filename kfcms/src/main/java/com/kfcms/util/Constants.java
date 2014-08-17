@@ -17,4 +17,6 @@ public class Constants {
 	public enum RegisterStatus {
 		SUCCESS, DUPLICATE_NAME, DUPLICATE_EMAIL, FAIL, NO_SUCH_USER, PWD_ENCRYPT_ERORR
 	}
+	
+	public static final int LOCKED_USER = 2;
 }
