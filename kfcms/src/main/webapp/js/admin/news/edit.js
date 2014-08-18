@@ -1,4 +1,7 @@
 $(document).ready(function(){
+	$('#profile-tab a').click(function(e) {
+		$(this).tab('show');
+	});
 	$('#btn_save').click(function(){
 		save();
 	});
@@ -8,6 +11,8 @@ function reset(){
 	$('input[type="text"]').each(function( index ) {
 		$(this).val('');
 	});
+	
+	$('#content').val('');
 }
 
 function save() {
