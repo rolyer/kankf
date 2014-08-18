@@ -70,6 +70,10 @@ public class HomeController {
 		
 		News hotGame = newsService.findTopOneByCategory(NewsCategory.HOT_GAME.getValue());
 		out.put("hotGame", hotGame);
+		
+		News notice = newsService.findTopOneByCategory(NewsCategory.NOTICE.getValue());
+		out.put("notice", notice);
+		
 	}
 	
 	@RequestMapping("today.html")
@@ -96,6 +100,9 @@ public class HomeController {
 		
 		News hotGame = newsService.findTopOneByCategory(NewsCategory.HOT_GAME.getValue());
 		out.put("hotGame", hotGame);
+		
+		News notice = newsService.findTopOneByCategory(NewsCategory.NOTICE.getValue());
+		out.put("notice", notice);
 	}
 	
 	@RequestMapping("tomorrow.html")
@@ -123,6 +130,9 @@ public class HomeController {
 		
 		News hotGame = newsService.findTopOneByCategory(NewsCategory.HOT_GAME.getValue());
 		out.put("hotGame", hotGame);
+		
+		News notice = newsService.findTopOneByCategory(NewsCategory.NOTICE.getValue());
+		out.put("notice", notice);
 	}
 	
 	@RequestMapping("rank.html")
@@ -147,6 +157,9 @@ public class HomeController {
 		
 		News hotGame = newsService.findTopOneByCategory(NewsCategory.HOT_GAME.getValue());
 		out.put("hotGame", hotGame);
+		
+		News notice = newsService.findTopOneByCategory(NewsCategory.NOTICE.getValue());
+		out.put("notice", notice);
 	}
 	
 	@RequestMapping("register.html")
@@ -155,6 +168,9 @@ public class HomeController {
 		
 		News hotGame = newsService.findTopOneByCategory(NewsCategory.HOT_GAME.getValue());
 		out.put("hotGame", hotGame);
+		
+		News notice = newsService.findTopOneByCategory(NewsCategory.NOTICE.getValue());
+		out.put("notice", notice);
 	}
 	
 	@RequestMapping("reg.html")
@@ -186,5 +202,8 @@ public class HomeController {
 		
 		News hotGame = newsService.findTopOneByCategory(NewsCategory.HOT_GAME.getValue());
 		out.put("hotGame", hotGame);
+		
+		News notice = newsService.findTopOneByCategory(NewsCategory.NOTICE.getValue());
+		out.put("notice", notice);
 	}
 }
