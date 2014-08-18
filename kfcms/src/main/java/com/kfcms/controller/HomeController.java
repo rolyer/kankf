@@ -15,10 +15,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kfcms.dto.Result;
 import com.kfcms.dto.SeoPage;
+import com.kfcms.model.News;
 import com.kfcms.model.User;
 import com.kfcms.service.GameService;
+import com.kfcms.service.NewsService;
 import com.kfcms.service.UserService;
 import com.kfcms.util.Constants;
+import com.kfcms.util.NewsCategory;
 import com.kfcms.util.UserStatus;
 import com.kfcms.util.Constants.RegisterStatus;
 import com.kfcms.vo.GameVO;
@@ -35,6 +38,9 @@ public class HomeController {
 	
 	@Autowired
 	private GameService gameService;
+	
+	@Autowired
+	private NewsService newsService;
 	
 	private SeoPage getSeoPage(String title, String currentPage) {
 		SeoPage seo = new SeoPage(
@@ -61,6 +67,9 @@ public class HomeController {
 		out.put("games", todayGamesList);
 		out.put("tomgames", tomorrowGamesList);
 		out.put("seo", getSeoPage("首页 - 看开服", "home"));
+		
+		News hotGame = newsService.findTopOneByCategory(NewsCategory.HOT_GAME.getValue());
+		out.put("hotGame", hotGame);
 	}
 	
 	@RequestMapping("today.html")
@@ -84,6 +93,9 @@ public class HomeController {
 		out.put("totalPages", totalPages);
 		out.put("games", list);
 		out.put("seo", getSeoPage("今日开服 - 看开服", "today"));
+		
+		News hotGame = newsService.findTopOneByCategory(NewsCategory.HOT_GAME.getValue());
+		out.put("hotGame", hotGame);
 	}
 	
 	@RequestMapping("tomorrow.html")
@@ -108,6 +120,9 @@ public class HomeController {
 		out.put("totalPages", totalPages);
 		out.put("games", list);
 		out.put("seo", getSeoPage("明日开服 - 看开服", "tomorrow"));
+		
+		News hotGame = newsService.findTopOneByCategory(NewsCategory.HOT_GAME.getValue());
+		out.put("hotGame", hotGame);
 	}
 	
 	@RequestMapping("rank.html")
@@ -129,11 +144,17 @@ public class HomeController {
 	public void play(ModelMap out, String url){
 		out.put("url", url);
 		out.put("seo", getSeoPage("开始游戏 - 看开服", "play"));
+		
+		News hotGame = newsService.findTopOneByCategory(NewsCategory.HOT_GAME.getValue());
+		out.put("hotGame", hotGame);
 	}
 	
 	@RequestMapping("register.html")
 	public void register(ModelMap out) {
 		out.put("seo", getSeoPage("用户注册 - 看开服", "register"));
+		
+		News hotGame = newsService.findTopOneByCategory(NewsCategory.HOT_GAME.getValue());
+		out.put("hotGame", hotGame);
 	}
 	
 	@RequestMapping("reg.html")
@@ -162,5 +183,8 @@ public class HomeController {
 	public void error(ModelMap out, String code) {
 		out.put("code", code);
 		out.put("seo", getSeoPage("看开服", "error"));
+		
+		News hotGame = newsService.findTopOneByCategory(NewsCategory.HOT_GAME.getValue());
+		out.put("hotGame", hotGame);
 	}
 }

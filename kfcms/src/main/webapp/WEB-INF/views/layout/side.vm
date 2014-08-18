@@ -1,6 +1,12 @@
 <aside class="sidebar">	
 <div class="widget d_textbanner">
-<a class="style02" href="#"><strong>热门游戏</strong><h2>斗破苍穹II</h2><p>《斗破苍穹II》是2011年成都页游科技自主研发的史诗级ARPG无端网游。改编自超人气白金作者天蚕土豆的同名小说，游戏画面精美清新，玩法多样轻松...</p></a>
+	
+<a class="style02" href="#">
+	<strong>热门游戏</strong>
+	<h2>$!{hotGame.title}</h2>
+	<p>$!{hotGame.content}</p>
+</a>
+
 </div>
 
 <div class="widget d_banner"><div class="d_banner_inner"><a style="line-height:116px;font-size:16px;" class="banner-your" href="#advertisement/">全站广告机会 360*120px</a></div></div>
