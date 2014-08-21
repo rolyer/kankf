@@ -26,6 +26,50 @@ $.extend(Utils.prototype, {
 		
 		setTimeout( function(){$(e).fadeOut();}, 5*1000 ); 
 	},
+	showMsg: function (msg,type){
+        if(!msg){
+            msg="";
+        }
+        var divWidth=300;
+        var divLeft=(document.body.clientWidth - divWidth) / 2;
+        var color="#777";
+        if(type=="info") {
+        	color="#428bca";
+        } else if(type=="error") {
+            color="#d9534f";
+        } else if(type=="warning"){
+        	color="#f0ad4e";
+        } else {
+        	color="#777"
+        }
+
+        var panel=$('<div>'+
+            '<strong>提示：</strong>'+
+            '<p>'+msg+'</p>'+
+            '</div>')
+            .css({"padding":"10px"})
+            .css({width:divWidth+"px",height:"35px",position: "fixed",left:divLeft+"px","z-index":1200,"background-color":color,color:'#FFFFFF'})
+            .css({"-webkit-box-shadow":"1px #FFFFFF inset","box-shadow":"1px #FFFFFF inset",opacity:0})
+            .css({"border":"1px #FFFFFF solid"})
+            .css({"-webkit-border-radius":"3px 3px 10px 10px","border-radius":"3px 3px 10px 10px"});
+        panel.animate({
+            top:+0,
+            opacity: +.8
+        },500);
+        var hideFuc=function(){
+            panel.animate({
+                opacity:-1
+            },{duration:800,
+            complete:function(){
+                if(panel){
+                    panel.remove();
+                }
+            }});
+        }
+        panel.click(hideFuc);
+        setInterval(hideFuc,2000);
+        $("body").append(panel);
+    },
 	/**
 	 * get timestamp
 	 * @returns

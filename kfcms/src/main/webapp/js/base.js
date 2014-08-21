@@ -110,12 +110,28 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<62?'':e(parseInt(c/62)))+((c=c
 	/* append body code
 	 * ====================================================
 	*/
-	$('body').append('<div class="modal hide fade" id="feed" tabindex="-1" style="width:400px;margin-left:-200px;"><div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button><h3>我要订阅'+_deel.name+'</h3></div><div class="modal-body"><p><strong>订阅地址</strong><br><input type="text" class="input-block-level" value="'+_deel.rss+'" readonly=""></p>'+(_deel.maillist?'<p><form class="subscribe-mail" action="http://list.qq.com/cgi-bin/qf_compose_send" target="_blank" method="post"><input type="hidden" name="t" value="qf_booked_feedback"><input type="hidden" name="id" value="'+_deel.maillistCode+'"><strong>邮件订阅</strong><br><div class="form-inline clearfix"><input class="pull-left" style="width:300px;" id="to" name="to" type="email" placeholder="a@b.com"><input class="btn btn-primary pull-right" style="width:51px;" type="submit" value="订阅"></div></form></p>':'')+'<p><strong>订阅到</strong><br><a class="btn btn-mini btn-success" target="_blank" href="http://mail.qq.com/cgi-bin/feed?u=http://'+_deel.rss+'">QQ邮箱</a> <a class="btn btn-mini btn-success" target="_blank" href="http://www.xianguo.com/subscribe.php?url=http://'+_deel.rss+'">鲜果</a> <a class="btn btn-mini btn-success" target="_blank" href="http://mail.qq.com/cgi-bin/feed?u=http://'+_deel.rss+'">抓虾</a></p></div></div><div class="rollto"><button class="btn btn-inverse" data-type="totop" title="回顶部"><i class="icon-eject icon-white"></i></button>'+(_deel.commenton?'<button class="btn btn-inverse" data-type="torespond" title="发评论"><i class="icon-comment icon-white"></i></button>':'')+'</div>')
+	//$('body').append('<div class="modal hide fade" id="feed" tabindex="-1" style="width:400px;margin-left:-200px;"><div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button><h3>我要订阅'+_deel.name+'</h3></div><div class="modal-body"><p><strong>订阅地址</strong><br><input type="text" class="input-block-level" value="'+_deel.rss+'" readonly=""></p>'+(_deel.maillist?'<p><form class="subscribe-mail" action="http://list.qq.com/cgi-bin/qf_compose_send" target="_blank" method="post"><input type="hidden" name="t" value="qf_booked_feedback"><input type="hidden" name="id" value="'+_deel.maillistCode+'"><strong>邮件订阅</strong><br><div class="form-inline clearfix"><input class="pull-left" style="width:300px;" id="to" name="to" type="email" placeholder="a@b.com"><input class="btn btn-primary pull-right" style="width:51px;" type="submit" value="订阅"></div></form></p>':'')+'<p><strong>订阅到</strong><br><a class="btn btn-mini btn-success" target="_blank" href="http://mail.qq.com/cgi-bin/feed?u=http://'+_deel.rss+'">QQ邮箱</a> <a class="btn btn-mini btn-success" target="_blank" href="http://www.xianguo.com/subscribe.php?url=http://'+_deel.rss+'">鲜果</a> <a class="btn btn-mini btn-success" target="_blank" href="http://mail.qq.com/cgi-bin/feed?u=http://'+_deel.rss+'">抓虾</a></p></div></div><div class="rollto"><button class="btn btn-inverse" data-type="totop" title="回顶部"><i class="icon-eject icon-white"></i></button>'+(_deel.commenton?'<button class="btn btn-inverse" data-type="torespond" title="发评论"><i class="icon-comment icon-white"></i></button>':'')+'</div>')
 	
-	$('body').append('<div class="modal hide fade" id="tijiaokaifu" tabindex="-1" style="width:400px;margin-left:-200px;"><div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button><h3>提交开服</h3></div><div class="modal-body"><p><strong>订阅地址</strong><br><input type="text" class="input-block-level" value="'+_deel.rss+'" readonly=""></p>'+(_deel.maillist?'<p><form class="subscribe-mail" action="http://list.qq.com/cgi-bin/qf_compose_send" target="_blank" method="post"><input type="hidden" name="t" value="qf_booked_feedback"><input type="hidden" name="id" value="'+_deel.maillistCode+'"><strong>邮件订阅</strong><br><div class="form-inline clearfix"><input class="pull-left" style="width:300px;" id="to" name="to" type="email" placeholder="a@b.com"><input class="btn btn-primary pull-right" style="width:51px;" type="submit" value="订阅"></div></form></p>':'')+'<p><strong>订阅到</strong><br><a class="btn btn-mini btn-success" target="_blank" href="http://mail.qq.com/cgi-bin/feed?u=http://'+_deel.rss+'">QQ邮箱</a> <a class="btn btn-mini btn-success" target="_blank" href="http://www.xianguo.com/subscribe.php?url=http://'+_deel.rss+'">鲜果</a> <a class="btn btn-mini btn-success" target="_blank" href="http://mail.qq.com/cgi-bin/feed?u=http://'+_deel.rss+'">抓虾</a></p></div></div><div class="rollto"><button class="btn btn-inverse" data-type="totop" title="回顶部"><i class="icon-eject icon-white"></i></button>'+(_deel.commenton?'<button class="btn btn-inverse" data-type="torespond" title="发评论"><i class="icon-comment icon-white"></i></button>':'')+'</div>')
-
+	$('body').append('<div class="modal hide fade" id="addgameinfo" tabindex="-1" style="width:400px;margin-left:-200px;">'
+			+'<div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button><h3>提交开服</h3></div>'
+			+'<div class="modal-body">'
+			+'<p><span id="sys_msg"></span></p>'
+			+'<p><strong>游戏名称</strong><br><input type="text" id="name" class="input-block-level" value=""></p>'
+			+'<p><strong>开始时间</strong><br><input type="text" id="statTime" class="input-block-level" value=""></p>'
+			+'<p><strong>服务器名</strong><br><input type="text" id="serverName" class="input-block-level" value=""></p>'
+			+'<p><strong>URL</strong><br><input type="text" id="url" class="input-block-level" value=""></p>'
+			+'<p><strong>游戏类型</strong><br><input type="text" id="category" class="input-block-level" value=""></p>'
+			+'<p><strong>运营商</strong><br><input type="text" id="platform" class="input-block-level" value=""></p>'
+			+'<p><center><button class="btn btn-mini btn-primary" onclick="addGameInfo()">提交</button>&nbsp;&nbsp;<button class="btn btn-mini btn-danger" target="_blank" href="#">取消</button></center></p>'
+			//+'<p><strong>订阅到</strong><br><a class="btn btn-mini btn-success" target="_blank" href="#">QQ邮箱</a> <a class="btn btn-mini btn-success" target="_blank" href="">鲜果</a> <a class="btn btn-mini btn-success" target="_blank" href="">抓虾</a></p>'
+			+'</div>'
+			+'</div>')
+	
+	// user login
 	$('body').append('<div class="modal hide fade" id="login" tabindex="-1" style="width: 400px; margin-left: -200px;"><div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button><h3>用户登录</h3></div><div class="modal-body"><p><strong>账 号</strong><br> <input type="text" name="modal_login_account" class="input-block-level"></p><p><strong>密 码</strong><br> <input class="input-block-level" name="modal_login_password" type="password"></p><p><input class="btn btn-primary pull-right" style="width: 100%;" type="button" value="登 录" onclick="login()"></p></div><div id="login_msg"></div></div>');
 	
+	//go to top
+	$('body').append('<div class="rollto"><button class="btn btn-inverse" data-type="totop" title="回顶部"><i class="icon-eject icon-white"></i></button></div>');
 	/* after feed show
 	 * ====================================================
 	*/
@@ -421,6 +437,82 @@ function open_win(id, url){
 	window.open("gourl.html")
 }
 
+function restGameInfoForm() {
+	$('#addgameinfo input[type="text"]').each(function( index ) {
+		$(this).val('');
+	});
+}
+
+function addGameInfo() {
+	var name = $.trim($('#name').val());
+	var statTime = $.trim($('#statTime').val());
+	var serverName = $.trim($('#serverName').val());
+	var url = $.trim($('#url').val());
+	var category = $.trim($('#category').val());
+	var platform = $.trim($('#platform').val());
+	var id = $.trim($('#id').val());
+	
+	if(utils.isEmpty(name)) {
+		utils.showMsg('游戏名称不能为空', 'error');
+		return false;
+	}
+	if(utils.isEmpty(statTime)) {
+		utils.showMsg('开始时间不能为空', 'error');
+		return false;
+	}
+	if(utils.isEmpty(serverName)) {
+		utils.showMsg('服务器名不能为空', 'error');
+		return false;
+	}
+	if(utils.isEmpty(url)) {
+		utils.showMsg('URL不能为空', 'error');
+		return false;
+	}
+	if(utils.isEmpty(category)) {
+		utils.showMsg('游戏类型不能为空', 'error');
+		return false;
+	}
+	if(utils.isEmpty(platform)) {
+		utils.showMsg('运营商不能为空', 'error');
+		return false;
+	}
+
+	$.ajax({
+		type : "POST",
+		url : Context.PATH + '/member/game/save.html?t=' + utils.random(),
+		data : {
+			name:name,
+			statTime:statTime,
+			serverName:serverName,
+			url:url,
+			category:category,
+			platform:platform,
+			id:id
+		},
+		dataType : "json",
+		success : function(response, textStatus, xhr) {
+			if(response==null) {
+				utils.showMsg('您还没有登录', 'info');
+				
+				return;
+			}
+			
+			if (response.success) {
+				utils.showMsg('保存成功', 'info');
+				if(utils.isEmpty(id)) {
+					restGameInfoForm();
+					$('#addgameinfo .close').click();
+				}
+			} else {
+				utils.showMsg(response.data, 'error');
+			}
+		},
+		error : function(xhr, textStatus, errorThrown) {
+			utils.showMsg("提交失败", 'error');
+		}
+	});
+}
+
 function receive(id, url) {
 	try {
 		showid('thisWinWrapper');
@@ -435,7 +527,7 @@ function receive(id, url) {
     		    dataType: 'jsonp',
     		    data: {},
     		    jsonp: 'jsonp_callback',
-    		    url: 'http://fahao.07073.com/api/tk_fh/' + id,
+    		    url: 'http://kankf.com/api/tk_fh/' + id,
     		    success: function(giftdata) {
     		    	kf_url = url;
 
