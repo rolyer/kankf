@@ -5,7 +5,7 @@
 <table class="table table-bordered table-striped">
 	<thead>
 		<tr>
-			<th>编号</th>
+			<th><input type="checkbox" id="ckbox"><label>全选</label></th>
 			<th>标题</th>
 			<th>类别</th>
 			<th>状态</th>
@@ -51,6 +51,11 @@
 			</td>
 		</tr>
 		#end
+		<tr>
+			<td colspan="8">
+                <button id="delAll" type="button" class="btn btn-default float_left">删除所选</button>
+            </td>
+        </tr>
 	</tbody>
 </table>
 

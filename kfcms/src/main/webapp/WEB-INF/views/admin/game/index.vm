@@ -5,7 +5,7 @@
 <table class="table table-bordered table-striped">
 	<thead>
 		<tr>
-			<th>编号</th>
+			<th><input type="checkbox" id="ckbox"><label>全选</label></th>
 			<th>游戏名称</th>
 			<th>服务器名</th>
 			<th>游戏类型</th>
@@ -16,11 +16,11 @@
 	</thead>
 	<tbody>
 		#if(0>=$list.size())
-            <tr><td colspan="6">暂无数据...</td></tr>
+            <tr><td colspan="7">暂无数据...</td></tr>
 		#end
 		#foreach( $game in $list )
 		<tr id="game_list_tr_gid_$!{game.id}">
-			<td><input type="checkbox" value="$!{game.id}"></td>
+			<td><input type="checkbox" value="$!{game.id}"><input type="hidden" id="account_$!{game.id}" value="$!{game.account}"></td>
 			<td>$!{game.name}</td>
 			<td>$!{game.serverName}</td>
 			<td>$!{game.category}</td>
@@ -41,6 +41,11 @@
 			</td>
 		</tr>
 		#end
+		<tr>
+			<td colspan="7">
+                <button id="delAll" type="button" class="btn btn-default float_left">删除所选</button>
+            </td>
+        </tr>
 	</tbody>
 </table>
 

@@ -1,11 +1,13 @@
 #set($layout="layout/member/template.vm")
 <script type="text/javascript" src="$link.getContextPath()/js/member/game/index.js"></script>
+
 <h1 class="float_left">开服信息</h1>
 <a href="$link.getContextPath()/member/game/edit.html?action=add" class="float_right btn btn-primary btn-large"><i class="icon-plus icon-white"></i>添加开服</a>
+
 <table class="table table-bordered table-striped">
 	<thead>
 		<tr>
-			<th>编号</th>
+            <th><input type="checkbox" id="ckbox"><label>全选</label></th>
 			<th>游戏名称</th>
 			<th>服务器名</th>
 			<th>游戏类型</th>
@@ -16,7 +18,7 @@
 	</thead>
 	<tbody>
 		#if(0>=$list.size())
-            <tr><td colspan="6">暂无数据...</td></tr>
+            <tr><td colspan="7">暂无数据...</td></tr>
 		#end
 		#foreach( $game in $list )
 		<tr id="game_list_tr_gid_$!{game.id}">
@@ -41,6 +43,11 @@
 			</td>
 		</tr>
 		#end
+		<tr>
+			<td colspan="7">
+                <button id="delAll" type="button" class="btn btn-default float_left">删除所选</button>
+            </td>
+        </tr>
 	</tbody>
 </table>
 

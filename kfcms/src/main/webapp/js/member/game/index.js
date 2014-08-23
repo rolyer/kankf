@@ -1,11 +1,37 @@
+$(document).ready(function(){
+	$('#ckbox').click(function(){
+		$("td").find('input[type="checkbox"]').each(function(){
+			if($('input[type="checkbox"]').prop('checked')) {
+				$(this).prop('checked',true);
+			} else {
+				$(this).prop('checked',false)
+			}
+		});
+	});
+	
+	$('#delAll').click(function(){
+		delAll();
+	});
+});
+
+function delAll(){
+	var msg = "您确定要删除吗？";
+	if (!confirm(msg)){
+		return false;
+	}
+	
+	$("td").find('input[type="checkbox"]').each(function(){
+		if($(this).prop('checked')){
+			del($(this).val())
+		}
+	});
+}
+
 function doDelete(id){
-	var msg = "您真的确定要删除吗？";
+	var msg = "您确定要删除吗？";
 	if (confirm(msg)==true){
 		del(id);
-		return true;
-	}else{
-		return false;
-	} 
+	}
 }
 
 function del(id){

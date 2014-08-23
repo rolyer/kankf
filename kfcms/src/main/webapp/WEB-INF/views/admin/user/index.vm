@@ -5,7 +5,7 @@
 <table class="table table-bordered table-striped">
 	<thead>
 		<tr>
-			<th>编号</th>
+			<th><input type="checkbox" id="ckbox"><label>全选</label></th>
 			<th>账号</th>
 			<th>邮箱</th>
 			<th>电话</th>
@@ -41,6 +41,11 @@
 			</td>
 		</tr>
 		#end
+		<tr>
+			<td colspan="7">
+                <button id="delAll" type="button" class="btn btn-default float_left">删除所选</button>
+            </td>
+        </tr>
 	</tbody>
 </table>
 

@@ -124,7 +124,7 @@ function add() {
 }
 
 function del(id) {
-	var msg = "您真的确定要删除吗？";
+	var msg = "您确定要删除吗？";
 	if (confirm(msg)==false){
 		return false;
 	} 
