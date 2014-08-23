@@ -1,124 +1,43 @@
-#set($layout="layout/template.vm")
+<!DOCTYPE html>
+<html>
+<head>
+#parse("layout/meta.vm")
+</head>
 
-<!-- 今日开服 start-->
-	<h2 class="title">今日开服</h2>
-	<article class="excerpt">
-		<div class="focus"><a href="#" class="thumbnail"><img src="images/ads.alibaixiu-220x150.png" alt="阿里百秀主题配置功能抢先看"></a></div>
-		<header>
-			<a class="label label-important" href="#topic/wp">Wordpress<i class="label-arrow"></i></a>
-			<h2><a href="#" title="阿里百秀主题配置功能抢先看_大前端">阿里百秀主题配置功能抢先看</a></h2>
-		</header>
-		<p class="muted"><a href="#/author/admin">Admin</a> 发表于 1天前 </p>
-		<p class="note">上个月说到阿里百秀主题于本月9日开售，感谢不少爱好者先行预售，你们的支持给了我莫大的信心，相信在不断完善的基础上大前端的主题会做得更好，同时也希望主题这行能够和谐发展，请大家支持开发者的心血。值得一说的是，这款主题在功能和配置上远比阿里百秀的强大，...</p>
-	</article>
-	<article class="excerpt">
-		<div class="focus"><a href="#" class="thumbnail"><img src="images/ymatou.png" alt="海外购物公司洋码头招Web前端开发工程师（上海）"></a></div>
-		<header>
-			<a class="label label-important" href="#topic/job">名企招聘<i class="label-arrow"></i></a>		<h2><a href="#" title="海外购物公司洋码头招Web前端开发工程师（上海）_大前端">海外购物公司洋码头招Web前端开发工程师（上海）</a></h2>
-		</header>
-		<p class="muted"><a href="#/author/admin">Admin</a> 发表于 3周前 (05-16)  - 12条评论</p>
-		<p class="note">海外购物公司洋码头（ymatou.com）招聘Web前端一枚，有愿意换个环境的朋友可以去试试，笔者有一朋友在内任职，工作地点上海。岗位职责： 负责web前端Javascript的开发工作解决网页及脚本在不同浏览器下的兼容性问题协助UI设计师进...</p>
-	</article>
-	<article class="excerpt">
-		<div class="focus"><a href="#" class="thumbnail"><img src="uploads/2013/11/ie11-logo.png" alt="IE11很是生猛：前端们应该关注最近浏览器市场占有率"></a></div>
-		<header>
-			<a class="label label-important" href="#topic/see">先知<i class="label-arrow"></i></a>		<h2><a href="#" title="IE11很是生猛：前端们应该关注最近浏览器市场占有率_大前端">IE11很是生猛：前端们应该关注最近浏览器市场占有率</a></h2>
-		</header>
-		<p class="muted"><a href="#/author/admin">Admin</a> 发表于 7个月前 (11-12)  - 21条评论</p>
-		<p class="note">这两天在做公司关于IE11一些数据的调查，这才发现IE11的生长很是生猛，作为一名前端不得不去关注下近期的浏览器市场占有率。以下是来自2013年10月份netmarketshare站点的数据调查。IE11 Logo PC端浏览器市场占有率： 浏览器...</p>
-	</article>
+<body class="home blog" cz-shortcut-listen="true">
+#parse("layout/header.vm")
+
+<section class="container">
+	<div class="content-wrap">
+	<div class="content">
+	##parse("layout/toplist.vm")
 	
-	<article class="excerpt">
-		<div class="focus"><a href="#" class="thumbnail"><img src="images/ads.alibaixiu-220x150.png" alt="阿里百秀主题配置功能抢先看"></a></div>
-		<header>
-			<a class="label label-important" href="#topic/wp">Wordpress<i class="label-arrow"></i></a>
-			<h2><a href="#" title="阿里百秀主题配置功能抢先看_大前端">阿里百秀主题配置功能抢先看</a></h2>
-		</header>
-		<p class="muted"><a href="#/author/admin">Admin</a> 发表于 1天前 </p>
-		<p class="note">上个月说到阿里百秀主题于本月9日开售，感谢不少爱好者先行预售，你们的支持给了我莫大的信心，相信在不断完善的基础上大前端的主题会做得更好，同时也希望主题这行能够和谐发展，请大家支持开发者的心血。值得一说的是，这款主题在功能和配置上远比阿里百秀的强大，...</p>
-	</article>
-	<article class="excerpt">
-		<div class="focus"><a href="#" class="thumbnail"><img src="images/ymatou.png" alt="海外购物公司洋码头招Web前端开发工程师（上海）"></a></div>
-		<header>
-			<a class="label label-important" href="#topic/job">名企招聘<i class="label-arrow"></i></a>		<h2><a href="#" title="海外购物公司洋码头招Web前端开发工程师（上海）_大前端">海外购物公司洋码头招Web前端开发工程师（上海）</a></h2>
-		</header>
-		<p class="muted"><a href="#/author/admin">Admin</a> 发表于 3周前 (05-16)  - 12条评论</p>
-		<p class="note">海外购物公司洋码头（ymatou.com）招聘Web前端一枚，有愿意换个环境的朋友可以去试试，笔者有一朋友在内任职，工作地点上海。岗位职责： 负责web前端Javascript的开发工作解决网页及脚本在不同浏览器下的兼容性问题协助UI设计师进...</p>
-	</article>
-	<article class="excerpt">
-		<div class="focus"><a href="#" class="thumbnail"><img src="uploads/2013/11/ie11-logo.png" alt="IE11很是生猛：前端们应该关注最近浏览器市场占有率"></a></div>
-		<header>
-			<a class="label label-important" href="#topic/see">先知<i class="label-arrow"></i></a>		<h2><a href="#" title="IE11很是生猛：前端们应该关注最近浏览器市场占有率_大前端">IE11很是生猛：前端们应该关注最近浏览器市场占有率</a></h2>
-		</header>
-		<p class="muted"><a href="#/author/admin">Admin</a> 发表于 7个月前 (11-12)  - 21条评论</p>
-		<p class="note">这两天在做公司关于IE11一些数据的调查，这才发现IE11的生长很是生猛，作为一名前端不得不去关注下近期的浏览器市场占有率。以下是来自2013年10月份netmarketshare站点的数据调查。IE11 Logo PC端浏览器市场占有率： 浏览器...</p>
-	</article>
-	
-	<article class="excerpt">
-		<div class="focus"><a href="#" class="thumbnail"><img src="images/ads.alibaixiu-220x150.png" alt="阿里百秀主题配置功能抢先看"></a></div>
-		<header>
-			<a class="label label-important" href="#topic/wp">Wordpress<i class="label-arrow"></i></a>
-			<h2><a href="#" title="阿里百秀主题配置功能抢先看_大前端">阿里百秀主题配置功能抢先看</a></h2>
-		</header>
-		<p class="muted"><a href="#/author/admin">Admin</a> 发表于 1天前 </p>
-		<p class="note">上个月说到阿里百秀主题于本月9日开售，感谢不少爱好者先行预售，你们的支持给了我莫大的信心，相信在不断完善的基础上大前端的主题会做得更好，同时也希望主题这行能够和谐发展，请大家支持开发者的心血。值得一说的是，这款主题在功能和配置上远比阿里百秀的强大，...</p>
-	</article>
-	<article class="excerpt">
-		<div class="focus"><a href="#" class="thumbnail"><img src="images/ymatou.png" alt="海外购物公司洋码头招Web前端开发工程师（上海）"></a></div>
-		<header>
-			<a class="label label-important" href="#topic/job">名企招聘<i class="label-arrow"></i></a>		<h2><a href="#" title="海外购物公司洋码头招Web前端开发工程师（上海）_大前端">海外购物公司洋码头招Web前端开发工程师（上海）</a></h2>
-		</header>
-		<p class="muted"><a href="#/author/admin">Admin</a> 发表于 3周前 (05-16)  - 12条评论</p>
-		<p class="note">海外购物公司洋码头（ymatou.com）招聘Web前端一枚，有愿意换个环境的朋友可以去试试，笔者有一朋友在内任职，工作地点上海。岗位职责： 负责web前端Javascript的开发工作解决网页及脚本在不同浏览器下的兼容性问题协助UI设计师进...</p>
-	</article>
-	<article class="excerpt">
-		<div class="focus"><a href="#" class="thumbnail"><img src="uploads/2013/11/ie11-logo.png" alt="IE11很是生猛：前端们应该关注最近浏览器市场占有率"></a></div>
-		<header>
-			<a class="label label-important" href="#topic/see">先知<i class="label-arrow"></i></a>		<h2><a href="#" title="IE11很是生猛：前端们应该关注最近浏览器市场占有率_大前端">IE11很是生猛：前端们应该关注最近浏览器市场占有率</a></h2>
-		</header>
-		<p class="muted"><a href="#/author/admin">Admin</a> 发表于 7个月前 (11-12)  - 21条评论</p>
-		<p class="note">这两天在做公司关于IE11一些数据的调查，这才发现IE11的生长很是生猛，作为一名前端不得不去关注下近期的浏览器市场占有率。以下是来自2013年10月份netmarketshare站点的数据调查。IE11 Logo PC端浏览器市场占有率： 浏览器...</p>
-	</article>
+	<!-- 今日开服 start-->
+	#if($!total)
+		#set($t=$total)
+	#else
+		#set($t=0)
+	#end
+	<h2 class="title">共搜索到  $!{t} 条与关键字 ${key} 相关信息</h2>
+	##parse("layout/rank.vm")
+	#gamelist($games 'today')
 	<!-- 今日开服 end-->
 	
-	<!-- 明日开服 start-->
-	<h2 class="title">明日开服</h2>
-	<article class="excerpt">
-		<div class="focus"><a href="#" class="thumbnail"><img src="images/ads.alibaixiu-220x150.png" alt="阿里百秀主题配置功能抢先看"></a></div>
-		<header>
-			<a class="label label-important" href="#topic/wp">Wordpress<i class="label-arrow"></i></a>
-			<h2><a href="#" title="阿里百秀主题配置功能抢先看_大前端">阿里百秀主题配置功能抢先看</a></h2>
-		</header>
-		<p class="muted"><a href="#/author/admin">Admin</a> 发表于 1天前 </p>
-		<p class="note">上个月说到阿里百秀主题于本月9日开售，感谢不少爱好者先行预售，你们的支持给了我莫大的信心，相信在不断完善的基础上大前端的主题会做得更好，同时也希望主题这行能够和谐发展，请大家支持开发者的心血。值得一说的是，这款主题在功能和配置上远比阿里百秀的强大，...</p>
-	</article>
-	<article class="excerpt">
-		<div class="focus"><a href="#" class="thumbnail"><img src="images/ymatou.png" alt="海外购物公司洋码头招Web前端开发工程师（上海）"></a></div>
-		<header>
-			<a class="label label-important" href="#topic/job">名企招聘<i class="label-arrow"></i></a>		<h2><a href="#" title="海外购物公司洋码头招Web前端开发工程师（上海）_大前端">海外购物公司洋码头招Web前端开发工程师（上海）</a></h2>
-		</header>
-		<p class="muted"><a href="#/author/admin">Admin</a> 发表于 3周前 (05-16)  - 12条评论</p>
-		<p class="note">海外购物公司洋码头（ymatou.com）招聘Web前端一枚，有愿意换个环境的朋友可以去试试，笔者有一朋友在内任职，工作地点上海。岗位职责： 负责web前端Javascript的开发工作解决网页及脚本在不同浏览器下的兼容性问题协助UI设计师进...</p>
-	</article>
-	<article class="excerpt">
-		<div class="focus"><a href="#" class="thumbnail"><img src="uploads/2013/11/ie11-logo.png" alt="IE11很是生猛：前端们应该关注最近浏览器市场占有率"></a></div>
-		<header>
-			<a class="label label-important" href="#topic/see">先知<i class="label-arrow"></i></a>		<h2><a href="#" title="IE11很是生猛：前端们应该关注最近浏览器市场占有率_大前端">IE11很是生猛：前端们应该关注最近浏览器市场占有率</a></h2>
-		</header>
-		<p class="muted"><a href="#/author/admin">Admin</a> 发表于 7个月前 (11-12)  - 21条评论</p>
-		<p class="note">这两天在做公司关于IE11一些数据的调查，这才发现IE11的生长很是生猛，作为一名前端不得不去关注下近期的浏览器市场占有率。以下是来自2013年10月份netmarketshare站点的数据调查。IE11 Logo PC端浏览器市场占有率： 浏览器...</p>
-	</article>
-	<!-- 明日开服 end-->
-	
-	<div class="pagination" style="display: none;">
-		<ul>
-			<li class="prev-page"></li><li class="active"><span>1</span></li>
-			<li><a href="#page/2">2</a></li>
-			<li><a href="#page/3">3</a></li>
-			<li><a href="#page/4">4</a></li>
-			<li><a href="#page/5">5</a></li>
-			<li><span> ... </span></li>
-			<li class="next-page"><a href="#page/2">下一页</a></li>
-		</ul>
-	</div>
+	#pagination3($totalPages, $page, "search.html?key=${key}&")	
 	<!-- pagination end -->
+
+	</div>
+</div>
+<!-- side -->
+#parse("layout/side.vm")
+<!-- side -->
+</section>
+
+#parse("layout/footer.vm")
+
+<script type="text/javascript" src="js/base.js"></script>
+
+#parse("layout/modal.vm")
+</body>
+
+</html>

@@ -32,9 +32,9 @@ public class AdminGameController {
 		Integer page = StringUtils.isNumeric(p) ? Integer.parseInt(p) : 1;
 
 		List<Game> list = gameService.queryListByConditions(page,
-				Constants.PAGE_SIZE, null);
+				Constants.PAGE_SIZE, null, null);
 
-		int totalrecords = gameService.countListByConditions(null);
+		int totalrecords = gameService.countListByConditions(null, null);
 		int totalPages = (totalrecords + Constants.PAGE_SIZE - 1)
 				/ Constants.PAGE_SIZE;
 

@@ -29,8 +29,8 @@
 		<!--nav end-->
 		<div class="screen-mini"><button data-type="screen-nav" class="btn btn-inverse screen-nav"><i class="icon-tasks icon-white"></i></button></div>
 		<div class="menu pull-right">
-			<form method="get" class="dropdown search-form" action="#">
-				<input class="search-input" name="s" type="text" placeholder="输入关键字搜索" autofocus="" x-webkit-speech="">
+			<form method="get" class="dropdown search-form" action="$link.getContextPath()/search.html">
+				<input class="search-input" name="key" type="text" placeholder="输入关键字搜索" autofocus="" x-webkit-speech="">
 				<input class="btn btn-success search-submit" type="submit" value="搜索">
 			</form>
 			<div class="btn-group pull-left">

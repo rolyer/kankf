@@ -10,9 +10,9 @@ public interface GameService {
 	public List<Game> queryList(Integer num, Date startTime);
 
 	public List<Game> queryListByConditions(Integer page, Integer pageSize,
-			String userName);
+			String userName, String keyWord);
 
-	public int countListByConditions(String account);
+	public int countListByConditions(String account, String keyWord);
 
 	public Game queryByIdAndAccount(Integer id, String account);
 
@@ -27,4 +27,7 @@ public interface GameService {
 	public List<GameVO> queryListByStartTime(Integer page, Integer pageSize, Date startTime);
 
 	public int countListByStartTime(Date startTime);
+	
+	public List<GameVO> queryForSearch(Integer page, Integer pageSize, String key);
+	public int countForSearch(String key);
 }

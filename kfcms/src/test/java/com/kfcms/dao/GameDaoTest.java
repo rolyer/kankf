@@ -36,14 +36,14 @@ public class GameDaoTest {
 	public void queryListByConditions() {
 		Integer offset = 0;
 		Integer rowCount = 20;
-		List<Game> list = dao.queryListByConditions(offset, rowCount, null);
+		List<Game> list = dao.queryListByConditions(offset, rowCount, null,"");
 
 		Assert.assertNotNull(list);
 		Assert.assertEquals(5, list.size());
 		Assert.assertEquals(gamename, list.get(0).getName());
 
 		// test row count
-		list = dao.queryListByConditions(offset, 1, null);
+		list = dao.queryListByConditions(offset, 1, null,"testgame");
 
 		Assert.assertNotNull(list);
 		Assert.assertEquals(1, list.size());
@@ -52,7 +52,7 @@ public class GameDaoTest {
 		// query with user name
 		Game game = new Game();
 		game.setAccount(account);
-		list = dao.queryListByConditions(offset, rowCount, game);
+		list = dao.queryListByConditions(offset, rowCount, game,"testgame");
 
 		Assert.assertNotNull(list);
 		Assert.assertEquals(3, list.size());
@@ -62,13 +62,13 @@ public class GameDaoTest {
 	public void countListByConditions() {
 		Game game = new Game();
 		// query without user name
-		Integer count = dao.countListByConditions(game);
+		Integer count = dao.countListByConditions(game, "");
 
 		Assert.assertEquals(5, count.intValue());
 
 		// query with user name
 		game.setAccount(account);
-		count = dao.countListByConditions(game);
+		count = dao.countListByConditions(game, "");
 
 		Assert.assertEquals(3, count.intValue());
 	}

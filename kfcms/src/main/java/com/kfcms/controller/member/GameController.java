@@ -35,9 +35,9 @@ public class GameController {
 		
 		User user = getLoginUser(request);
 		
-		List<Game> list = gameService.queryListByConditions(page, Constants.PAGE_SIZE, user.getAccount());
+		List<Game> list = gameService.queryListByConditions(page, Constants.PAGE_SIZE, user.getAccount(), null);
 		
-		int totalrecords =  gameService.countListByConditions(user.getAccount());
+		int totalrecords =  gameService.countListByConditions(user.getAccount() , null);
 		int totalPages = (totalrecords + Constants.PAGE_SIZE - 1) / Constants.PAGE_SIZE;
 		
 		out.put("list", list);

@@ -12,9 +12,9 @@ public interface GameDao {
 			@Param("startTime") Date startTime);
 
 	public List<Game> queryListByConditions(@Param("offset") Integer offset,
-			@Param("rowCount") Integer rowCount, @Param("game") Game game);
+			@Param("rowCount") Integer rowCount, @Param("game") Game game, @Param("keyWord") String keyWord);
 
-	public int countListByConditions(@Param("game") Game game);
+	public int countListByConditions(@Param("game") Game game, @Param("keyWord") String keyWord);
 
 	public Game query(Game game);
 

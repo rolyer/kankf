@@ -21,9 +21,9 @@ import com.kfcms.service.GameService;
 import com.kfcms.service.NewsService;
 import com.kfcms.service.UserService;
 import com.kfcms.util.Constants;
+import com.kfcms.util.Constants.RegisterStatus;
 import com.kfcms.util.NewsCategory;
 import com.kfcms.util.UserStatus;
-import com.kfcms.util.Constants.RegisterStatus;
 import com.kfcms.vo.GameVO;
 
 @Controller
@@ -146,8 +146,34 @@ public class HomeController {
 	}
 	
 	@RequestMapping("search.html")
-	public void search(ModelMap out){
+	public void search(ModelMap out, Integer page, String key){
+		Integer pageSize = 25;
+		if (page == null || page.intValue() <= 0) {
+			page = 1;
+		}
+		
+		Date date =  new Date();
+		Calendar c = Calendar.getInstance(); 
+		c.setTime(date); 
+		date = c.getTime();
+		
+		List<GameVO> list = gameService.queryForSearch(page, pageSize, key);
+		
+		Integer total =  gameService.countForSearch(key);
+		Integer totalPages = (total + pageSize - 1) / pageSize;
+		
+		out.put("total", total);
+		out.put("key", key);
+		out.put("page", page);
+		out.put("totalPages", totalPages);
+		out.put("games", list);
 		out.put("seo", getSeoPage("搜索 - 看开服", "search"));
+		
+		News hotGame = newsService.findTopOneByCategory(NewsCategory.HOT_GAME.getValue());
+		out.put("hotGame", hotGame);
+		
+		News notice = newsService.findTopOneByCategory(NewsCategory.NOTICE.getValue());
+		out.put("notice", notice);
 	}
 	
 	@RequestMapping("play.html")

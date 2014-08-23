@@ -32,20 +32,20 @@ public class GameServiceImpl implements GameService {
 	}
 
 	public List<Game> queryListByConditions(Integer page, Integer pageSize,
-			String account) {
+			String account, String keyWord) {
 		Integer offset = (page-1) * pageSize;
 		
 		Game game = new Game();
 		game.setAccount(account);
 		
-		return gameDao.queryListByConditions(offset, pageSize, game);
+		return gameDao.queryListByConditions(offset, pageSize, game, keyWord);
 	}
 
-	public int countListByConditions(String account) {
+	public int countListByConditions(String account, String keyWord) {
 		Game game = new Game();
 		game.setAccount(account);
 		
-		return gameDao.countListByConditions(game);
+		return gameDao.countListByConditions(game, keyWord);
 	}
 
 	public Game queryByIdAndAccount(Integer id, String account) {
@@ -108,7 +108,7 @@ public class GameServiceImpl implements GameService {
 		game.setStartTime(startTime);
 		game.setStatus(1);
 		
-		List<Game> list = gameDao.queryListByConditions(offset, pageSize, game);
+		List<Game> list = gameDao.queryListByConditions(offset, pageSize, game, null);
 		
 		return transformation(list);
 	}
@@ -148,6 +148,18 @@ public class GameServiceImpl implements GameService {
 		Game game = new Game();
 		game.setStartTime(startTime);
 		
-		return gameDao.countListByConditions(game);
+		return gameDao.countListByConditions(game, null);
+	}
+
+	public List<GameVO> queryForSearch(Integer page, Integer pageSize, String key) {
+		Integer offset = (page-1) * pageSize;
+		
+		List<Game> list = gameDao.queryListByConditions(offset, pageSize, null, key);
+		
+		return transformation(list);
+	}
+
+	public int countForSearch(String key) {
+		return gameDao.countListByConditions(null, key);
 	}
 }

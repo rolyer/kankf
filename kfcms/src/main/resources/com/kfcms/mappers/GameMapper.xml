@@ -30,7 +30,7 @@
 			LIMIT 0, #{num}
 	</select>
 	
-	<select id="queryListByConditions" parameterType="game" resultMap="baseResultMap">
+	<select id="queryListByConditions" parameterType="map" resultMap="baseResultMap">
 			SELECT g.id, g.account, g.name, g.start_time, g.server_name, g.url, g.category, g.platform, status, g.gmt_created, g.gmt_modified
 			FROM game g
 			WHERE 1=1
@@ -47,11 +47,14 @@
 					AND MONTH(start_time) = MONTH(#{game.startTime})
 				</if>
 			</if>
+			<if test="keyWord != null and keyWord !='' ">
+				AND (g.name LIKE '%${keyWord}%' OR g.platform LIKE '%${keyWord}%')
+			</if>
 			ORDER BY id DESC
 			LIMIT #{offset}, #{rowCount} 
 	</select>
 	
-	<select id="countListByConditions" parameterType="game" resultType="int">
+	<select id="countListByConditions" parameterType="map" resultType="int">
 			SELECT COUNT(g.id) FROM game g
 			WHERE 1=1
 			<if test="game != null">
@@ -66,6 +69,9 @@
 					AND DAY(start_time) = DAY(#{game.startTime})
 					AND MONTH(start_time) = MONTH(#{game.startTime})
 				</if>
+			</if>
+			<if test="keyWord != null and keyWord !='' ">
+				AND (g.name LIKE '%${keyWord}%' OR g.platform LIKE '%${keyWord}%')
 			</if>
 	</select>
 	
