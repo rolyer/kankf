@@ -99,19 +99,17 @@ public class AuthorizeFilter implements Filter {
 			if (!canFilter(needLoginPage, path, uri)) { // no need login
 				chain.doFilter(request, response);
 				return;
+			}
+			
+			if (isAdminPath) {
+				if (loginAdmin != null) {
+					chain.doFilter(request, response);
+					return;
+				}
 			} else {
-				if (isAdminPath) {
-					if (loginAdmin != null) {
-						chain.doFilter(request, response);
-						return;
-					}
-
-				} else {
-					
-					if (loginUser != null) {
-						chain.doFilter(request, response);
-						return;
-					}
+				if (loginUser != null) {
+					chain.doFilter(request, response);
+					return;
 				}
 			}
 
@@ -120,7 +118,6 @@ public class AuthorizeFilter implements Filter {
 					url = adminLoginURL;
 					break;
 				}
-
 			} else {
 				
 				if (loginUser == null) { // no login
