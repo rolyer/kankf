@@ -54,7 +54,7 @@
             	
             	$.ajax({
                     type: "POST",
-                    url: '/web/member/ajaxlogin.html?t='+utils.random(),
+                    url: '$link.getContextPath()/member/ajaxlogin.html?t='+utils.random(),
                     data : {
             			account: account,
             			password: password
@@ -62,7 +62,7 @@
                     dataType:"json",
                     success: function(response, textStatus, xhr) {
                     	if(response.success){
-                    		window.location.href = "/web/member/index.html";
+                    		window.location.href = "$link.getContextPath()/member/index.html";
                     	} else {
 							utils.alert('#sys_msg', response.data, 'danger');
             			}
